@@ -1,11 +1,15 @@
-package ed_trabalho;
+package trabalho_ed_mf;
+
+import trabalho_ed_mf.MovementEnum;
+import trabalho_ed_mf.BotMovement;
+import trabalho_ed_mf.Player;
 
 public class Bot{
     private int index;
     private boolean turn;
-    private MovEnum movEnum;
+    private MovementEnum movEnum;
     private Player player;
-    private MovementAlgoritms mov;
+    private BotMovement mov;
 
     //Constructors
     public Bot(Player player){
@@ -25,13 +29,13 @@ public class Bot{
 
     //Metodo de movimento do bot
     public void move(){
-        if(movEnum == MovEnum.SHORTESTPATH){
+        if(movEnum == MovementEnum.SHORTESTPATH){
             mov.shortestPath();
         }
-        else if(movEnum == MovEnum.RANDOMPATH){
+        else if(movEnum == MovementEnum.RANDOMPATH){
             mov.randomPath();
         }
-        else if(movEnum == MovEnum.GREEDYPATH){
+        else if(movEnum == MovementEnum.GREEDYPATH){
             mov.greedyPath();
         }
     }
@@ -52,11 +56,11 @@ public class Bot{
         return turn;
     }
 
-    public void setMov(MovEnum mov){
+    public void setMov(MovementEnum mov){
         this.movEnum = mov;
     }
 
-    public MovEnum getMovEnum(){
+    public MovementEnum getMovEnum(){
         return movEnum;
     }
 
@@ -64,16 +68,17 @@ public class Bot{
         return player;
     }
 
-    public void setMov(MovementAlgoritms mov){
+    public void setMov(BotMovement mov){
         this.mov = mov;
     }
 
-    public MovementAlgoritms getMov(){
+    public BotMovement getMov(){
         return mov;
     }
 
     //get player colour
-    public FlagColour getPlayerColour(){
+    public PlayerColour getPlayerColour(){
         return player.getFlag().getColour();
     }
 }
+

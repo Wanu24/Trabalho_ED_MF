@@ -1,5 +1,5 @@
 package trabalho_ed_mf;
 
-public enum FlagColour {
+public enum PlayerColour {
     BLACK, WHITE
 }

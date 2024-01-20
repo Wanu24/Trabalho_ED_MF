@@ -173,7 +173,7 @@ public class Game {
         else{
             for(int i = 0; i < players.size(); i++){
                 for(int j = 0; j < numBots; j++){
-                    map.getNetwork().getVertex(players.get(i).getFlag().getIndex()).setBot(new Bot(players.get(i),j+1));
+                    map.getNetwork().getVertex(players.get(i).getFlag().getIndex()).addBot(new Bot(players.get(i),j+1));
                 }
             }
         }

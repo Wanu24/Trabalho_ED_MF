@@ -57,16 +57,15 @@ public class Locations {
     public int getIndex() {
         return index;
     }
-    //funçao que devolve a lista de bots
+
     public LinkedList<Bot> getBots(){
         return bot;
     }
 
-    //funcao que devolve o bot que esta na localizaçao
     public Bot getBot(){
-        return bot.getLast();
+        return bot.getFirst();
     }
-    
+
     public void addBot(Bot bot){
         this.bot.add(bot);
         this.hasBot = true;

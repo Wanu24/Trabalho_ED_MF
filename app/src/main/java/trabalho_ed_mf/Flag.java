@@ -1,14 +1,14 @@
 package trabalho_ed_mf;
 
-import trabalho_ed_mf.FlagColour;
+import trabalho_ed_mf.PlayerColour;
 
 public class Flag {
-    private FlagColour colour;
+    private PlayerColour colour;
     private int index;
 
     //Constructors
     public Flag(String colour){
-        this.colour = FlagColour.valueOf(colour);
+        this.colour = PlayerColour.valueOf(colour);
         this.index = -1;
     }
     public Flag(){
@@ -17,10 +17,10 @@ public class Flag {
     }
 
     //Getters and Setters
-    public FlagColour  getColour(){
+    public PlayerColour  getColour(){
         return colour;
     }
-    public void setColour(FlagColour colour){
+    public void setColour(PlayerColour colour){
         this.colour = colour;
     }
 
