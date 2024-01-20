@@ -6,7 +6,6 @@ import trabalho_ed_mf.Player;
 
 public class Bot{
     private int index;
-    private boolean turn;
     private MovementEnum movEnum;
     private Player player;
     private BotMovement mov;
@@ -14,20 +13,17 @@ public class Bot{
     //Constructors
     public Bot(Player player){
         this.index = -1;
-        this.turn = false;
         this.mov = null;
         this.player = player;
     }
 
     public Bot(Player player, int index){
         this.index = index;
-        this.turn = false;
         this.mov = null;
         this.player = player;
     }
 
 
-    //Metodo de movimento do bot
     public void move(){
         if(movEnum == MovementEnum.SHORTESTPATH){
             mov.shortestPath();
@@ -44,16 +40,9 @@ public class Bot{
     public int getIndex(){
         return index;
     }
+
     public void setIndex(int index){
         this.index = index;
-    }
-
-    public void setTurn(boolean turn){
-        this.turn = turn;
-    }
-
-    public boolean getTurn(){
-        return turn;
     }
 
     public void setMov(MovementEnum mov){
@@ -76,7 +65,6 @@ public class Bot{
         return mov;
     }
 
-    //get player colour
     public PlayerColour getPlayerColour(){
         return player.getFlag().getColour();
     }

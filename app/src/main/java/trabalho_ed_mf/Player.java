@@ -7,26 +7,24 @@ import trabalho_ed_mf.Bot;
 public class Player {
     private String name;
     private int numBots;
-    private LinkedList<Bot> bots;
+    private LinkedList<Bot> botsQueue;
     private Flag flag;
 
     //Constructors
     public Player(String name, Flag flag){
         this.name = name;
         this.numBots = 0;
-        this.bots = new LinkedList<Bot>();
+        this.botsQueue = new LinkedList<Bot>();
         this.flag = flag;
     }
 
-    //Metodo para adicionar um bot ao jogador
     public void addBot(Bot bot){
-        this.bots.add(bot);
+        this.botsQueue.add(bot);
         this.numBots++;
     }
 
-    //Metodo para remover um bot do jogador
     public void removeBot(Bot bot){
-        this.bots.remove(bot);
+        this.botsQueue.remove(bot);
         this.numBots--;
     }
 
@@ -44,10 +42,10 @@ public class Player {
         this.numBots = numBots;
     }
     public LinkedList<Bot> getBots(){
-        return bots;
+        return botsQueue;
     }
     public void setBots(LinkedList<Bot> bots){
-        this.bots = bots;
+        this.botsQueue = bots;
     }
     public Flag getFlag(){
         return flag;
@@ -57,6 +55,11 @@ public class Player {
     }
     public PlayerColour getPlayerColour(){
         return flag.getColour();
+    }
+    public void useTurn(){
+        Bot bot = botsQueue.get(0);
+        botsQueue.remove(0);
+        botsQueue.add(bot);
     }
 }
 
