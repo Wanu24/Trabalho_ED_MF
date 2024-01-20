@@ -1,4 +1,6 @@
-package ed_trabalho;
+package trabalho_ed_mf;
+
+import trabalho_ed_mf.FlagColour;
 
 public class Flag {
     private FlagColour colour;

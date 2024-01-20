@@ -33,23 +33,23 @@ public class Locations {
     public boolean getHasFlag(){
         return hasFlag;
     }
-    
+
     public void setHasFlag(boolean hasFlag){
         this.hasFlag = hasFlag;
     }
-    
+
     public boolean getHasBot(){
         return hasBot;
     }
-    
+
     public void setHasBot(boolean hasBot){
         this.hasBot = hasBot;
     }
-    
+
     public Flag getFlag(){
         return flag;
     }
-    
+
     public void setFlag(Flag flag){
         this.flag = flag;
     }
@@ -64,12 +64,9 @@ public class Locations {
 
     //funcao que devolve o bot que esta na localizaçao
     public Bot getBot(){
-        return bot.getFirst();
+        return bot.getLast();
     }
-
-
-
-    //funçao add bot
+    
     public void addBot(Bot bot){
         this.bot.add(bot);
         this.hasBot = true;
