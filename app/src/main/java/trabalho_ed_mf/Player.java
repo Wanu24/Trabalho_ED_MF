@@ -2,7 +2,6 @@ package trabalho_ed_mf;
 
 
 import ClassImplementation.LinkedList;
-import trabalho_ed_mf.Bot;
 
 public class Player {
     private String name;
@@ -56,8 +55,9 @@ public class Player {
     public PlayerColour getPlayerColour(){
         return flag.getColour();
     }
-    public void useTurn(){
+    public void useTurn(Map map,Player enemy){
         Bot bot = botsQueue.get(0);
+        bot.move(map,enemy);
         botsQueue.remove(0);
         botsQueue.add(bot);
     }

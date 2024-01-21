@@ -1,7 +1,6 @@
 package trabalho_ed_mf;
 
 import java.io.IOException;
-//import ed_trabalho package
 import ed_trabalho.Game;
 
 

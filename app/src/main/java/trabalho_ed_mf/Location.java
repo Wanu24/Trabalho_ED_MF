@@ -12,15 +12,14 @@ public class Location {
     private Flag flag;
     private LinkedList<Bot> bot;
     private int index;
-    private static int contador;
 
-    public Location(){
+
+    public Location(int i){
         this.hasFlag = false;
         this.hasBot = false;
         this.flag = null;
         this.bot = new LinkedList<Bot>();
-        this.index = contador;
-        contador++;
+        this.index = i+1;
     }
 
     public boolean getHasFlag(){
@@ -59,7 +58,7 @@ public class Location {
         return bot.getFirst();
     }
 
-    public void addBot(Bot bot){
+    public void setBot(Bot bot){
         this.bot.add(bot);
         this.hasBot = true;
     }

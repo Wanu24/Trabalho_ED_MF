@@ -5,44 +5,41 @@ import trabalho_ed_mf.BotMovement;
 import trabalho_ed_mf.Player;
 
 public class Bot{
-    private int index;
+    private int location;
     private MovementEnum movEnum;
     private Player player;
     private BotMovement mov;
 
-    //Constructors
+    private static int contador;
+
+
     public Bot(Player player){
-        this.index = -1;
+        contador++;
+        this.location = player.getFlag().getIndex();
         this.mov = null;
         this.player = player;
+        this.movEnum = contador%3 == 0 ? MovementEnum.RANDOMPATH : contador%3 == 1 ? MovementEnum.SHORTESTPATH : MovementEnum.GREEDYPATH;
     }
 
-    public Bot(Player player, int index){
-        this.index = index;
-        this.mov = null;
-        this.player = player;
-    }
-
-
-    public void move(){
+    public void move(Map map,Player enemy){
         if(movEnum == MovementEnum.SHORTESTPATH){
-            mov.shortestPath();
+            mov.shortestPath(map,location, enemy.getFlag().getIndex());
         }
         else if(movEnum == MovementEnum.RANDOMPATH){
-            mov.randomPath();
+            mov.randomPath(map,location);
         }
         else if(movEnum == MovementEnum.GREEDYPATH){
-            mov.greedyPath();
+            mov.greedyPath(map,location);
         }
     }
 
     //Getters and Setters
     public int getIndex(){
-        return index;
+        return location;
     }
 
     public void setIndex(int index){
-        this.index = index;
+        this.location = index;
     }
 
     public void setMov(MovementEnum mov){
