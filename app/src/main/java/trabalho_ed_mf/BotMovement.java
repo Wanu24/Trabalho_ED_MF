@@ -19,10 +19,7 @@ public class BotMovement {
             if (currentLocation.getHasFlag() || !currentLocation.getHasBot()) {
                 return currentLocation.getIndex();
             } else {
-
                 map1.removeLocal(currentLocation);
-
-
                 return shortestPath(map1, index1, index2);
             }
         } else {
