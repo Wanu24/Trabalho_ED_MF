@@ -27,9 +27,9 @@ public class ArrayIterator<T> implements Iterator {
 
 
     public T next() {
-        if (! hasNext())
+        if (! hasNext()) {
             throw new ElementNotFoundException("No next element");
-
+        }
         current++;
         return items[current - 1];
 

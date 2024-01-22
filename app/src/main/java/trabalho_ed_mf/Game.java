@@ -89,7 +89,7 @@ public class Game {
             int randomNumber2 = random.nextInt(size);
             if (randomNumber1 != randomNumber2) {
                 if (!map.getNetwork().hasEdge(randomNumber1, randomNumber2)) {
-                    int distance = randomNumber(15) + 1;
+                    double distance = randomNumber(15) + 1;
                     if (type.equals("bidirecional")) {
                         map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
                     } else {
@@ -107,7 +107,6 @@ public class Game {
         Player enemy = players.get((roundNumber + 1) % 2);
         player.useTurn(map, enemy);
         roundNumber++;
-        System.out.println(player.getLastBot().getIndex()+" "+enemy.getFlag().getIndex());///////////////////////////////////////////////////////////
         if (player.getLastBot().getIndex() == enemy.getFlag().getIndex()) {
             System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
             System.out.println("Jogador " + player.getName() + " ganhou!");

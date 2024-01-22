@@ -8,7 +8,6 @@ public class Bot{
     private int lastLocation;
     private MovementEnum movEnum;
     private static int contador;
-
     private int index;
 
     public Bot(Player player){
@@ -21,9 +20,9 @@ public class Bot{
 
     public void move(Map map,Player enemy){
         map.getNetwork().getVertex(location).setHasBot(false);
+        lastLocation = location;
         if(movEnum == MovementEnum.SHORTESTPATH){
             location = shortestPath(map,location, enemy.getFlag().getIndex());
-            System.out.println(location);
         }
         else if(movEnum == MovementEnum.RANDOMPATH){
             location = randomPath(map,location);
@@ -33,7 +32,7 @@ public class Bot{
         }
         map.getNetwork().getVertex(location).setHasBot(true);
         System.out.println("Bot used " + movEnum);
-        System.out.println("Bot " + index +"moved from" + lastLocation + " to " + location);
+        System.out.println("Bot " + index +" moved from " + lastLocation + " to " + location);
     }
 
     //Getters and Setters
