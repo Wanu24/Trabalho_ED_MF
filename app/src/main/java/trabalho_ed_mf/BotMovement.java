@@ -18,7 +18,7 @@ public class BotMovement {
     public static int randomPath(Map map, int index) {
         LinkedList<Integer> locals = new LinkedList<Integer>();
         for (int i = 0; i < map.getSize(); i++) {
-            if (map.getNetwork().getAdjMatrix()[index][i] != 0 && !map.getNetwork().getVertex(i).getHasBot()) {
+            if (map.getNetwork().getAdjMatrix()[index][i] != 0 && (!map.getNetwork().getVertex(i).getHasBot() || map.getNetwork().getVertex(i).getHasFlag())) {
                 locals.add(i);
             }
         }
@@ -35,7 +35,7 @@ public class BotMovement {
         double longestPath = 0;
         int longestPathIndex = -1;
         for (int i = 0; i < map.getSize(); i++) {
-            if (map.getNetwork().getAdjMatrix()[index][i] > longestPath && !map.getNetwork().getVertex(i).getHasBot() && i != index2) {
+            if (map.getNetwork().getAdjMatrix()[index][i] > longestPath && (!map.getNetwork().getVertex(i).getHasBot() || map.getNetwork().getVertex(i).getHasFlag()) && i != index2) {
                 longestPath = map.getNetwork().getAdjMatrix()[index][i];
                 longestPathIndex = i;
             }

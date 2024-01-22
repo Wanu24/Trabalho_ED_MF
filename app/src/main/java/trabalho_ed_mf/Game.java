@@ -28,6 +28,17 @@ public class Game {
             return 1;
         }
     }
+    public float lerFloat() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            return Float.parseFloat(br.readLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Valor invalido! Insira novamente: ");
+            return 1;
+        }
+    }
+
+
 
     public String ler() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -61,7 +72,7 @@ public class Game {
             System.out.println("Erro na leitura do tipo de mapa!");
         }
         System.out.println("Insira a densidade de arestas: ");
-        float densidade = lerInt();
+        float densidade = lerFloat();
         int numArestas = 0;
         if (type.equals("direcional")) {
             numArestas = (int) (densidade * (size * (size - 1)));
@@ -71,6 +82,7 @@ public class Game {
             System.out.println("Tipo de mapa invalido!");
         }
         int count = 0;
+        System.out.println(numArestas);
         while (count < numArestas) {
             Random random = new Random();
             int randomNumber1 = random.nextInt(size);
@@ -87,32 +99,41 @@ public class Game {
                 }
             }
         }
+        System.out.println("Mapa criado!");
     }
 
-    public void useTurn() {
+    public int useTurn() {
         Player player = players.get(roundNumber % 2);
         Player enemy = players.get((roundNumber + 1) % 2);
         player.useTurn(map, enemy);
         roundNumber++;
+        System.out.println(player.getLastBot().getIndex()+" "+enemy.getFlag().getIndex());///////////////////////////////////////////////////////////
         if (player.getLastBot().getIndex() == enemy.getFlag().getIndex()) {
             System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
             System.out.println("Jogador " + player.getName() + " ganhou!");
             System.out.println("Ronda" + roundNumber);
-            System.exit(0);
+            return 1;
+        }
+        return 0;
+    }
+
+    public void createBots() throws IOException {
+        for (int i = 0; i < players.size(); i++) {
+            createBotsPlayer(players.get(i));
         }
     }
 
-    public void createBots(Player player) throws IOException {
+    public void createBotsPlayer(Player player) throws IOException {
         System.out.println(player.getName() + " insira o numero de bots: ");
         int numBots = lerInt();
         int numVertices = map.getNetwork().size();
         if (numBots <= (numVertices / 5)) {
-                for (int i = 0; i < numBots; i++) {
-                    player.addBot(new Bot(player));
-                }
+            for (int i = 0; i < numBots; i++) {
+                player.addBot(new Bot(player));
+            }
         } else {
             System.out.println("Numero de bots invalido!");
-            createBots(player);
+            createBotsPlayer(player);
         }
     }
 
@@ -122,12 +143,20 @@ public class Game {
             int index = lerInt();
             if (map.getNetwork().getVertex(index).getFlag() == null) {
                 players.get(i).getFlag().setIndex(index);
-                map.getNetwork().getVertex(index).setFlag(players.get(i).getFlag());
+                map.addFlag(index,(players.get(i).getFlag()));
             } else {
                 System.out.println("Local ja tem bandeira!");
-                chooseFlags();
+                i--;
             }
         }
+    }
+
+    public void coinFlip() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(2);
+        Player player = players.get(randomNumber);
+        players.remove(randomNumber);
+        players.add(player);
     }
 
     public void createPlayers() {

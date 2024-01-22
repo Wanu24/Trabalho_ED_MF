@@ -5,18 +5,17 @@ import static trabalho_ed_mf.BotMovement.*;
 
 public class Bot{
     private int location;
-
     private int lastLocation;
     private MovementEnum movEnum;
-    private Player player;
     private static int contador;
 
+    private int index;
 
     public Bot(Player player){
         contador++;
+        this.index = contador;
         this.location = player.getFlag().getIndex();
-        this.lastLocation = -1;
-        this.player = player;
+        this.lastLocation = player.getFlag().getIndex();
         this.movEnum = contador%3 == 0 ? MovementEnum.RANDOMPATH : contador%3 == 1 ? MovementEnum.SHORTESTPATH : MovementEnum.ATHELETICPATH;
     }
 
@@ -24,6 +23,7 @@ public class Bot{
         map.getNetwork().getVertex(location).setHasBot(false);
         if(movEnum == MovementEnum.SHORTESTPATH){
             location = shortestPath(map,location, enemy.getFlag().getIndex());
+            System.out.println(location);
         }
         else if(movEnum == MovementEnum.RANDOMPATH){
             location = randomPath(map,location);
@@ -32,6 +32,8 @@ public class Bot{
             location = atheleticPath(map,location,lastLocation);
         }
         map.getNetwork().getVertex(location).setHasBot(true);
+        System.out.println("Bot used " + movEnum);
+        System.out.println("Bot " + index +"moved from" + lastLocation + " to " + location);
     }
 
     //Getters and Setters
@@ -49,14 +51,6 @@ public class Bot{
 
     public MovementEnum getMovEnum(){
         return movEnum;
-    }
-
-    public Player getPlayer(){
-        return player;
-    }
-
-    public PlayerColour getPlayerColour(){
-        return player.getFlag().getColour();
     }
 }
 

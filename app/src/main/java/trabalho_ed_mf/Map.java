@@ -48,7 +48,6 @@ public class Map {
 
     }
 
-    //Getters
     public Network<Location> getNetwork() {
         return network;
     }
