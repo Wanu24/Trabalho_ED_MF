@@ -154,9 +154,11 @@ public class Game {
     public void coinFlip() {
         Random random = new Random();
         int randomNumber = random.nextInt(2);
-        Player player = players.get(randomNumber);
-        players.remove(randomNumber);
-        players.add(player);
+        if(randomNumber == 1){
+            Player player = players.get(0);
+            players.remove(0);
+            players.add(player);
+        }
     }
 
     public void createPlayers() {

@@ -16,7 +16,7 @@ public class Main {
         */
 
         game.createPlayers();
-        //game.coinFlip();
+        game.coinFlip();
         game.createMap();
         game.chooseFlags();
         game.createBots();
