@@ -1,36 +1,37 @@
 package trabalho_ed_mf;
 
-import trabalho_ed_mf.MovementEnum;
-import trabalho_ed_mf.BotMovement;
-import trabalho_ed_mf.Player;
+
+import static trabalho_ed_mf.BotMovement.*;
 
 public class Bot{
     private int location;
+
+    private int lastLocation;
     private MovementEnum movEnum;
     private Player player;
-    private BotMovement mov;
-
     private static int contador;
 
 
     public Bot(Player player){
         contador++;
         this.location = player.getFlag().getIndex();
-        this.mov = null;
+        this.lastLocation = -1;
         this.player = player;
-        this.movEnum = contador%3 == 0 ? MovementEnum.RANDOMPATH : contador%3 == 1 ? MovementEnum.SHORTESTPATH : MovementEnum.GREEDYPATH;
+        this.movEnum = contador%3 == 0 ? MovementEnum.RANDOMPATH : contador%3 == 1 ? MovementEnum.SHORTESTPATH : MovementEnum.ATHELETICPATH;
     }
 
     public void move(Map map,Player enemy){
+        map.getNetwork().getVertex(location).setHasBot(false);
         if(movEnum == MovementEnum.SHORTESTPATH){
-            mov.shortestPath(map,location, enemy.getFlag().getIndex());
+            location = shortestPath(map,location, enemy.getFlag().getIndex());
         }
         else if(movEnum == MovementEnum.RANDOMPATH){
-            mov.randomPath(map,location);
+            location = randomPath(map,location);
         }
-        else if(movEnum == MovementEnum.GREEDYPATH){
-            mov.greedyPath(map,location);
+        else if(movEnum == MovementEnum.ATHELETICPATH){
+            location = atheleticPath(map,location,lastLocation);
         }
+        map.getNetwork().getVertex(location).setHasBot(true);
     }
 
     //Getters and Setters
@@ -52,14 +53,6 @@ public class Bot{
 
     public Player getPlayer(){
         return player;
-    }
-
-    public void setMov(BotMovement mov){
-        this.mov = mov;
-    }
-
-    public BotMovement getMov(){
-        return mov;
     }
 
     public PlayerColour getPlayerColour(){

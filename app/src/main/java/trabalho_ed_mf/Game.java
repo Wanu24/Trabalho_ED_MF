@@ -1,11 +1,7 @@
 package trabalho_ed_mf;
 
 import ClassImplementation.LinkedList;
-import trabalho_ed_mf.Flag;
-import trabalho_ed_mf.PlayerColour;
-import trabalho_ed_mf.Bot;
-import trabalho_ed_mf.Map;
-import trabalho_ed_mf.Player;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +13,7 @@ public class Game {
     private LinkedList<Player> players;
     private static int roundNumber;
 
-    public Game(int i){
+    public Game() {
         this.map = new Map();
         this.players = new LinkedList<Player>();
         roundNumber = 0;
@@ -25,15 +21,15 @@ public class Game {
 
     public int lerInt() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try{
+        try {
             return Integer.parseInt(br.readLine());
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Valor invalido! Insira novamente: ");
             return 1;
         }
     }
 
-    public String ler() throws IOException{
+    public String ler() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         return br.readLine();
     }
@@ -44,117 +40,109 @@ public class Game {
     }
 
 
-    public void createMap(){
+    public void createMap() throws IOException {
         System.out.println("Insira o tamanho do mapa: ");
         int size = 0;
-        try{
+        try {
             size = lerInt();
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Erro na leitura do tamanho do mapa!");
         }
-        //create location nodes
-        for(int i = 0; i < size; i++){
+        map.setSize(size);
+        for (int i = 0; i < size; i++) {
             Location local = new Location(i);
             map.addLocal(local);
         }
         System.out.println("Escolha entre direcional e bidirecional: ");
         String type = "";
-        try{
+        try {
             type = ler();
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Erro na leitura do tipo de mapa!");
         }
-        if(type.equals("direcional")){
-            for(int i = 0; i < map.getNetwork().size(); i++){
-                System.out.println("Insira o numero de ligaçoes do local " + (i+1) + ": ");
-                int numLigacoes = 0;
-      //random aqui
-
-                for(int j = 0; j < numLigacoes; j++){
-
-                    int index = 0;
-                    //random aqui
-                    map.getNetwork().getVertex(i).addEdge(map.getNetwork().getVertex(index-1));
-                }
-            }
+        System.out.println("Insira a densidade de arestas: ");
+        float densidade = lerInt();
+        int numArestas = 0;
+        if (type.equals("direcional")) {
+            numArestas = (int) (densidade * (size * (size - 1)));
+        } else if (type.equals("bidirecional")) {
+            numArestas = (int) (densidade * (size * (size - 1)) / 2);
+        } else {
+            System.out.println("Tipo de mapa invalido!");
         }
-        else if(type.equals("bidirecional")){
-            for(int i = 0; i < map.getNetwork().size(); i++){
-                System.out.println("Insira o numero de ligaçoes do local " + (i+1) + ": ");
-                int numLigacoes = 0;
-                try{
-                    numLigacoes = lerInt();
-                }catch(IOException e){
-                    System.out.println("Erro na leitura do numero de ligaçoes!");
-                }
-                for(int j = 0; j < numLigacoes; j++){
-                    //random aqui
-                }
-                    int index = 0;
-                    try{
-                        index = lerInt();
-                    }catch(IOException e){
-                        System.out.println("Erro na leitura do local de destino!");
+        int count = 0;
+        while (count < numArestas) {
+            Random random = new Random();
+            int randomNumber1 = random.nextInt(size);
+            int randomNumber2 = random.nextInt(size);
+            if (randomNumber1 != randomNumber2) {
+                if (!map.getNetwork().hasEdge(randomNumber1, randomNumber2)) {
+                    int distance = randomNumber(15) + 1;
+                    if (type.equals("bidirecional")) {
+                        map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
+                    } else {
+                        map.getNetwork().addEdgeDiretional(randomNumber1, randomNumber2, distance);
                     }
-                    map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
-                    map.getNetwork().getVertex(index-1).addEdge(map.getNetwork().getVertex(i));
+                    count++;
                 }
             }
-        else{
-            System.out
-
         }
     }
-    public void useTurn(){
-            Player player = players.get(roundNumber%2);
-            Player enemy = players.get((roundNumber+1)%2);
-            player.useTurn(map,enemy);
+
+    public void useTurn() {
+        Player player = players.get(roundNumber % 2);
+        Player enemy = players.get((roundNumber + 1) % 2);
+        player.useTurn(map, enemy);
+        roundNumber++;
+        if (player.getLastBot().getIndex() == enemy.getFlag().getIndex()) {
+            System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
+            System.out.println("Jogador " + player.getName() + " ganhou!");
+            System.out.println("Ronda" + roundNumber);
+            System.exit(0);
+        }
     }
-    public void createBots() throws IOException{
-        System.out.println("Insira o numero de bots: ");
+
+    public void createBots(Player player) throws IOException {
+        System.out.println(player.getName() + " insira o numero de bots: ");
         int numBots = lerInt();
         int numVertices = map.getNetwork().size();
-        if(numBots <=(numVertices/5)){
-            for(int i = 0; i < players.size(); i++){
-                for(int j = 0; j < numBots; j++){
-                    map.getNetwork().getVertex(players.get(i).getFlag().getIndex()).setBot(new Bot(players.get(i)));
+        if (numBots <= (numVertices / 5)) {
+                for (int i = 0; i < numBots; i++) {
+                    player.addBot(new Bot(player));
                 }
-            }
-        }
-        else{
+        } else {
             System.out.println("Numero de bots invalido!");
-            createBots();
+            createBots(player);
         }
     }
 
-    public void chooseFlags() throws IOException{
-        for(int i = 0; i < players.size(); i++){
+    public void chooseFlags() throws IOException {
+        for (int i = 0; i < players.size(); i++) {
             System.out.println("Player " + players.get(i).getName() + " choose a flag: ");
             int index = lerInt();
-            if(map.getNetwork().getVertex(index).getFlag() == null){
-                map.getNetwork().getVertex(index).setFlag(players.get(i).getFlag());
+            if (map.getNetwork().getVertex(index).getFlag() == null) {
                 players.get(i).getFlag().setIndex(index);
-            }
-            else{
+                map.getNetwork().getVertex(index).setFlag(players.get(i).getFlag());
+            } else {
                 System.out.println("Local ja tem bandeira!");
                 chooseFlags();
             }
         }
     }
-    public void initiatePlayer(){
-        for(int i = 0; i < 2; i++){
+
+    public void createPlayers() {
+        for (int i = 0; i < 2; i++) {
             System.out.println("Insira o nome do jogador " + (i + 1) + ": ");
             String name = "";
-            try{
+            try {
                 name = ler();
-            }catch(IOException e){
+            } catch (IOException e) {
                 System.out.println("Erro na leitura do nome do jogador!");
             }
             Flag flag = new Flag();
-            if(i==1){
+            if (i == 1) {
                 flag.setColour(PlayerColour.valueOf("BLACK"));
-            }
-            else {
+            } else {
                 flag.setColour(PlayerColour.valueOf("WHITE"));
             }
             Player player = new Player(name, flag);

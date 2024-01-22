@@ -1,6 +1,5 @@
 package trabalho_ed_mf;
 
-import trabalho_ed_mf.PlayerColour;
 
 public class Flag {
     private PlayerColour colour;

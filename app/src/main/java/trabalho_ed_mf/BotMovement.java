@@ -1,15 +1,48 @@
 package trabalho_ed_mf;
 
+import ClassImplementation.LinkedList;
+
+import java.util.Random;
+
 public class BotMovement {
-    public static void shortestPath(Map map, int index1, int index2){
-        map.getNetwork().iteratorShortestPath(index1,index2).next();
+    public static int shortestPath(Map map, int index1, int index2) {
+        Map map1 = map;
+        if (map1.getNetwork().iteratorShortestPath(index1, index2).next().getHasFlag() || !map1.getNetwork().iteratorShortestPath(index1, index2).next().getHasBot()) {
+            return map1.getNetwork().iteratorShortestPath(index1, index2).next().getIndex();
+        } else {
+            map1.removeLocal(map1.getNetwork().iteratorShortestPath(index1, index2).next());
+            return shortestPath(map1, index1, index2);
+        }
     }
 
-    public static void randomPath(Map map, int index){
-        //Implementar o algoritmo de busca aleatoria para encontrar a bandeira
+    public static int randomPath(Map map, int index) {
+        LinkedList<Integer> locals = new LinkedList<Integer>();
+        for (int i = 0; i < map.getSize(); i++) {
+            if (map.getNetwork().getAdjMatrix()[index][i] != 0 && !map.getNetwork().getVertex(i).getHasBot()) {
+                locals.add(i);
+            }
+        }
+        if (locals.isEmpty()) {
+            return index;
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(locals.size());
+        return locals.get(randomIndex);
     }
 
-    public static void greedyPath(Map map, int index){
-        //Implementar o algoritmo de busca gulosa para encontrar a bandeira
+
+    public static int atheleticPath(Map map, int index, int index2) {
+        double longestPath = 0;
+        int longestPathIndex = -1;
+        for (int i = 0; i < map.getSize(); i++) {
+            if (map.getNetwork().getAdjMatrix()[index][i] > longestPath && !map.getNetwork().getVertex(i).getHasBot() && i != index2) {
+                longestPath = map.getNetwork().getAdjMatrix()[index][i];
+                longestPathIndex = i;
+            }
+            if (longestPathIndex == -1) {
+                return index;
+            }
+        }
+        return longestPathIndex;
     }
 }

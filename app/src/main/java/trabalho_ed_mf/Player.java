@@ -5,26 +5,22 @@ import ClassImplementation.LinkedList;
 
 public class Player {
     private String name;
-    private int numBots;
     private LinkedList<Bot> botsQueue;
     private Flag flag;
 
     //Constructors
     public Player(String name, Flag flag){
         this.name = name;
-        this.numBots = 0;
         this.botsQueue = new LinkedList<Bot>();
         this.flag = flag;
     }
 
     public void addBot(Bot bot){
         this.botsQueue.add(bot);
-        this.numBots++;
     }
 
     public void removeBot(Bot bot){
         this.botsQueue.remove(bot);
-        this.numBots--;
     }
 
     //Getters and Setters
@@ -33,12 +29,6 @@ public class Player {
     }
     public void setName(String name){
         this.name = name;
-    }
-    public int getNumBots(){
-        return numBots;
-    }
-    public void setNumBots(int numBots){
-        this.numBots = numBots;
     }
     public LinkedList<Bot> getBots(){
         return botsQueue;
@@ -60,6 +50,9 @@ public class Player {
         bot.move(map,enemy);
         botsQueue.remove(0);
         botsQueue.add(bot);
+    }
+    public Bot getLastBot(){
+        return botsQueue.getRear().getElement();
     }
 }
 
