@@ -11,8 +11,6 @@ public class BotMovement {
     public static int shortestPath(Map map, int index1, int index2) {
         Map map1 = map;
         ArrayList<Integer> path = map1.getNetwork().dijkstraAlgorithm(index1, index2);
-        System.out.println(path);
-
         if (path.size() == 1) {
             return index1;
         }

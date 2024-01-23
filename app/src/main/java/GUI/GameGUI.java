@@ -60,75 +60,60 @@ public class GameGUI extends JFrame {
         System.out.println("Density: " + density);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new GameGUI().setVisible(true));
-    }
-}
+    public class MapCreationDialog extends JDialog {
 
-class MapCreationDialog extends JDialog {
+        private JTextField sizeField;
+        private JTextField densityField;
+        private JComboBox<String> typeComboBox;
+        private GameGUI parentGameGUI;
 
-    private JTextField sizeField;
-    private JTextField densityField;
-    private JComboBox<String> typeComboBox;
-    private GameGUI parentGameGUI;
-
-    public MapCreationDialog(GameGUI parent) {
-        super(parent, "Map Creation", true);
-        parentGameGUI = parent;
-        initComponents();
-    }
-
-    private void initComponents() {
-        sizeField = new JTextField(5);
-        densityField = new JTextField(5);
-        String[] types = {"direcional", "bidirecional"};
-        typeComboBox = new JComboBox<>(types);
-
-        JButton createMapButton = new JButton("Create Map");
-        createMapButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                createMap();
-            }
-        });
-
-        setLayout(new FlowLayout());
-        add(new JLabel("Map Size:"));
-        add(sizeField);
-        add(new JLabel("Type:"));
-        add(typeComboBox);
-        add(new JLabel("Edge Density:"));
-        add(densityField);
-        add(createMapButton);
-
-        pack();
-        setLocationRelativeTo(parentGameGUI); // Center the dialog relative to the GameGUI
-    }
-
-    private void createMap() {
-        try {
-            int size = Integer.parseInt(sizeField.getText());
-            String type = (String) typeComboBox.getSelectedItem();
-            float density = Float.parseFloat(densityField.getText());
-
-            // Chamando o método de GameGUI para definir os detalhes do mapa
-            parentGameGUI.setMapDetails(size, type, density);
-
-            // Fechar o diálogo após criar o mapa
-            dispose();
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Por favor, insira valores válidos para o tamanho e densidade.");
+        public MapCreationDialog(GameGUI parent) {
+            super(parent, "Map Creation", true);
+            parentGameGUI = parent;
+            initComponents();
         }
-    }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            GameGUI gameGUI = new GameGUI();
-            gameGUI.setVisible(true);
+        private void initComponents() {
+            sizeField = new JTextField(5);
+            densityField = new JTextField(5);
+            String[] types = {"direcional", "bidirecional"};
+            typeComboBox = new JComboBox<>(types);
 
-            // Simula a criação do mapa após a criação do jogo
-            MapCreationDialog mapDialog = new MapCreationDialog(gameGUI);
-            mapDialog.setVisible(true);
-        });
+            JButton createMapButton = new JButton("Create Map");
+            createMapButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    createMap();
+                }
+            });
+
+            setLayout(new FlowLayout());
+            add(new JLabel("Map Size:"));
+            add(sizeField);
+            add(new JLabel("Type:"));
+            add(typeComboBox);
+            add(new JLabel("Edge Density:"));
+            add(densityField);
+            add(createMapButton);
+
+            pack();
+            setLocationRelativeTo(parentGameGUI); // Center the dialog relative to the GameGUI
+        }
+
+        private void createMap() {
+            try {
+                int size = Integer.parseInt(sizeField.getText());
+                String type = (String) typeComboBox.getSelectedItem();
+                float density = Float.parseFloat(densityField.getText());
+
+                // Chamando o método de GameGUI para definir os detalhes do mapa
+                parentGameGUI.setMapDetails(size, type, density);
+
+                // Fechar o diálogo após criar o mapa
+                dispose();
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Por favor, insira valores válidos para o tamanho e densidade.");
+            }
+        }
     }
 }

@@ -1,16 +1,26 @@
+// MapCreationGUI.java
 package GUI;
+
+import trabalho_ed_mf.Game;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.concurrent.CountDownLatch;
 
 public class MapCreationGUI extends JFrame {
 
-    private JTextField sizeField;
-    private JTextField densityField;
-    private JComboBox<String> typeComboBox;
+    private JTextField mapSizeField;
+    private JComboBox<String> mapTypeComboBox;
+    private JTextField edgeDensityField;
+    private JButton createMapButton;
+    private Game game;
+    private CountDownLatch latch; // Add a CountDownLatch field
 
-    public MapCreationGUI() {
+    public MapCreationGUI(Game game, CountDownLatch latch) { // Modify the constructor to accept a CountDownLatch
+        this.game = game;
+        this.latch = latch; // Initialize the CountDownLatch field
         initComponents();
     }
 
@@ -18,47 +28,32 @@ public class MapCreationGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Map Creation");
 
-        sizeField = new JTextField(5);
-        densityField = new JTextField(5);
-        String[] types = {"direcional", "bidirecional"};
-        typeComboBox = new JComboBox<>(types);
+        mapSizeField = new JTextField(10);
+        mapTypeComboBox = new JComboBox<>(new String[]{"direcional", "bidirecional"});
+        edgeDensityField = new JTextField(10);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
+        createMapButton = new JButton("Create Map");
+        createMapButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int size = Integer.parseInt(mapSizeField.getText());
+                String type = (String) mapTypeComboBox.getSelectedItem();
+                float density = Float.parseFloat(edgeDensityField.getText());
+                game.createMap(size, type, density);
+                latch.countDown(); // Call countDown() on the CountDownLatch when the map is created
+            }
+        });
 
-        panel.add(new JLabel("Map Size:"));
-        panel.add(sizeField);
-        panel.add(new JLabel("Type:"));
-        panel.add(typeComboBox);
-        panel.add(new JLabel("Edge Density:"));
-        panel.add(densityField);
-
-        JButton createMapButton = new JButton("Create Map");
-        createMapButton.addActionListener(e -> createMap());
-        panel.add(createMapButton);
-
-        add(panel);
+        setLayout(new FlowLayout());
+        add(new JLabel("Map Size:"));
+        add(mapSizeField);
+        add(new JLabel("Map Type:"));
+        add(mapTypeComboBox);
+        add(new JLabel("Edge Density:"));
+        add(edgeDensityField);
+        add(createMapButton);
 
         pack();
         setLocationRelativeTo(null); // Center the frame on the screen
-    }
-
-    private void createMap() {
-        try {
-            int size = Integer.parseInt(sizeField.getText());
-            String type = (String) typeComboBox.getSelectedItem();
-            float density = Float.parseFloat(densityField.getText());
-
-            // Restante da lógica para criar o mapa (semelhante ao código original)
-
-            System.out.println("Mapa criado!");
-            dispose(); // Fechar a janela após a criação do mapa
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Por favor, insira valores válidos para o tamanho e densidade.");
-        }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new MapCreationGUI().setVisible(true));
     }
 }

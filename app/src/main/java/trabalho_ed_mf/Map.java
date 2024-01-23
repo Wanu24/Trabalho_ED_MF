@@ -53,6 +53,14 @@ public class Map {
         return location;
     }
 
+    public Integer[] getVertices() {
+        Integer[] location = new Integer[network.size()];
+        for (int i = 0; i < network.size(); i++) {
+            location[i] = network.getVertex(i).getIndex();
+        }
+        return location;
+    }
+
     public void importMap(String file) {
         try (FileReader fileReader = new FileReader(file)) {
             JSONTokener tokener = new JSONTokener(fileReader);

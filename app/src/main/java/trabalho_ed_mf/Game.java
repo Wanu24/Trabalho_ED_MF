@@ -58,66 +58,38 @@ public class Game {
     }
 
 
-    public void createMap() throws IOException {
-        System.out.println("Escolha entre criar mapa ou importar mapa: ");
-        String option = ler();
-        if (option.equals("criar")) {
-            System.out.println("Insira o tamanho do mapa: ");
-            int size = 0;
-            try {
-                size = lerInt();
-            } catch (IOException e) {
-                System.out.println("Erro na leitura do tamanho do mapa!");
-            }
-            map.setSize(size);
-            for (int i = 0; i < size; i++) {
-                Location local = new Location(i);
-                map.addLocal(local);
-            }
-            System.out.println("Escolha entre direcional e bidirecional: ");
-            String type = "";
-            try {
-                type = ler();
-            } catch (IOException e) {
-                System.out.println("Erro na leitura do tipo de mapa!");
-            }
-            System.out.println("Insira a densidade de arestas: ");
-            float densidade = lerFloat();
-            int numArestas = 0;
-            if (type.equals("direcional")) {
-                numArestas = (int) (densidade * (size * (size - 1)));
-            } else if (type.equals("bidirecional")) {
-                numArestas = (int) (densidade * (size * (size - 1)) / 2);
-            } else {
-                System.out.println("Tipo de mapa invalido!");
-            }
-            int count = 0;
-            System.out.println(numArestas);
-            while (count < numArestas) {
-                Random random = new Random();
-                int randomNumber1 = random.nextInt(size);
-                int randomNumber2 = random.nextInt(size);
-                if (randomNumber1 != randomNumber2) {
-                    if (!map.getNetwork().hasEdge(randomNumber1, randomNumber2)) {
-                        double distance = randomNumber(15) + 1;
-                        if (type.equals("bidirecional")) {
-                            map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
-                        } else {
-                            map.getNetwork().addEdgeDiretional(randomNumber1, randomNumber2, distance);
-                        }
-                        count++;
+    public void createMap(int size, String type, float density) {
+        map.setSize(size);
+        for (int i = 0; i < size; i++) {
+            Location local = new Location(i);
+            map.addLocal(local);
+        }
+        int numArestas = 0;
+        if (type.equals("direcional")) {
+            numArestas = (int) (density * (size * (size - 1)));
+        } else if (type.equals("bidirecional")) {
+            numArestas = (int) (density * (size * (size - 1)) / 2);
+        } else {
+            System.out.println("Tipo de mapa invalido!");
+        }
+        int count = 0;
+        while (count < numArestas) {
+            Random random = new Random();
+            int randomNumber1 = random.nextInt(size);
+            int randomNumber2 = random.nextInt(size);
+            if (randomNumber1 != randomNumber2) {
+                if (!map.getNetwork().hasEdge(randomNumber1, randomNumber2)) {
+                    double distance = randomNumber(15) + 1;
+                    if (type.equals("bidirecional")) {
+                        map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
+                    } else {
+                        map.getNetwork().addEdgeDiretional(randomNumber1, randomNumber2, distance);
                     }
+                    count++;
                 }
             }
-            System.out.println("Mapa criado!");
-        } else if (option.equals("importar")) {
-            System.out.println("Insira o nome do ficheiro: ");
-            String file = ler();
-            map.importMap(file);
-        } else {
-            System.out.println("Opcao invalida!");
-            createMap();
         }
+        System.out.println("Mapa criado!");
     }
 
     public int useTurn(int roundNumber) {
@@ -145,7 +117,7 @@ public class Game {
         int numVertices = map.getNetwork().size();
         if (numBots <= (numVertices / 5)) {
             for (int i = 0; i < numBots; i++) {
-                player.addBot(new Bot(player));
+                player.addBot(new Bot(player, MovementEnum.SHORTESTPATH));
             }
         } else {
             System.out.println("Numero de bots invalido!");
@@ -167,6 +139,10 @@ public class Game {
         }
     }
 
+    public LinkedList<Player> getPlayers() {
+        return players;
+    }
+
     public void coinFlip() {
         Random random = new Random();
         int randomNumber = random.nextInt(2);
@@ -177,30 +153,13 @@ public class Game {
         }
     }
 
-    public void createPlayers() {
-        for (int i = 0; i < 2; i++) {
-            System.out.println("Insira o nome do jogador " + (i + 1) + ": ");
-            String name = "";
-            try {
-                name = ler();
-            } catch (IOException e) {
-                System.out.println("Erro na leitura do nome do jogador!");
-            }
-            Flag flag = new Flag();
-            if (i == 1) {
-                flag.setColour(PlayerColour.valueOf("BLACK"));
-            } else {
-                flag.setColour(PlayerColour.valueOf("WHITE"));
-            }
-            Player player = new Player(name, flag);
-            players.add(player);
-        }
-    }
-
     public void createPlayer(String player, String string) {
         Flag flag = new Flag();
         flag.setColour(PlayerColour.valueOf(string));
         Player player1 = new Player(player, flag);
         players.add(player1);
+    }
+    public Map getMap() {
+        return map;
     }
 }

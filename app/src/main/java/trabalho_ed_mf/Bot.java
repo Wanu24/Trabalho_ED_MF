@@ -10,13 +10,12 @@ public class Bot{
     private static int contador;
     private int index;
 
-    public Bot(Player player){
+    public Bot(Player player,MovementEnum mov){
         contador++;
         this.index = contador;
         this.location = player.getFlag().getIndex();
         this.lastLocation = player.getFlag().getIndex();
-        this.movEnum = contador%3 == 0 ? MovementEnum.RANDOMPATH : contador%3 == 1 ? MovementEnum.SHORTESTPATH : MovementEnum.ATHELETICPATH;
-        //this.movEnum = MovementEnum.SHORTESTPATH;
+        this.movEnum = mov;
     }
 
     public void move(Map map,Player enemy){
