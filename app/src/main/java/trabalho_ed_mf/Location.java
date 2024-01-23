@@ -7,13 +7,21 @@ import java.util.LinkedList;
  * Representa uma localização no mapa do jogo.
  */
 public class Location {
-    /** Indica se a localização tem uma bandeira. */
+    /**
+     * Indica se a localização tem uma bandeira.
+     */
     private boolean hasFlag;
-    /** Indica se a localização tem um bot. */
+    /**
+     * Indica se a localização tem um bot.
+     */
     private boolean hasBot;
-    /** Bandeira associada à localização. */
+    /**
+     * Bandeira associada à localização.
+     */
     private Flag flag;
-    /** Índice que indica a posição da localização no mapa. */
+    /**
+     * Indice que indica a posição da localização no mapa.
+     */
     private int index;
 
 
@@ -90,6 +98,15 @@ public class Location {
      */
     public int getIndex() {
         return index;
+    }
+
+    /**
+     * Define o índice da localização.
+     *
+     * @param index O índice da localização.
+     */
+    public void setIndex(int index) {
+        this.index = index;
     }
 
 }

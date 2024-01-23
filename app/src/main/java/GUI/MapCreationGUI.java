@@ -51,7 +51,8 @@ public class MapCreationGUI extends JFrame {
                 String type = (String) mapTypeComboBox.getSelectedItem();
                 float density = Float.parseFloat(edgeDensityField.getText());
                 game.createMap(size, type, density);
-                latch.countDown(); 
+                latch.countDown();
+                dispose();
             }
         });
 

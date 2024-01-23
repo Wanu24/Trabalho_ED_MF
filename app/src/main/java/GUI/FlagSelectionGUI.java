@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -44,6 +46,28 @@ public class FlagSelectionGUI extends JFrame {
         player1FlagComboBox = new JComboBox<>(vertices);
         player2FlagComboBox = new JComboBox<>(vertices);
 
+        player1FlagComboBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    player2FlagComboBox.removeItem(e.getItem());
+                } else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                    player2FlagComboBox.addItem((Integer) e.getItem());
+                }
+            }
+        });
+
+        player2FlagComboBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    player1FlagComboBox.removeItem(e.getItem());
+                } else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                    player1FlagComboBox.addItem((Integer) e.getItem());
+                }
+            }
+        });
+
         confirmSelectionButton = new JButton("Confirm Selection");
         confirmSelectionButton.addActionListener(new ActionListener() {
             @Override
@@ -54,8 +78,8 @@ public class FlagSelectionGUI extends JFrame {
                 game.getMap().addFlag(player1Flag, (game.getPlayers().get(0).getFlag()));
                 game.getPlayers().get(1).getFlag().setIndex(player2Flag);
                 game.getMap().addFlag(player2Flag, (game.getPlayers().get(1).getFlag()));
-                latch.countDown(); // Call countDown() on the CountDownLatch when the flags are selected
-                dispose(); // Close the current window
+                latch.countDown();
+                dispose();
             }
         });
 
@@ -67,6 +91,6 @@ public class FlagSelectionGUI extends JFrame {
         add(confirmSelectionButton);
 
         pack();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        setLocationRelativeTo(null);
     }
 }

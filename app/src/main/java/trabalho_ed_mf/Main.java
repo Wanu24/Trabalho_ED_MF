@@ -13,43 +13,43 @@ public class Main {
     public static void main(String[] args) throws NumberFormatException, IOException, InterruptedException {
 
         Game game = new Game();
-        CountDownLatch playerLatch = new CountDownLatch(2); // Create a CountDownLatch with a count of 2
+        CountDownLatch playerLatch = new CountDownLatch(2);
 
         SwingUtilities.invokeLater(() -> {
-            PlayerCreationGUI playerCreationGUI = new PlayerCreationGUI(game, playerLatch); // Pass the CountDownLatch to PlayerCreationGUI
+            PlayerCreationGUI playerCreationGUI = new PlayerCreationGUI(game, playerLatch);
             playerCreationGUI.setVisible(true);
         });
 
-        playerLatch.await(); // Wait here until two players are created
+        playerLatch.await();
 
         game.coinFlip();
 
-        CountDownLatch mapLatch = new CountDownLatch(1); // Create a CountDownLatch with a count of 1
+        CountDownLatch mapLatch = new CountDownLatch(1);
 
         SwingUtilities.invokeLater(() -> {
             MapOptionGUI mapOptionGUI = new MapOptionGUI(game, mapLatch);
             mapOptionGUI.setVisible(true);
         });
 
-        mapLatch.await(); // Wait here until the map is created
+        mapLatch.await();
 
-        CountDownLatch flagLatch = new CountDownLatch(1); // Create a CountDownLatch with a count of 1
+        CountDownLatch flagLatch = new CountDownLatch(1);
 
         SwingUtilities.invokeLater(() -> {
             FlagSelectionGUI flagSelectionGUI = new FlagSelectionGUI(game, flagLatch);
             flagSelectionGUI.setVisible(true);
         });
 
-        flagLatch.await(); // Wait here until the flags are selected
+        flagLatch.await();
 
-        CountDownLatch botLatch = new CountDownLatch(1); // Create a CountDownLatch with a count of 1
+        CountDownLatch botLatch = new CountDownLatch(1);
 
         SwingUtilities.invokeLater(() -> {
             BotCreationGUI botCreationGUI = new BotCreationGUI(game, botLatch);
             botCreationGUI.setVisible(true);
         });
 
-        botLatch.await(); // Wait here until the bots are created
+        botLatch.await();
 
         int i = 0;
         int counter = 1;
@@ -59,5 +59,6 @@ public class Main {
             sleep(1000);
             counter++;
         }
+        game.getMap().exportMap();
     }
 }

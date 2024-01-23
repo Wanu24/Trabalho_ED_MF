@@ -53,7 +53,10 @@ public class PlayerCreationGUI extends JFrame {
                     JOptionPane.showMessageDialog(null, "Successfully created player " + playerName);
                     playerNameField.setText("");
                     playerCount++;
-                    latch.countDown(); 
+                    latch.countDown();
+                    if (playerCount == 2) {
+                        dispose();
+                    }
                 } else {
                     JOptionPane.showMessageDialog(null, "Please enter a player name.");
                 }

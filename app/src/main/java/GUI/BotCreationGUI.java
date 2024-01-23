@@ -8,19 +8,17 @@ import trabalho_ed_mf.Bot;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Uma classe GUI para criação de bots, onde os jogadores 
+ * Uma classe GUI para criação de bots, onde os jogadores
  * selecionam o número de bots bem como o tipo de movimentação.
  */
 public class BotCreationGUI extends JFrame {
 
-    private JButton confirmSelectionButton;
     private Game game;
     private CountDownLatch latch;
+
 
     /**
      * Construtor para criar uma janela de criação de bots.
@@ -31,6 +29,7 @@ public class BotCreationGUI extends JFrame {
         this.game = game;
         this.latch = latch;
         initComponents();
+        createBots(); // Call the bot creation logic directly
     }
 
     /**
@@ -40,28 +39,33 @@ public class BotCreationGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Bot Creation");
 
-        confirmSelectionButton = new JButton("Confirm Selection");
-        confirmSelectionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < game.getPlayers().size(); i++) {
-                    Player currentPlayer = game.getPlayers().get(i);
-                    int numBotsSelected = askForNumBots(currentPlayer);
-                    for (int j = 0; j < numBotsSelected; j++) {
-                        MovementEnum movementEnumSelected = askForMovementEnum(currentPlayer);
-                        currentPlayer.addBot(new Bot(currentPlayer, movementEnumSelected));
-                    }
-                }
-                latch.countDown(); // Call countDown() on the CountDownLatch when the bots are created
-                dispose(); // Close the current window
-            }
-        });
-
         setLayout(new FlowLayout());
-        add(confirmSelectionButton);
 
         pack();
         setLocationRelativeTo(null); // Center the frame on the screen
+    }
+
+    /**
+     * Cria os bots para cada jogador.
+     */
+    private void createBots() {
+        for (int i = 0; i < game.getPlayers().size(); i++) {
+            Player currentPlayer = game.getPlayers().get(i);
+            int numBotsSelected = askForNumBots(currentPlayer);
+            for (int j = 0; j < numBotsSelected; j++) {
+                MovementEnum movementEnumSelected = askForMovementEnum(currentPlayer);
+                currentPlayer.addBot(new Bot(currentPlayer, movementEnumSelected));
+            }
+        }
+        latch.countDown(); // Call countDown() on the CountDownLatch when the bots are created
+
+        // Move the dispose() call here, after the for loop
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                dispose(); // Close the current window
+            }
+        });
     }
 
     /**
@@ -79,7 +83,7 @@ public class BotCreationGUI extends JFrame {
         JOptionPane.showMessageDialog(null, numBotsComboBox, "Select Number of Bots for " + player.getName(), JOptionPane.QUESTION_MESSAGE);
         return (Integer) numBotsComboBox.getSelectedItem();
     }
-    
+
     /**
      * Pede ao jogador para selecionar o tipo de movimentação.
      *

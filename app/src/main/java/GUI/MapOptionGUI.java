@@ -53,8 +53,7 @@ public class MapOptionGUI extends JFrame {
         importMapButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Call the method in the Game class to import a map
-                // game.importMap();
+                 game.getMap().importMap("map.json");
                 latch.countDown();
                 dispose(); 
             }

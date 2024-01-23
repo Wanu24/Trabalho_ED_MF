@@ -150,8 +150,7 @@ public class Game {
         player.useTurn(map, enemy);
         if (player.getLastBot().getIndex() == enemy.getFlag().getIndex()) {
             System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
-            System.out.println("Jogador " + player.getName() + " ganhou!");
-            System.out.println("Ronda" + roundNumber);
+            System.out.println("Jogador " + player.getName() + " ganhou na ronda! " + roundNumber);
             return 1;
         }
         return 0;
@@ -185,25 +184,6 @@ public class Game {
         } else {
             System.out.println("Numero de bots invalido!");
             createBotsPlayer(player);
-        }
-    }
-
-    /**
-     * Permite que os jogadores escolham a posição das bandeiras no mapa.
-     *
-     * @throws IOException Se ocorrer um erro de entrada/saída.
-     */
-    public void chooseFlags() throws IOException {
-        for (int i = 0; i < players.size(); i++) {
-            System.out.println("Player " + players.get(i).getName() + " choose a flag: ");
-            int index = lerInt();
-            if (map.getNetwork().getVertex(index).getFlag() == null) {
-                players.get(i).getFlag().setIndex(index);
-                map.addFlag(index, (players.get(i).getFlag()));
-            } else {
-                System.out.println("Local ja tem bandeira!");
-                i--;
-            }
         }
     }
 
