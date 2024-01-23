@@ -65,6 +65,14 @@ public class BotCreationGUI extends JFrame {
     private MovementEnum askForMovementEnum(Player player) {
         MovementEnum[] movementEnums = MovementEnum.values();
         JComboBox<MovementEnum> movementEnumComboBox = new JComboBox<>(movementEnums);
+
+        if (player.getBots().size() < 3) {
+            for (int i = 0; i < player.getBots().size(); i++) {
+                Bot bot = player.getBots().get(i);
+                movementEnumComboBox.removeItem(bot.getMovEnum());
+            }
+        }
+
         JOptionPane.showMessageDialog(null, movementEnumComboBox, "Select Movement Enum for " + player.getName(), JOptionPane.QUESTION_MESSAGE);
         return (MovementEnum) movementEnumComboBox.getSelectedItem();
     }
