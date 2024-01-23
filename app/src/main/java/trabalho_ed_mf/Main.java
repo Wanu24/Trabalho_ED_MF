@@ -24,9 +24,9 @@ public class Main {
         int counter = 1;
         while(i !=1){
             System.out.println("Round: " + counter);
-            counter++;
-            i = game.useTurn();
+            i = game.useTurn(counter);
             sleep(1000);
+            counter++;
         }
     }
 }

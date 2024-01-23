@@ -146,7 +146,7 @@ public class Network<T> extends Graph<T> implements NetworkADT<T> {
                 vertices[i] = vertices[i + 1];
             }
             for (int i = index; i < numVertices; i++) {
-                if (numVertices + 1 >= 0) System.arraycopy(adjMatrix[i + 1], 0, adjMatrix[i], 0, numVertices + 1);
+                System.arraycopy(adjMatrix[i + 1], 0, adjMatrix[i], 0, numVertices);
             }
             for (int i = index; i < numVertices; i++) {
                 for (int j = 0; j < numVertices; j++) {
@@ -326,6 +326,52 @@ public class Network<T> extends Graph<T> implements NetworkADT<T> {
         }
         return -1;
     }
+
+    public ArrayList<Integer> dijkstraAlgorithm(int startIndex, int finalIndex) {
+        ArrayList<Double> distances = new ArrayList<>(numVertices);
+        ArrayList<Boolean> visited = new ArrayList<>(numVertices);
+        ArrayList<Integer> predecessor = new ArrayList<>(numVertices);
+
+        for (int i = 0; i < numVertices; i++) {
+            distances.add(Double.POSITIVE_INFINITY);
+            predecessor.add(-1);
+            visited.add(false);
+        }
+        distances.set(startIndex, 0.0);
+
+        for (int i = 0; i < numVertices; i++) {
+            int vertex = -1;
+            for (int j = 0; j < numVertices; j++) {
+                if (!visited.get(j) && (vertex == -1 || distances.get(j) < distances.get(vertex))) {
+                    vertex = j;
+                }
+            }
+
+            visited.set(vertex, true);
+
+            for (int j = 0; j < numVertices; j++) {
+                double edgeDistance = adjMatrix[vertex][j];
+                if (edgeDistance < Double.POSITIVE_INFINITY) {
+                    double newDistance = distances.get(vertex) + edgeDistance;
+                    if (newDistance < distances.get(j)) {
+                        distances.set(j, newDistance);
+                        predecessor.set(j, vertex);
+                    }
+                }
+            }
+        }
+
+        ArrayList<Integer> path = new ArrayList<>();
+        int current = finalIndex;
+        while (current != -1) {
+            path.add(0, current);
+            current = predecessor.get(current);
+        }
+
+        return path;
+    }
+
+
 
     public Iterator<T> iteratorShortestPath(int startIndex, int targetIndex) {
         ArrayUnorderedList templist = new ArrayUnorderedList();

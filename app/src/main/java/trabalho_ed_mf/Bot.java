@@ -16,6 +16,7 @@ public class Bot{
         this.location = player.getFlag().getIndex();
         this.lastLocation = player.getFlag().getIndex();
         this.movEnum = contador%3 == 0 ? MovementEnum.RANDOMPATH : contador%3 == 1 ? MovementEnum.SHORTESTPATH : MovementEnum.ATHELETICPATH;
+        //this.movEnum = MovementEnum.SHORTESTPATH;
     }
 
     public void move(Map map,Player enemy){

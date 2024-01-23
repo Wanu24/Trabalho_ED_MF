@@ -19,7 +19,7 @@ public class Game {
         roundNumber = 0;
     }
 
-    public Game(Map map, Player player1, Player player2){
+    public Game(Map map, Player player1, Player player2) {
         this.map = map;
         this.players.add(player1);
         this.players.add(player2);
@@ -35,6 +35,7 @@ public class Game {
             return 1;
         }
     }
+
     public float lerFloat() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -44,7 +45,6 @@ public class Game {
             return 1;
         }
     }
-
 
 
     public String ler() throws IOException {
@@ -59,61 +59,71 @@ public class Game {
 
 
     public void createMap() throws IOException {
-        System.out.println("Insira o tamanho do mapa: ");
-        int size = 0;
-        try {
-            size = lerInt();
-        } catch (IOException e) {
-            System.out.println("Erro na leitura do tamanho do mapa!");
-        }
-        map.setSize(size);
-        for (int i = 0; i < size; i++) {
-            Location local = new Location(i);
-            map.addLocal(local);
-        }
-        System.out.println("Escolha entre direcional e bidirecional: ");
-        String type = "";
-        try {
-            type = ler();
-        } catch (IOException e) {
-            System.out.println("Erro na leitura do tipo de mapa!");
-        }
-        System.out.println("Insira a densidade de arestas: ");
-        float densidade = lerFloat();
-        int numArestas = 0;
-        if (type.equals("direcional")) {
-            numArestas = (int) (densidade * (size * (size - 1)));
-        } else if (type.equals("bidirecional")) {
-            numArestas = (int) (densidade * (size * (size - 1)) / 2);
-        } else {
-            System.out.println("Tipo de mapa invalido!");
-        }
-        int count = 0;
-        System.out.println(numArestas);
-        while (count < numArestas) {
-            Random random = new Random();
-            int randomNumber1 = random.nextInt(size);
-            int randomNumber2 = random.nextInt(size);
-            if (randomNumber1 != randomNumber2) {
-                if (!map.getNetwork().hasEdge(randomNumber1, randomNumber2)) {
-                    double distance = randomNumber(15) + 1;
-                    if (type.equals("bidirecional")) {
-                        map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
-                    } else {
-                        map.getNetwork().addEdgeDiretional(randomNumber1, randomNumber2, distance);
+        System.out.println("Escolha entre criar mapa ou importar mapa: ");
+        String option = ler();
+        if (option.equals("criar")) {
+            System.out.println("Insira o tamanho do mapa: ");
+            int size = 0;
+            try {
+                size = lerInt();
+            } catch (IOException e) {
+                System.out.println("Erro na leitura do tamanho do mapa!");
+            }
+            map.setSize(size);
+            for (int i = 0; i < size; i++) {
+                Location local = new Location(i);
+                map.addLocal(local);
+            }
+            System.out.println("Escolha entre direcional e bidirecional: ");
+            String type = "";
+            try {
+                type = ler();
+            } catch (IOException e) {
+                System.out.println("Erro na leitura do tipo de mapa!");
+            }
+            System.out.println("Insira a densidade de arestas: ");
+            float densidade = lerFloat();
+            int numArestas = 0;
+            if (type.equals("direcional")) {
+                numArestas = (int) (densidade * (size * (size - 1)));
+            } else if (type.equals("bidirecional")) {
+                numArestas = (int) (densidade * (size * (size - 1)) / 2);
+            } else {
+                System.out.println("Tipo de mapa invalido!");
+            }
+            int count = 0;
+            System.out.println(numArestas);
+            while (count < numArestas) {
+                Random random = new Random();
+                int randomNumber1 = random.nextInt(size);
+                int randomNumber2 = random.nextInt(size);
+                if (randomNumber1 != randomNumber2) {
+                    if (!map.getNetwork().hasEdge(randomNumber1, randomNumber2)) {
+                        double distance = randomNumber(15) + 1;
+                        if (type.equals("bidirecional")) {
+                            map.getNetwork().addEdge(randomNumber2, randomNumber1, distance);
+                        } else {
+                            map.getNetwork().addEdgeDiretional(randomNumber1, randomNumber2, distance);
+                        }
+                        count++;
                     }
-                    count++;
                 }
             }
+            System.out.println("Mapa criado!");
+        } else if (option.equals("importar")) {
+            System.out.println("Insira o nome do ficheiro: ");
+            String file = ler();
+            map.importMap(file);
+        } else {
+            System.out.println("Opcao invalida!");
+            createMap();
         }
-        System.out.println("Mapa criado!");
     }
 
-    public int useTurn() {
+    public int useTurn(int roundNumber) {
         Player player = players.get(roundNumber % 2);
         Player enemy = players.get((roundNumber + 1) % 2);
         player.useTurn(map, enemy);
-        roundNumber++;
         if (player.getLastBot().getIndex() == enemy.getFlag().getIndex()) {
             System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
             System.out.println("Jogador " + player.getName() + " ganhou!");
@@ -149,7 +159,7 @@ public class Game {
             int index = lerInt();
             if (map.getNetwork().getVertex(index).getFlag() == null) {
                 players.get(i).getFlag().setIndex(index);
-                map.addFlag(index,(players.get(i).getFlag()));
+                map.addFlag(index, (players.get(i).getFlag()));
             } else {
                 System.out.println("Local ja tem bandeira!");
                 i--;
@@ -160,7 +170,7 @@ public class Game {
     public void coinFlip() {
         Random random = new Random();
         int randomNumber = random.nextInt(2);
-        if(randomNumber == 1){
+        if (randomNumber == 1) {
             Player player = players.get(0);
             players.remove(0);
             players.add(player);

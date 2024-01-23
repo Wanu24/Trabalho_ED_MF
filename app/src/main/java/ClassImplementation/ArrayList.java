@@ -164,6 +164,41 @@ public class ArrayList<T> implements ListADT<T>, Iterable<T> {
         return result;
     }
 
+    public void add(T element) {
+        if (size() == list.length) {
+            expandCapacity();
+        }
+        list[rear] = element;
+        rear++;
+    }
+
+    public void add(int index, T element) {
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException("ArrayList index out of range.");
+        }
+        if (size() == list.length) {
+            expandCapacity();
+        }
+        for (int i = rear; i > index; i--) {
+            list[i] = list[i - 1];
+        }
+        list[index] = element;
+        rear++;
+    }
+
+    public void set(int index, T element) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("ArrayList index out of range.");
+        }
+        list[index] = element;
+    }
+    public T get(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("ArrayList index out of range.");
+        }
+        return list[index];
+    }
+
 
     private class MyIterator<T> implements Iterator<T> {
         private int current = 0;
