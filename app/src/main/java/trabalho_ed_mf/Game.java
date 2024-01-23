@@ -19,6 +19,13 @@ public class Game {
         roundNumber = 0;
     }
 
+    public Game(Map map, Player player1, Player player2){
+        this.map = map;
+        this.players.add(player1);
+        this.players.add(player2);
+        roundNumber = 0;
+    }
+
     public int lerInt() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -178,5 +185,12 @@ public class Game {
             Player player = new Player(name, flag);
             players.add(player);
         }
+    }
+
+    public void createPlayer(String player, String string) {
+        Flag flag = new Flag();
+        flag.setColour(PlayerColour.valueOf(string));
+        Player player1 = new Player(player, flag);
+        players.add(player1);
     }
 }

@@ -15,6 +15,13 @@ public class Player {
         this.flag = flag;
     }
 
+    public Player(String name, Flag flag, LinkedList<Bot> bots){
+        this.name = name;
+        this.botsQueue = bots;
+        this.flag = flag;
+    }
+
+
     public void addBot(Bot bot){
         this.botsQueue.add(bot);
     }
