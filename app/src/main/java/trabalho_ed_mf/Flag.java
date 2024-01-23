@@ -8,7 +8,7 @@ package trabalho_ed_mf;
 public class Flag {
     /** Cor da bandeira. */
     private PlayerColour colour;
-    /** Índice que indica a posição da bandeira no mapa. */
+    /** Indice que indica a posição da bandeira no mapa. */
     private int index;
 
     /**

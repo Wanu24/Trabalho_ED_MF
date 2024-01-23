@@ -1,8 +1,5 @@
 package trabalho_ed_mf;
 
-
-import java.util.LinkedList;
-
 /**
  * Representa uma localização no mapa do jogo.
  */
