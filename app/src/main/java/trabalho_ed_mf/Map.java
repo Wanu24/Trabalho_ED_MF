@@ -7,44 +7,89 @@ import java.io.FileWriter;
 import java.io.IOException;
 import org.json.*;
 
+/**
+ * Representa o mapa do jogo, que contém uma rede de localizações ligadas.
+ */
 public class Map {
+    /** Rede de localizações ligadas. */
     private Network<Location> network;
+    /** Tamanho do mapa. */
     int size;
 
+    /**
+     * Construtor que inicializa o mapa com uma nova rede e tamanho zero.
+     */
     public Map() {
         this.network = new Network<Location>();
         this.size = 0;
     }
 
+    /**
+     * Define o tamanho do mapa.
+     *
+     * @param size O tamanho do mapa a ser definido.
+     */
     public void setSize(int size) {
         this.size = size;
     }
+
+     /**
+     * Obtém o tamanho do mapa.
+     *
+     * @return O tamanho do mapa.
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Adiciona uma localização à rede do mapa.
+     *
+     * @param local A localização a ser adicionada.
+     */
     public void addLocal(Location local) {
         network.addVertex(local);
         System.out.println("Vertex added: " + local.getIndex());
     }
 
+    /**
+     * Remove uma localização da rede do mapa.
+     *
+     * @param local A localização a ser removida.
+     */
     public void removeLocal(Location local) {
         network.removeVertex(local);
         System.out.println("Vertex removed: " + local.getIndex());
     }
 
+    /**
+     * Adiciona uma bandeira a uma localização específica no mapa.
+     *
+     * @param index O índice da localização.
+     * @param flag A bandeira a ser adicionada.
+     */
     public void addFlag(int index, Flag flag) {
         network.getVertex(index).setFlag(flag);
         network.getVertex(index).setHasFlag(true);
         System.out.println("Flag added to vertex: " + index);
     }
 
+    /**
+     * Remove uma bandeira de uma localização específica no mapa.
+     *
+     * @param index O índice da localização.
+     */
     public void removeFlag(int index) {
         network.getVertex(index).setFlag(null);
         network.getVertex(index).setHasFlag(false);
         System.out.println("Flag removed from vertex: " + index);
     }
 
+    /**
+     * Obtém um array de todas as localizações no mapa.
+     *
+     * @return Um array de localizações no mapa.
+     */
     public Location[] getLocations() {
         Location[] location = new Location[network.size()];
         for (int i = 0; i < network.size(); i++) {
@@ -53,6 +98,11 @@ public class Map {
         return location;
     }
 
+    /**
+     * Obtém um array de índices das localizações no mapa.
+     *
+     * @return Um array de índices das localizações no mapa.
+     */
     public Integer[] getVertices() {
         Integer[] location = new Integer[network.size()];
         for (int i = 0; i < network.size(); i++) {
@@ -61,6 +111,11 @@ public class Map {
         return location;
     }
 
+    /**
+     * Importa um mapa a partir de um arquivo JSON.
+     *
+     * @param file O caminho do arquivo JSON contendo as informações do mapa.
+     */
     public void importMap(String file) {
         try (FileReader fileReader = new FileReader(file)) {
             JSONTokener tokener = new JSONTokener(fileReader);
@@ -93,6 +148,9 @@ public class Map {
         }
     }
 
+    /**
+     * Exporta o mapa para um arquivo JSON.
+     */
     public void exportMap() {
         JSONObject json = new JSONObject();
 
@@ -130,6 +188,11 @@ public class Map {
         }
     }
 
+    /**
+     * Obtém a rede de localizações do mapa.
+     *
+     * @return A rede de localizações do mapa.
+     */
     public Network<Location> getNetwork() {
         return network;
     }

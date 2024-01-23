@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Uma classe GUI para opções de mapa.
+ */
 public class MapOptionGUI extends JFrame {
 
     private JButton createMapButton;
@@ -16,12 +19,20 @@ public class MapOptionGUI extends JFrame {
     private Game game;
     private CountDownLatch latch;
 
+    /**
+     * Construtor para criar uma janela de opções de mapa.
+     * @param game O jogo.
+     * @param latch Um objeto CountDownLatch para sincronizar a criação de mapa.
+     */
     public MapOptionGUI(Game game, CountDownLatch latch) {
         this.game = game;
         this.latch = latch;
         initComponents();
     }
 
+    /**
+     * Inicializa os componentes da janela.
+     */
     private void initComponents() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Map Options");
@@ -34,7 +45,7 @@ public class MapOptionGUI extends JFrame {
                     MapCreationGUI mapCreationGUI = new MapCreationGUI(game, latch);
                     mapCreationGUI.setVisible(true);
                 });
-                dispose(); // Close the current window
+                dispose();
             }
         });
 
@@ -44,8 +55,8 @@ public class MapOptionGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Call the method in the Game class to import a map
                 // game.importMap();
-                latch.countDown(); // Call countDown() on the CountDownLatch when the map is imported
-                dispose(); // Close the current window
+                latch.countDown();
+                dispose(); 
             }
         });
 
@@ -54,6 +65,6 @@ public class MapOptionGUI extends JFrame {
         add(importMapButton);
 
         pack();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        setLocationRelativeTo(null);
     }
 }

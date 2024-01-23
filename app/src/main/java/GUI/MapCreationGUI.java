@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Uma classe GUI para criação de mapa.
+ */
 public class MapCreationGUI extends JFrame {
 
     private JTextField mapSizeField;
@@ -16,14 +19,22 @@ public class MapCreationGUI extends JFrame {
     private JTextField edgeDensityField;
     private JButton createMapButton;
     private Game game;
-    private CountDownLatch latch; // Add a CountDownLatch field
+    private CountDownLatch latch; 
 
-    public MapCreationGUI(Game game, CountDownLatch latch) { // Modify the constructor to accept a CountDownLatch
+    /**
+     * Construtor para criar uma janela de criação de mapa.
+     * @param game O jogo.
+     * @param latch Um objeto CountDownLatch para sincronizar a criação de mapa.
+     */
+    public MapCreationGUI(Game game, CountDownLatch latch) { 
         this.game = game;
-        this.latch = latch; // Initialize the CountDownLatch field
+        this.latch = latch; 
         initComponents();
     }
 
+    /**
+     * Inicializa os componentes da janela.
+     */
     private void initComponents() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Map Creation");
@@ -40,7 +51,7 @@ public class MapCreationGUI extends JFrame {
                 String type = (String) mapTypeComboBox.getSelectedItem();
                 float density = Float.parseFloat(edgeDensityField.getText());
                 game.createMap(size, type, density);
-                latch.countDown(); // Call countDown() on the CountDownLatch when the map is created
+                latch.countDown(); 
             }
         });
 
@@ -54,6 +65,6 @@ public class MapCreationGUI extends JFrame {
         add(createMapButton);
 
         pack();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        setLocationRelativeTo(null);
     }
 }

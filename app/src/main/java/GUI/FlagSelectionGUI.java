@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Uma classe GUI para seleção de bandeiras, onde os jogadores escolhem bandeiras para Jogador 1 e Jogador 2.
+ */
 public class FlagSelectionGUI extends JFrame {
 
     private JComboBox<Integer> player1FlagComboBox;
@@ -18,12 +21,20 @@ public class FlagSelectionGUI extends JFrame {
     private Game game;
     private CountDownLatch latch;
 
+    /**
+     * Construtor para criar uma janela de seleção de bandeiras.
+     * @param game O jogo.
+     * @param latch Um objeto CountDownLatch para sincronizar a seleção de bandeiras.
+     */
     public FlagSelectionGUI(Game game, CountDownLatch latch) {
         this.game = game;
         this.latch = latch;
         initComponents();
     }
 
+    /**
+     * Inicializa os componentes da janela.
+     */
     private void initComponents() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Flag Selection");

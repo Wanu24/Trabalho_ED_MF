@@ -9,21 +9,33 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Uma classe GUI para criação de jogadores, onde os jogadores
+ * inserem os seus nomes.
+ */
 public class PlayerCreationGUI extends JFrame {
 
     private JTextField playerNameField;
     private JButton createPlayerButton;
     private Game game;
     private int playerCount;
-    private CountDownLatch latch; // Add a CountDownLatch field
+    private CountDownLatch latch; 
 
-    public PlayerCreationGUI(Game game, CountDownLatch latch) { // Modify the constructor to accept a CountDownLatch
+    /**
+     * Construtor para criar uma janela de criação de jogadores.
+     * @param game O jogo.
+     * @param latch Um objeto CountDownLatch para sincronizar a criação de jogadores.
+     */
+    public PlayerCreationGUI(Game game, CountDownLatch latch) { 
         this.game = game;
         this.playerCount = 0;
-        this.latch = latch; // Initialize the CountDownLatch field
+        this.latch = latch; 
         initComponents();
     }
 
+    /**
+     * Inicializa os componentes da janela.
+     */
     private void initComponents() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Player Creation");
@@ -41,7 +53,7 @@ public class PlayerCreationGUI extends JFrame {
                     JOptionPane.showMessageDialog(null, "Successfully created player " + playerName);
                     playerNameField.setText("");
                     playerCount++;
-                    latch.countDown(); // Call countDown() on the CountDownLatch each time a player is created
+                    latch.countDown(); 
                 } else {
                     JOptionPane.showMessageDialog(null, "Please enter a player name.");
                 }
@@ -54,6 +66,6 @@ public class PlayerCreationGUI extends JFrame {
         add(createPlayerButton);
 
         pack();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        setLocationRelativeTo(null);
     }
 }
