@@ -29,65 +29,6 @@ public class Game {
     }
 
     /**
-    * Construtor que permite inicializar o jogo com um mapa, jogadores 
-    * e um número para a rodada atual.
-    *
-    * @param map     O mapa do jogo.
-    * @param player1 O primeiro jogador.
-    * @param player2 O segundo jogador.
-    */
-    public Game(Map map, Player player1, Player player2) {
-        this.map = map;
-        this.players.add(player1);
-        this.players.add(player2);
-        roundNumber = 0;
-    }
-
-    /**
-     * Lê um valor inteiro da entrada padrão.
-     *
-     * @return O valor inteiro lido.
-     * @throws IOException Se ocorrer um erro de entrada/saída.
-     */
-    public int lerInt() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            return Integer.parseInt(br.readLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Valor invalido! Insira novamente: ");
-            return 1;
-        }
-    }
-
-    /**
-     * Lê um valor float da entrada padrão.
-     *
-     * @return O valor float lido.
-     * @throws IOException Se ocorrer um erro de entrada/saída.
-    */
-    public float lerFloat() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            return Float.parseFloat(br.readLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Valor invalido! Insira novamente: ");
-            return 1;
-        }
-    }
-
-
-    /**
-     * Lê uma linha de texto da entrada padrão.
-     *
-     * @return A linha de texto lida.
-     * @throws IOException Se ocorrer um erro de entrada/saída.
-    */
-    public String ler() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        return br.readLine();
-    }
-
-    /**
      * Inicia o jogo, criando o mapa, os jogadores, os bots e a bandeira.
      *
      * @throws IOException Se ocorrer um erro de entrada/saída.
