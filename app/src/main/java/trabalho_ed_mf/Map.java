@@ -51,16 +51,7 @@ public class Map {
         network.addVertex(local);
         System.out.println("Vertex added: " + local.getIndex());
     }
-
-    /**
-     * Remove uma localização da rede do mapa.
-     *
-     * @param local A localização a ser removida.
-     */
-    public void removeLocal(Location local) {
-        network.removeVertex(local);
-        System.out.println("Vertex removed: " + local.getIndex());
-    }
+    
     /**
      * Obtém um array de todas as localizações no mapa.
      *
