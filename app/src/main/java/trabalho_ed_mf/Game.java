@@ -157,37 +157,6 @@ public class Game {
     }
 
     /**
-     * Cria bots para todos os jogadores.
-     *
-     * @throws IOException Se ocorrer um erro de entrada/saída.
-    */
-    public void createBots() throws IOException {
-        for (int i = 0; i < players.size(); i++) {
-            createBotsPlayer(players.get(i));
-        }
-    }
-
-    /**
-     * Cria bots para um jogador específico.
-     *
-     * @param player O jogador para o qual se pretende criar bots.
-     * @throws IOException Se ocorrer um erro de entrada/saída.
-     */
-    public void createBotsPlayer(Player player) throws IOException {
-        System.out.println(player.getName() + " insira o numero de bots: ");
-        int numBots = lerInt();
-        int numVertices = map.getNetwork().size();
-        if (numBots <= (numVertices / 5)) {
-            for (int i = 0; i < numBots; i++) {
-                player.addBot(new Bot(player, MovementEnum.SHORTESTPATH));
-            }
-        } else {
-            System.out.println("Numero de bots invalido!");
-            createBotsPlayer(player);
-        }
-    }
-
-    /**
      * Obtém a lista de jogadores.
      *
      * @return A lista de jogadores.
