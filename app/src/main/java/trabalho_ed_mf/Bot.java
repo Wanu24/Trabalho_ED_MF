@@ -68,7 +68,7 @@ public class Bot {
      *
      * @param index O novo índice da posição do bot.
      */
-    public void setIndex(int index) {
+    public void setLocation(int index) {
         this.location = index;
     }
 

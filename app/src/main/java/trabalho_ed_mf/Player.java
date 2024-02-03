@@ -105,7 +105,7 @@ public class Player {
      * @return Cor do jogador.
      */
     public PlayerColour getPlayerColour() {
-        return base.getPlayerColour();
+        return base.getFlag().getColour();
     }
 
     /**
@@ -127,23 +127,25 @@ public class Player {
             location = bot.move(map, enemyBase.getIndex());
         }
 
-
-        for (int i = 0; i < map.getNetwork().getVertex(location).getBots().size(); i++) {
-            if (map.getNetwork().getVertex(location).getBots().get(i) == base.getFlag().getCarryBot()) {
-                base.getFlag().removeBot();
-                if (bot == enemyBase.getFlag().getCarryBot()) {
-                    enemyBase.getFlag().removeBot();
+        Location location1 = map.getNetwork().getVertex(location);
+        if (location1.getHasBot()) {
+            for (int i = 0; i < location1.getBots().size(); i++) {
+                if (location1.getBots().get(i) == base.getFlag().getCarryBot()) {
+                    base.getFlag().removeBot();
+                    if (bot == enemyBase.getFlag().getCarryBot()) {
+                        enemyBase.getFlag().removeBot();
+                    }
                 }
             }
-        }
 
-        if (location == enemyBase.getIndex() && enemyBase.getFlag().getCarryBot() == null) {
-            enemyBase.getFlag().addBot(bot);
+            if (location == enemyBase.getIndex() && enemyBase.getFlag().getCarryBot() == null) {
+                enemyBase.getFlag().addBot(bot);
+            }
         }
 
         botsQueue.remove(0);
         botsQueue.add(bot);
-        map.getNetwork().getVertex(location).addBot(bot);
+        location1.addBot(bot);
     }
 
     /**

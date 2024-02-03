@@ -14,9 +14,6 @@ public class Base {
     public int getIndex() {
         return index;
     }
-    public PlayerColour getPlayerColour() {
-        return flag.getColour();
-    }
     public void setIndex(int index) {
         this.index = index;
     }

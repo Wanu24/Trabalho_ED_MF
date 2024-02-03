@@ -51,7 +51,7 @@ public class Map {
         network.addVertex(local);
         System.out.println("Vertex added: " + local.getIndex());
     }
-    
+
     /**
      * Obtém um array de todas as localizações no mapa.
      *
