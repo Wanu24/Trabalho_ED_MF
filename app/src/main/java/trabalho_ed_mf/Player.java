@@ -145,6 +145,12 @@ public class Player {
         botsQueue.add(bot);
         map.getNetwork().getVertex(location).addBot(bot);
     }
+
+    /**
+     * Obtém o último bot da fila de bots do jogador.
+     *
+     * @return Último bot da fila de bots do jogador.
+     */
     public Bot getLastBot() {
         return botsQueue.get(botsQueue.size() - 1);
     }
