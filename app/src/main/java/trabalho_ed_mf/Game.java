@@ -12,16 +12,22 @@ import java.util.Random;
  * Representa o jogo e suas funcionalidades, incluindo a criação do mapa, jogadores, bots e a lógica do jogo.
  */
 public class Game {
-    /** O mapa do jogo. */
+    /**
+     * O mapa do jogo.
+     */
     private Map map;
-    /** Lista de jogadores. */
+    /**
+     * Lista de jogadores.
+     */
     private LinkedList<Player> players;
-    /** Número da ronda atual. */
+    /**
+     * Número da ronda atual.
+     */
     private static int roundNumber;
 
     /**
-    * Construtor padrão que inicializa o jogo com um mapa vazio e uma lista vazia de jogadores.
-    */
+     * Construtor padrão que inicializa o jogo com um mapa vazio e uma lista vazia de jogadores.
+     */
     public Game() {
         this.map = new Map();
         this.players = new LinkedList<Player>();
@@ -32,7 +38,7 @@ public class Game {
      * Inicia o jogo, criando o mapa, os jogadores, os bots e a bandeira.
      *
      * @throws IOException Se ocorrer um erro de entrada/saída.
-    */
+     */
     public int randomNumber(int max) {
         Random random = new Random();
         return random.nextInt(max);
@@ -44,7 +50,7 @@ public class Game {
      * @param size    O tamanho do mapa.
      * @param type    O tipo de mapa ("direcional" ou "bidirecional").
      * @param density A densidade de arestas no mapa.
-    */
+     */
     public void createMap(int size, String type, float density) {
         map.setSize(size);
         for (int i = 0; i < size; i++) {
@@ -84,12 +90,12 @@ public class Game {
      *
      * @param roundNumber O número da rodada atual.
      * @return 1 se o jogador ganhou, 0 se o jogo continua.
-    */
+     */
     public int useTurn(int roundNumber) {
         Player player = players.get(roundNumber % 2);
         Player enemy = players.get((roundNumber + 1) % 2);
         player.useTurn(map, enemy);
-        if (player.getLastBot().getLocation()==enemy.getBase().getIndex()){
+        if (player.getLastBot().getLocation() == player.getBase().getIndex() && player.getLastBot() == enemy.getBase().getFlag().getCarryBot()) {
             System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
             System.out.println("Jogador " + player.getName() + " ganhou na ronda! " + roundNumber);
             return 1;
@@ -123,7 +129,7 @@ public class Game {
      * Cria um jogador com base no nome e na cor especificados.
      *
      * @param playerName O nome do jogador.
-     * @param colour A cor do jogador.
+     * @param colour     A cor do jogador.
      */
     public void createPlayer(String playerName, String colour) {
         Flag flag = new Flag();
