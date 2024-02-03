@@ -9,11 +9,11 @@ public enum MovementEnum {
      */
     SHORTESTPATH,
     /**
-     * Caminho aleatório entre as localizações vizinhas.
+     * Arvore geradora de custo mínimo.
      */
-    RANDOMPATH,
+    SHORTESTCONEECTEDPATH,
     /**
-     * Caminho mais longo do vértice, escolhendo o caminho mais longo entre as localizações vizinhas.
+     * Caminho aleatório.
      */
-    ATHELETICPATH
+    RANDOMPATH
 }

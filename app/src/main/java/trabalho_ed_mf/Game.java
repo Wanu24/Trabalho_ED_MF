@@ -148,7 +148,7 @@ public class Game {
         Player player = players.get(roundNumber % 2);
         Player enemy = players.get((roundNumber + 1) % 2);
         player.useTurn(map, enemy);
-        if (player.getLastBot().getIndex() == enemy.getFlag().getIndex()) {
+        if (player.getLastBot().getLocation()==enemy.getBase().getIndex()){
             System.out.println("Bot do jogador " + player.getName() + " chegou a bandeira do jogador " + enemy.getName() + "!");
             System.out.println("Jogador " + player.getName() + " ganhou na ronda! " + roundNumber);
             return 1;
@@ -212,14 +212,15 @@ public class Game {
     /**
      * Cria um jogador com base no nome e na cor especificados.
      *
-     * @param player O nome do jogador.
-     * @param string A cor do jogador.
+     * @param playerName O nome do jogador.
+     * @param colour A cor do jogador.
      */
-    public void createPlayer(String player, String string) {
+    public void createPlayer(String playerName, String colour) {
         Flag flag = new Flag();
-        flag.setColour(PlayerColour.valueOf(string));
-        Player player1 = new Player(player, flag);
-        players.add(player1);
+        flag.setColour(PlayerColour.valueOf(colour));
+        Base base = new Base(flag);
+        Player player = new Player(playerName, base);
+        players.add(player);
     }
 
     /**

@@ -74,10 +74,8 @@ public class FlagSelectionGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int player1Flag = (Integer) player1FlagComboBox.getSelectedItem();
                 int player2Flag = (Integer) player2FlagComboBox.getSelectedItem();
-                game.getPlayers().get(0).getFlag().setIndex(player1Flag);
-                game.getMap().addFlag(player1Flag, (game.getPlayers().get(0).getFlag()));
-                game.getPlayers().get(1).getFlag().setIndex(player2Flag);
-                game.getMap().addFlag(player2Flag, (game.getPlayers().get(1).getFlag()));
+                game.getPlayers().get(0).getBase().setIndex(player1Flag);
+                game.getPlayers().get(1).getBase().setIndex(player2Flag);
                 latch.countDown();
                 dispose();
             }

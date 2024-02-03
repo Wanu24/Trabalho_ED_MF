@@ -54,18 +54,14 @@ public class BotCreationGUI extends JFrame {
             int numBotsSelected = askForNumBots(currentPlayer);
             for (int j = 0; j < numBotsSelected; j++) {
                 MovementEnum movementEnumSelected = askForMovementEnum(currentPlayer);
-                currentPlayer.addBot(new Bot(currentPlayer, movementEnumSelected));
+                Bot newBot = new Bot(currentPlayer, movementEnumSelected);
+                currentPlayer.addBot(newBot);
+                game.getMap().getNetwork().getVertex(currentPlayer.getBase().getIndex()).addBot(newBot);
             }
         }
-        latch.countDown(); // Call countDown() on the CountDownLatch when the bots are created
+        latch.countDown();
 
-        // Move the dispose() call here, after the for loop
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                dispose(); // Close the current window
-            }
-        });
+        SwingUtilities.invokeLater(this::dispose);
     }
 
     /**

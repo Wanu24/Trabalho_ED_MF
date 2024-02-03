@@ -8,8 +8,8 @@ package trabalho_ed_mf;
 public class Flag {
     /** Cor da bandeira. */
     private PlayerColour colour;
-    /** Indice que indica a posição da bandeira no mapa. */
-    private int index;
+    private Bot CarryBot;
+
 
     /**
      * Construtor que cria uma bandeira com uma cor específica.
@@ -18,17 +18,25 @@ public class Flag {
      */
     public Flag(String colour){
         this.colour = PlayerColour.valueOf(colour);
-        this.index = -1;
+        this.CarryBot = null;
     }
 
+    public void addBot(Bot bot){
+        this.CarryBot = bot;
+    }
+    public void removeBot(){
+        this.CarryBot = null;
+    }
+     public Bot getCarryBot(){
+        return CarryBot;
+     }
     /**
-    * Construtor padrão que cria uma bandeira sem cor e com índice -1.
+    * Construtor padrão que cria uma bandeira sem cor.
     */
     public Flag(){
         this.colour = null;
-        this.index = -1;
+        this.CarryBot = null;
     }
-
 
      /**
      * Obtém a cor da bandeira.
@@ -48,22 +56,5 @@ public class Flag {
         this.colour = colour;
     }
 
-    /**
-     * Obtém o índice da bandeira no mapa.
-     *
-     * @return O índice da bandeira no mapa.
-     */
-    public int getIndex() {
-        return index;
-    }
-
-    /**
-     * Define o índice da bandeira no mapa.
-     *
-     * @param index O índice da bandeira no mapa.
-     */
-    public void setIndex(int index) {
-        this.index = index;
-    }
 
 }

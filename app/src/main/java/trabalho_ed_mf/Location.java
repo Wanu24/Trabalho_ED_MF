@@ -1,25 +1,17 @@
 package trabalho_ed_mf;
 
+import ClassImplementation.LinkedList;
+
 /**
  * Representa uma localização no mapa do jogo.
  */
 public class Location {
     /**
-     * Indica se a localização tem uma bandeira.
-     */
-    private boolean hasFlag;
-    /**
-     * Indica se a localização tem um bot.
-     */
-    private boolean hasBot;
-    /**
      * Bandeira associada à localização.
      */
-    private Flag flag;
-    /**
-     * Indice que indica a posição da localização no mapa.
-     */
     private int index;
+
+    private LinkedList<Bot> bots;
 
 
     /**
@@ -28,29 +20,15 @@ public class Location {
      * @param i O índice da localização.
      */
     public Location(int i) {
-        this.hasFlag = false;
-        this.hasBot = false;
-        this.flag = null;
         this.index = i;
+        this.bots = new LinkedList<>();
     }
-
-    /**
-     * Obtém se a localização tem uma bandeira.
-     *
-     * @return true se a localização tem uma bandeira, false caso contrário.
-     */
-    public boolean getHasFlag() {
-        return hasFlag;
+    public void addBot(Bot bot) {
+        bots.add(bot);
     }
-
-    /**
-     * Define se a localização tem uma bandeira.
-     *
-     * @param hasFlag true se a localização tem uma bandeira, false caso contrário.
-     */
-    public void setHasFlag(boolean hasFlag) {
-        this.hasFlag = hasFlag;
-    }
+     public void removeBot(Bot bot) {
+        bots.remove(bot);
+     }
 
     /**
      * Obtém se a localização tem um bot.
@@ -58,36 +36,8 @@ public class Location {
      * @return true se a localização tem um bot, false caso contrário.
      */
     public boolean getHasBot() {
-        return hasBot;
+        return !bots.isEmpty();
     }
-
-    /**
-     * Define se a localização tem um bot.
-     *
-     * @param hasBot true se a localização tem um bot, false caso contrário.
-     */
-    public void setHasBot(boolean hasBot) {
-        this.hasBot = hasBot;
-    }
-
-    /**
-     * Obtém a bandeira associada à localização.
-     *
-     * @return A bandeira associada à localização.
-     */
-    public Flag getFlag() {
-        return flag;
-    }
-
-    /**
-     * Define a bandeira associada à localização.
-     *
-     * @param flag A bandeira a ser associada à localização.
-     */
-    public void setFlag(Flag flag) {
-        this.flag = flag;
-    }
-
     /**
      * Obtém o índice da localização.
      *
@@ -95,6 +45,9 @@ public class Location {
      */
     public int getIndex() {
         return index;
+    }
+    public LinkedList<Bot> getBots() {
+        return bots;
     }
 
     /**

@@ -14,10 +14,6 @@ public class Bot {
      */
     private int location;
     /**
-     * Localizão anterior do bot.
-     */
-    private int lastLocation;
-    /**
      * Algoritmo de movimentação do bot.
      */
     private MovementEnum movEnum;
@@ -39,31 +35,23 @@ public class Bot {
     public Bot(Player player, MovementEnum mov) {
         contador++;
         this.index = contador;
-        this.location = player.getFlag().getIndex();
-        this.lastLocation = player.getFlag().getIndex();
+        this.location = player.getBase().getIndex();
         this.movEnum = mov;
     }
 
-    /**
-     * Move o bot para uma nova posição no mapa com base no algoritmo de movimento selecionado.
-     * Antes de mover, atualiza a informação de localização do bot no grafo do mapa.
-     *
-     * @param map   O mapa no qual o bot está se movendo.
-     * @param enemy O jogador inimigo, usado como referência para alguns algoritmos de movimento.
-     */
-    public void move(Map map, Player enemy) {
-        map.getNetwork().getVertex(location).setHasBot(false);
-        lastLocation = location;
+
+    public int move(Map map, int targetIndex) {
+        System.out.println("\nBot used " + movEnum);
+        System.out.print("Bot " + index + " moved from " + location);
         if (movEnum == MovementEnum.SHORTESTPATH) {
-            location = shortestPath(map, location, enemy.getFlag().getIndex());
+            location = shortestPath(map, location, targetIndex);
+        } else if (movEnum == MovementEnum.SHORTESTCONEECTEDPATH) {
+            location = minimumSpanningTree(map, location, targetIndex);
         } else if (movEnum == MovementEnum.RANDOMPATH) {
             location = randomPath(map, location);
-        } else if (movEnum == MovementEnum.ATHELETICPATH) {
-            location = atheleticPath(map, location, lastLocation);
         }
-        map.getNetwork().getVertex(location).setHasBot(true);
-        System.out.println("Bot used " + movEnum);
-        System.out.println("Bot " + index + " moved from " + lastLocation + " to " + location);
+        System.out.println(" to " + location);
+        return location;
     }
 
     /**
@@ -71,7 +59,7 @@ public class Bot {
      *
      * @return O índice da posição do bot.
      */
-    public int getIndex() {
+    public int getLocation() {
         return location;
     }
 
@@ -101,5 +89,6 @@ public class Bot {
     public MovementEnum getMovEnum() {
         return movEnum;
     }
+
 }
 

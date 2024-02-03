@@ -61,30 +61,6 @@ public class Map {
         network.removeVertex(local);
         System.out.println("Vertex removed: " + local.getIndex());
     }
-
-    /**
-     * Adiciona uma bandeira a uma localização específica no mapa.
-     *
-     * @param index O índice da localização.
-     * @param flag A bandeira a ser adicionada.
-     */
-    public void addFlag(int index, Flag flag) {
-        network.getVertex(index).setFlag(flag);
-        network.getVertex(index).setHasFlag(true);
-        System.out.println("Flag added to vertex: " + index);
-    }
-
-    /**
-     * Remove uma bandeira de uma localização específica no mapa.
-     *
-     * @param index O índice da localização.
-     */
-    public void removeFlag(int index) {
-        network.getVertex(index).setFlag(null);
-        network.getVertex(index).setHasFlag(false);
-        System.out.println("Flag removed from vertex: " + index);
-    }
-
     /**
      * Obtém um array de todas as localizações no mapa.
      *

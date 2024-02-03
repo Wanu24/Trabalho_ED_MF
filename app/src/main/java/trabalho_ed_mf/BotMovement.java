@@ -13,83 +13,115 @@ public class BotMovement {
     /**
      * Algoritmo de movimentação que move o bot para o caminho mais curto entre ele e a bandeira inimiga.
      *
-     * @param map     O mapa no qual o bot está a mover-se.
-     * @param index1  O índice do bot no grafo.
-     * @param index2  O índice da bandeira inimiga no grafo.
+     * @param map    O mapa no qual o bot está a mover-se.
+     * @param index1 O índice do bot no grafo.
+     * @param index2 O índice da bandeira inimiga no grafo.
      * @return O índice do próximo vértice para o qual o bot deve mover-se.
      */
     public static int shortestPath(Map map, int index1, int index2) {
-        Map map1 = map;
-        ArrayList<Integer> path = map1.getNetwork().dijkstraAlgorithm(index1, index2);
+        if (index1 == index2) {
+            return index1;
+        }
+        ArrayList<Integer> path = map.getNetwork().dijkstraAlgorithm(index1, index2);
         if (path.size() == 1) {
             return index1;
         }
-        int nextVertex = path.get(1);
-        Location currentLocation = map1.getNetwork().getVertex(nextVertex);
-
-        if (!currentLocation.getHasFlag() && currentLocation.getHasBot()) {
-            map1.removeLocal(currentLocation);
-            return shortestPath(map1, index1, index2);
-        } else {
-            return nextVertex;
-        }
+        return path.get(1);
     }
 
     /**
-     * Algoritmo de movimentação que move o bot para um vértice aleatório adjacente ao seu.
+     * Algoritmo de movimentação que move o bot para um vértice aleatório conectado ao vértice atual.
      *
-     * @param map    O mapa no qual o bot está a mover-se.
-     * @param index  O índice do bot no grafo.
+     * @param map   O mapa no qual o bot está a mover-se.
+     * @param index O índice do bot no grafo.
      * @return O índice do próximo vértice para o qual o bot deve mover-se.
      */
     public static int randomPath(Map map, int index) {
-        LinkedList<Integer> locals = new LinkedList<Integer>();
+        double[][] adjMatrix = map.getNetwork().getAdjMatrix();
+        ArrayList<Integer> connectedVertices = new ArrayList<>();
+
+        for (int i = 0; i < adjMatrix[index].length; i++) {
+            if (adjMatrix[index][i] != 0) {
+                connectedVertices.add(i);
+            }
+        }
+
+        if (connectedVertices.isEmpty()) {
+            return index;
+        }
+
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(connectedVertices.size());
+        return connectedVertices.get(randomIndex);
+    }
+
+
+    /**
+     * Algoritmo de Arvóre geradora de custo mínimo
+     *
+     * @param map         O mapa no qual o bot está a mover-se.
+     * @param startIndex  O índice do bot no grafo.
+     * @param targetIndex O índice da bandeira inimiga no grafo.
+     * @return O índice do próximo vértice para o qual o bot deve mover-se.
+     */
+    public static int minimumSpanningTree(Map map, int startIndex, int targetIndex) {
+        if (startIndex == targetIndex) {
+            return startIndex;
+        }
+        int[] parent = new int[map.getNetwork().getAdjMatrix().length];
+        int[] key = new int[map.getNetwork().getAdjMatrix().length];
+        boolean[] mstSet = new boolean[map.getNetwork().getAdjMatrix().length];
+
         for (int i = 0; i < map.getNetwork().getAdjMatrix().length; i++) {
-            if (16 > map.getNetwork().getAdjMatrix()[index][i] && map.getNetwork().getAdjMatrix()[index][i] > 0) {
-                if (!map.getNetwork().getVertex(i).getHasBot() || map.getNetwork().getVertex(i).getHasFlag()) {
-                    if (map.getNetwork().getVertex(i).getIndex() != index) {
-                        locals.add(i);
-                    }
+            key[i] = Integer.MAX_VALUE;
+            mstSet[i] = false;
+        }
+
+        key[startIndex] = 0;
+        parent[startIndex] = -1;
+
+        for (int count = 0; count < map.getNetwork().getAdjMatrix().length - 1; count++) {
+            int u = minKey(map, key, mstSet);
+            mstSet[u] = true;
+
+            for (int v = 0; v < map.getNetwork().getAdjMatrix().length; v++) {
+                if (map.getNetwork().getAdjMatrix()[u][v] != 0 && !mstSet[v] && map.getNetwork().getAdjMatrix()[u][v] < key[v]) {
+                    parent[v] = u;
+                    key[v] = (int) map.getNetwork().getAdjMatrix()[u][v];
                 }
             }
         }
-        if (locals.isEmpty()) {
-            return index;
-        }
-        Random random = new Random();
-        int randomIndex = random.nextInt(locals.size());
-        return locals.get(randomIndex);
 
+        // Find the path from the start index to the target index
+        LinkedList<Integer> path = new LinkedList<>();
+        int vertex = targetIndex;
+        while (vertex != startIndex) {
+            path.add(0, vertex);
+            vertex = parent[vertex];
+        }
+        path.add(0, startIndex);
+
+        // Return the second vertex in the path as the next location index
+        return path.get(1);
     }
 
     /**
-     * Algoritmo de movimentação que move o bot para o caminho mais longo entre ele e a sua localização anterior.
+     * Função auxiliar para encontrar o vértice com a menor chave
      *
      * @param map     O mapa no qual o bot está a mover-se.
-     * @param index   O índice do bot no grafo.
-     * @param index2  O índice da localização anterior do bot no grafo.
-     * @return O índice do próximo vértice para o qual o bot deve mover-se.
+     * @param key     Array de chaves
+     * @param mstSet  Array de booleanos que indica se o vértice está na árvore geradora de custo mínimo
+     * @return O índice do vértice com a menor chave
      */
-    public static int atheleticPath(Map map, int index, int index2) {
-        double longestPath = 0;
-        int longestPathIndex = -1;
-        for (int i = 0; i < map.getNetwork().getAdjMatrix().length; i++) {
-            if (i != index2) {
-                if (map.getNetwork().getVertex(i).getHasFlag() && map.getNetwork().getAdjMatrix()[index][i] < 16) {
-                    return i;
-                } else if (16 > map.getNetwork().getAdjMatrix()[index][i] && map.getNetwork().getAdjMatrix()[index][i] > longestPath) {
-                    if (!map.getNetwork().getVertex(i).getHasBot()) {
-                        longestPath = map.getNetwork().getAdjMatrix()[index][i];
-                        longestPathIndex = i;
-                    }
-                }
+    public static int minKey(Map map, int key[], boolean mstSet[]) {
+        int min = Integer.MAX_VALUE, min_index = -1;
+
+        for (int v = 0; v < map.getNetwork().getAdjMatrix().length; v++)
+            if (mstSet[v] == false && key[v] < min) {
+                min = key[v];
+                min_index = v;
             }
-        }
-        if (longestPathIndex == -1) {
-            return index;
-        }
-        return longestPathIndex;
+
+        return min_index;
     }
-
-
 }
