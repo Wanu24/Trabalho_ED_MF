@@ -5,15 +5,15 @@ package trabalho_ed_mf;
  */
 public enum MovementEnum {
     /**
-     * Caminho mais curto em direção a um destino.
+     * Caminho mais curto por peso em direção a um destino.
      */
-    SHORTESTPATH,
+    SHORTESTWEIGHTPATH,
     /**
      * Arvore geradora de custo mínimo.
      */
     SHORTESTCONEECTEDPATH,
     /**
-     * Caminho aleatório.
+     * Caminho mais curto por conexões em direção a um destino.
      */
-    RANDOMPATH
+    SHORTESTCONNECTIONPATH
 }

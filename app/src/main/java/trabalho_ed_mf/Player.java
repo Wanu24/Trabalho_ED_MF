@@ -20,7 +20,11 @@ public class Player {
      */
     private Base base;
 
-
+    /**
+     * Construtor da classe Player.
+     * @param name
+     * @param base
+     */
     public Player(String name, Base base) {
         this.name = name;
         this.botsQueue = new LinkedList<Bot>();
@@ -131,17 +135,20 @@ public class Player {
         if (location1.getHasBot()) {
             for (int i = 0; i < location1.getBots().size(); i++) {
                 if (location1.getBots().get(i) == base.getFlag().getCarryBot()) {
+                    System.out.println("Bot " + base.getFlag().getCarryBot().getIndex() + " lost the flag!");
                     base.getFlag().removeBot();
                     if (bot == enemyBase.getFlag().getCarryBot()) {
+                        System.out.println("Bot " + bot.getIndex() + " lost the flag!");
                         enemyBase.getFlag().removeBot();
                     }
                 }
             }
-
-            if (location == enemyBase.getIndex() && enemyBase.getFlag().getCarryBot() == null) {
-                enemyBase.getFlag().addBot(bot);
-            }
         }
+        if (location == enemyBase.getIndex() && enemyBase.getFlag().getCarryBot() == null) {
+            enemyBase.getFlag().addBot(bot);
+            System.out.println("Bot " + bot.getIndex() + " captured the flag!");
+        }
+
 
         botsQueue.remove(0);
         botsQueue.add(bot);

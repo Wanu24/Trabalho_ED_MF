@@ -6,8 +6,13 @@ package trabalho_ed_mf;
  */
 
 public class Flag {
-    /** Cor da bandeira. */
+    /**
+     * Cor da bandeira.
+     */
     private PlayerColour colour;
+    /**
+     * Bot que está a carregar a bandeira.
+     */
     private Bot CarryBot;
 
 
@@ -16,34 +21,50 @@ public class Flag {
      *
      * @param colour A cor da bandeira, representada pelo enum PlayerColour.
      */
-    public Flag(String colour){
+    public Flag(String colour) {
         this.colour = PlayerColour.valueOf(colour);
         this.CarryBot = null;
     }
 
-    public void addBot(Bot bot){
-        this.CarryBot = bot;
-    }
-    public void removeBot(){
-        this.CarryBot = null;
-    }
-     public Bot getCarryBot(){
-        return CarryBot;
-     }
     /**
-    * Construtor padrão que cria uma bandeira sem cor.
-    */
-    public Flag(){
+     * Construtor padrão que cria uma bandeira sem cor.
+     */
+    public Flag() {
         this.colour = null;
         this.CarryBot = null;
     }
 
-     /**
+    /**
+     * Adiciona um bot à bandeira.
+     *
+     * @param bot
+     */
+    public void addBot(Bot bot) {
+        this.CarryBot = bot;
+    }
+
+    /**
+     * Remove o bot da bandeira.
+     */
+    public void removeBot() {
+        this.CarryBot = null;
+    }
+
+    /**
+     * Retorna o bot que está a carregar a bandeira.
+     *
+     * @return
+     */
+    public Bot getCarryBot() {
+        return CarryBot;
+    }
+
+    /**
      * Obtém a cor da bandeira.
      *
      * @return A cor da bandeira.
      */
-    public PlayerColour  getColour(){
+    public PlayerColour getColour() {
         return colour;
     }
 
@@ -52,7 +73,7 @@ public class Flag {
      *
      * @param colour A cor da bandeira, representada pelo enum PlayerColour.
      */
-    public void setColour(PlayerColour colour){
+    public void setColour(PlayerColour colour) {
         this.colour = colour;
     }
 

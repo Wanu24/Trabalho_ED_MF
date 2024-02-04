@@ -39,16 +39,24 @@ public class Bot {
         this.movEnum = mov;
     }
 
-
+    /**
+     * Move o bot para a próxima posição de acordo com o algoritmo de movimentação.
+     *
+     * @param map
+     * @param targetIndex
+     * @return O índice da nova posição do bot.
+     */
     public int move(Map map, int targetIndex) {
         System.out.println("\nBot used " + movEnum);
         System.out.print("Bot " + index + " moved from " + location);
-        if (movEnum == MovementEnum.SHORTESTPATH) {
-            location = shortestPath(map, location, targetIndex);
+        if (movEnum == MovementEnum.SHORTESTWEIGHTPATH) {
+            location = shortestWeightPath(map, location, targetIndex);
         } else if (movEnum == MovementEnum.SHORTESTCONEECTEDPATH) {
             location = minimumSpanningTree(map, location, targetIndex);
-        } else if (movEnum == MovementEnum.RANDOMPATH) {
-            location = randomPath(map, location);
+        } //else if (movEnum == MovementEnum.RANDOMPATH) {
+        //location = randomPath(map, location);
+        else if (movEnum == MovementEnum.SHORTESTCONNECTIONPATH) {
+            location = shortestConnectionPath(map, location, targetIndex);
         }
         System.out.println(" to " + location);
         return location;
@@ -90,5 +98,13 @@ public class Bot {
         return movEnum;
     }
 
+    /**
+     * Obtém o índice do bot.
+     *
+     * @return O índice do bot.
+     */
+    public int getIndex() {
+        return index;
+    }
 }
 

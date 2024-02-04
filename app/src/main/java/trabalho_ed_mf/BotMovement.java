@@ -2,6 +2,8 @@ package trabalho_ed_mf;
 
 import ClassImplementation.ArrayList;
 import ClassImplementation.LinkedList;
+import ClassImplementation.LinkedQueue;
+import Exceptions.EmptyCollectionException;
 
 import java.util.Random;
 
@@ -18,7 +20,7 @@ public class BotMovement {
      * @param index2 O índice da bandeira inimiga no grafo.
      * @return O índice do próximo vértice para o qual o bot deve mover-se.
      */
-    public static int shortestPath(Map map, int index1, int index2) {
+    public static int shortestWeightPath(Map map, int index1, int index2) {
         if (index1 == index2) {
             return index1;
         }
@@ -101,7 +103,6 @@ public class BotMovement {
         }
         path.add(0, startIndex);
 
-        // Return the second vertex in the path as the next location index
         return path.get(1);
     }
 
@@ -110,7 +111,7 @@ public class BotMovement {
      *
      * @param map     O mapa no qual o bot está a mover-se.
      * @param key     Array de chaves
-     * @param mstSet  Array de booleanos que indica se o vértice está na árvore geradora de custo mínimo
+     * @param mstSet  Array de booleans que indica se o vértice está na árvore geradora de custo mínimo
      * @return O índice do vértice com a menor chave
      */
     public static int minKey(Map map, int key[], boolean mstSet[]) {
@@ -123,5 +124,53 @@ public class BotMovement {
             }
 
         return min_index;
+    }
+
+    /**
+     * Algoritmo de movimentação que move o bot para o caminho mais curto entre ele e a bandeira inimiga.
+     *
+     * @param map         O mapa no qual o bot está a mover-se.
+     * @param startIndex  O índice do bot no grafo.
+     * @param targetIndex O índice da bandeira inimiga no grafo.
+     * @return O índice do próximo vértice para o qual o bot deve mover-se.
+     */
+    public static int shortestConnectionPath(Map map, int startIndex, int targetIndex) {
+        int vertices = map.getNetwork().getAdjMatrix().length;
+        if (startIndex == targetIndex) {
+            return startIndex;
+        }
+
+        int[] pred = new int[vertices];
+        boolean[] visited = new boolean[vertices];
+
+        LinkedQueue<Integer> queue = new LinkedQueue<>();
+        queue.enqueue(startIndex);
+        visited[startIndex] = true;
+
+        while (!queue.isEmpty()) {
+            int current = 0;
+            try {
+                current = queue.dequeue();
+            } catch (EmptyCollectionException e) {
+                e.printStackTrace();
+            }
+            if (current == targetIndex) {
+                int next = pred[targetIndex];
+                while (pred[next] != startIndex) {
+                    next = pred[next];
+                }
+                return next;
+            } else {
+                double[] adj = map.getNetwork().getAdjMatrix()[current];
+                for (int i = 0; i < vertices; i++) {
+                    if (adj[i] != 0 && !visited[i]) {
+                        queue.enqueue(i);
+                        visited[i] = true;
+                        pred[i] = current;
+                    }
+                }
+            }
+        }
+        return startIndex;
     }
 }

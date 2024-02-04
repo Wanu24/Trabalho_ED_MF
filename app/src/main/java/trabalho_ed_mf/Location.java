@@ -11,6 +11,9 @@ public class Location {
      */
     private int index;
 
+    /**
+     * Lista de bots que estão na localização.
+     */
     private LinkedList<Bot> bots;
 
 
