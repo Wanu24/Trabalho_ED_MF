@@ -75,12 +75,18 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de elemento que este nÃ³ armazena.</dd>
+</dl>
+<dl class="notes">
 <dt>Direct Known Subclasses:</dt>
 <dd><code><a href="HeapNode.html" title="class in ClassImplementation">HeapNode</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BinaryTreeNode&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Classe BinaryTreeNode que representa um nÃ³ em uma Ã¡rvore binÃ¡ria.
+ Cada nÃ³ BinaryTreeNode tem um elemento genÃ©rico e dois nÃ³s filhos, esquerdo e direito.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -95,13 +101,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected <a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a></code></div>
 <div class="col-second even-row-color"><code><a href="#element" class="member-name-link">element</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">O elemento armazenado neste nÃ³.</div>
+</div>
 <div class="col-first odd-row-color"><code>protected <a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#left" class="member-name-link">left</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">O nÃ³ filho esquerdo deste nÃ³.</div>
+</div>
 <div class="col-first even-row-color"><code>protected <a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#right" class="member-name-link">right</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">O nÃ³ filho direito deste nÃ³.</div>
+</div>
 </div>
 </section>
 </li>
@@ -115,7 +127,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(T)" class="member-name-link">BinaryTreeNode</a><wbr>(<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new tree node with the specified data.</div>
+<div class="block">Construtor para a classe BinaryTreeNode.</div>
 </div>
 </div>
 </section>
@@ -133,27 +145,39 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getElement()" class="member-name-link">getElement</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o elemento armazenado neste nÃ³.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLeft()" class="member-name-link">getLeft</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o nÃ³ filho esquerdo deste nÃ³.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRight()" class="member-name-link">getRight</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o nÃ³ filho direito deste nÃ³.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numChildren()" class="member-name-link">numChildren</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of non-null children of this node.</div>
+<div class="block">Retorna o nÃºmero de filhos deste nÃ³.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setElement(T)" class="member-name-link">setElement</a><wbr>(<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&nbsp;element)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define o elemento armazenado neste nÃ³.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLeft(ClassImplementation.BinaryTreeNode)" class="member-name-link">setLeft</a><wbr>(<a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;&nbsp;left)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define o nÃ³ filho esquerdo deste nÃ³.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRight(ClassImplementation.BinaryTreeNode)" class="member-name-link">setRight</a><wbr>(<a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;&nbsp;right)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define o nÃ³ filho direito deste nÃ³.</div>
+</div>
 </div>
 </div>
 </div>
@@ -175,18 +199,21 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="element">
 <h3>element</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a></span>&nbsp;<span class="element-name">element</span></div>
+<div class="block">O elemento armazenado neste nÃ³.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="left">
 <h3>left</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</span>&nbsp;<span class="element-name">left</span></div>
+<div class="block">O nÃ³ filho esquerdo deste nÃ³.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="right">
 <h3>right</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</span>&nbsp;<span class="element-name">right</span></div>
+<div class="block">O nÃ³ filho direito deste nÃ³.</div>
 </section>
 </li>
 </ul>
@@ -201,11 +228,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(T)">
 <h3 id="&lt;init&gt;(java.lang.Object)">BinaryTreeNode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BinaryTreeNode</span><wbr><span class="parameters">(<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&nbsp;obj)</span></div>
-<div class="block">Creates a new tree node with the specified data.</div>
+<div class="block">Construtor para a classe BinaryTreeNode.
+ Inicializa o elemento do nÃ³ com o objeto fornecido e os nÃ³s filhos como nulos.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>obj</code> - the element that will become a part of
- the new tree node</dd>
+<dd><code>obj</code> - O objeto a ser armazenado neste nÃ³.</dd>
 </dl>
 </section>
 </li>
@@ -221,47 +248,77 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getElement()">
 <h3>getElement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a></span>&nbsp;<span class="element-name">getElement</span>()</div>
+<div class="block">Retorna o elemento armazenado neste nÃ³.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O elemento armazenado neste nÃ³.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setElement(T)">
 <h3 id="setElement(java.lang.Object)">setElement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setElement</span><wbr><span class="parameters">(<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&nbsp;element)</span></div>
+<div class="block">Define o elemento armazenado neste nÃ³.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - O novo elemento a ser armazenado.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getLeft()">
 <h3>getLeft</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</span>&nbsp;<span class="element-name">getLeft</span>()</div>
+<div class="block">Retorna o nÃ³ filho esquerdo deste nÃ³.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O nÃ³ filho esquerdo deste nÃ³.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setLeft(ClassImplementation.BinaryTreeNode)">
 <h3>setLeft</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLeft</span><wbr><span class="parameters">(<a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;&nbsp;left)</span></div>
+<div class="block">Define o nÃ³ filho esquerdo deste nÃ³.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>left</code> - O novo nÃ³ filho esquerdo.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getRight()">
 <h3>getRight</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;</span>&nbsp;<span class="element-name">getRight</span>()</div>
+<div class="block">Retorna o nÃ³ filho direito deste nÃ³.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O nÃ³ filho direito deste nÃ³.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setRight(ClassImplementation.BinaryTreeNode)">
 <h3>setRight</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRight</span><wbr><span class="parameters">(<a href="BinaryTreeNode.html" title="class in ClassImplementation">BinaryTreeNode</a>&lt;<a href="BinaryTreeNode.html" title="type parameter in BinaryTreeNode">T</a>&gt;&nbsp;right)</span></div>
+<div class="block">Define o nÃ³ filho direito deste nÃ³.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>right</code> - O novo nÃ³ filho direito.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="numChildren()">
 <h3>numChildren</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">numChildren</span>()</div>
-<div class="block">Returns the number of non-null children of this node.
- This method may be able to be written more efficiently.</div>
+<div class="block">Retorna o nÃºmero de filhos deste nÃ³.
+ Este mÃ©todo Ã© recursivo e conta o nÃºmero de filhos do nÃ³ esquerdo e do nÃ³ direito.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the integer number of non-null children of this node</dd>
+<dd>O nÃºmero de filhos deste nÃ³.</dd>
 </dl>
 </section>
 </li>

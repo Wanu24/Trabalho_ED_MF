@@ -106,20 +106,34 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#atheleticPath(trabalho_ed_mf.Map,int,int)" class="member-name-link">atheleticPath</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
- int&nbsp;index,
- int&nbsp;index2)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#minimumSpanningTree(trabalho_ed_mf.Map,int,int)" class="member-name-link">minimumSpanningTree</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int&nbsp;startIndex,
+ int&nbsp;targetIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para o caminho mais longo entre ele e a sua localizaÃ§Ã£o anterior.</div>
+<div class="block">Algoritmo de ArvÃ³re geradora de custo mÃ­nimo</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#randomPath(trabalho_ed_mf.Map,int)" class="member-name-link">randomPath</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
- int&nbsp;index)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#minKey(trabalho_ed_mf.Map,int%5B%5D,boolean%5B%5D)" class="member-name-link">minKey</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int[]&nbsp;key,
+ boolean[]&nbsp;mstSet)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para um vÃ©rtice aleatÃ³rio adjacente ao seu.</div>
+<div class="block">FunÃ§Ã£o auxiliar para encontrar o vÃ©rtice com a menor chave</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shortestPath(trabalho_ed_mf.Map,int,int)" class="member-name-link">shortestPath</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#randomPath(trabalho_ed_mf.Map,int)" class="member-name-link">randomPath</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int&nbsp;index)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para um vÃ©rtice aleatÃ³rio conectado ao vÃ©rtice atual.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shortestConnectionPath(trabalho_ed_mf.Map,int,int)" class="member-name-link">shortestConnectionPath</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int&nbsp;startIndex,
+ int&nbsp;targetIndex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para o caminho mais curto entre ele e a bandeira inimiga.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shortestWeightPath(trabalho_ed_mf.Map,int,int)" class="member-name-link">shortestWeightPath</a><wbr>(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
  int&nbsp;index1,
  int&nbsp;index2)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -157,9 +171,9 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="shortestPath(trabalho_ed_mf.Map,int,int)">
-<h3>shortestPath</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">shortestPath</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+<section class="detail" id="shortestWeightPath(trabalho_ed_mf.Map,int,int)">
+<h3>shortestWeightPath</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">shortestWeightPath</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
  int&nbsp;index1,
  int&nbsp;index2)</span></div>
 <div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para o caminho mais curto entre ele e a bandeira inimiga.</div>
@@ -178,7 +192,7 @@ loadScripts(document, 'script');</script>
 <h3>randomPath</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">randomPath</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
  int&nbsp;index)</span></div>
-<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para um vÃ©rtice aleatÃ³rio adjacente ao seu.</div>
+<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para um vÃ©rtice aleatÃ³rio conectado ao vÃ©rtice atual.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>map</code> - O mapa no qual o bot estÃ¡ a mover-se.</dd>
@@ -189,17 +203,51 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="atheleticPath(trabalho_ed_mf.Map,int,int)">
-<h3>atheleticPath</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">atheleticPath</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
- int&nbsp;index,
- int&nbsp;index2)</span></div>
-<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para o caminho mais longo entre ele e a sua localizaÃ§Ã£o anterior.</div>
+<section class="detail" id="minimumSpanningTree(trabalho_ed_mf.Map,int,int)">
+<h3>minimumSpanningTree</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">minimumSpanningTree</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int&nbsp;startIndex,
+ int&nbsp;targetIndex)</span></div>
+<div class="block">Algoritmo de ArvÃ³re geradora de custo mÃ­nimo</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>map</code> - O mapa no qual o bot estÃ¡ a mover-se.</dd>
-<dd><code>index</code> - O Ã­ndice do bot no grafo.</dd>
-<dd><code>index2</code> - O Ã­ndice da localizaÃ§Ã£o anterior do bot no grafo.</dd>
+<dd><code>startIndex</code> - O Ã­ndice do bot no grafo.</dd>
+<dd><code>targetIndex</code> - O Ã­ndice da bandeira inimiga no grafo.</dd>
+<dt>Returns:</dt>
+<dd>O Ã­ndice do prÃ³ximo vÃ©rtice para o qual o bot deve mover-se.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="minKey(trabalho_ed_mf.Map,int[],boolean[])">
+<h3>minKey</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">minKey</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int[]&nbsp;key,
+ boolean[]&nbsp;mstSet)</span></div>
+<div class="block">FunÃ§Ã£o auxiliar para encontrar o vÃ©rtice com a menor chave</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>map</code> - O mapa no qual o bot estÃ¡ a mover-se.</dd>
+<dd><code>key</code> - Array de chaves</dd>
+<dd><code>mstSet</code> - Array de booleans que indica se o vÃ©rtice estÃ¡ na Ã¡rvore geradora de custo mÃ­nimo</dd>
+<dt>Returns:</dt>
+<dd>O Ã­ndice do vÃ©rtice com a menor chave</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="shortestConnectionPath(trabalho_ed_mf.Map,int,int)">
+<h3>shortestConnectionPath</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">shortestConnectionPath</span><wbr><span class="parameters">(<a href="Map.html" title="class in trabalho_ed_mf">Map</a>&nbsp;map,
+ int&nbsp;startIndex,
+ int&nbsp;targetIndex)</span></div>
+<div class="block">Algoritmo de movimentaÃ§Ã£o que move o bot para o caminho mais curto entre ele e a bandeira inimiga.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>map</code> - O mapa no qual o bot estÃ¡ a mover-se.</dd>
+<dd><code>startIndex</code> - O Ã­ndice do bot no grafo.</dd>
+<dd><code>targetIndex</code> - O Ã­ndice da bandeira inimiga no grafo.</dd>
 <dt>Returns:</dt>
 <dd>O Ã­ndice do prÃ³ximo vÃ©rtice para o qual o bot deve mover-se.</dd>
 </dl>

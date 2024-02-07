@@ -75,6 +75,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de dados que a pilha irÃ¡ conter.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;T&gt;</code></dd>
 </dl>
@@ -82,6 +86,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LinkedStack&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;T&gt;</span></div>
+<div class="block">Classe LinkedStack que representa uma pilha usando uma lista encadeada.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -94,7 +99,9 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">LinkedStack</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor padrÃ£o da classe LinkedStack.</div>
+</div>
 </div>
 </section>
 </li>
@@ -112,32 +119,32 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this stack contains no elements.</div>
+<div class="block">Verifica se a pilha estÃ¡ vazia.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LinkedStack.html" title="type parameter in LinkedStack">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#peek()" class="member-name-link">peek</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns without removing the top element of this stack.</div>
+<div class="block">Retorna o elemento no topo da pilha sem removÃª-lo.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LinkedStack.html" title="type parameter in LinkedStack">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pop()" class="member-name-link">pop</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes and returns the top element from this stack.</div>
+<div class="block">Remove e retorna o elemento no topo da pilha.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#push(T)" class="member-name-link">push</a><wbr>(<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&nbsp;element)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds one element to the top of this stack.</div>
+<div class="block">Adiciona um elemento ao topo da pilha.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of elements in this stack.</div>
+<div class="block">Retorna o nÃºmero de elementos na pilha.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a string representation of this stack.</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string da pilha.</div>
 </div>
 </div>
 </div>
@@ -160,6 +167,8 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <section class="detail" id="&lt;init&gt;()">
 <h3>LinkedStack</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LinkedStack</span>()</div>
+<div class="block">Construtor padrÃ£o da classe LinkedStack.
+ Inicializa o contador como 0 e o topo como nulo.</div>
 </section>
 </li>
 </ul>
@@ -174,13 +183,12 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <section class="detail" id="push(T)">
 <h3 id="push(java.lang.Object)">push</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">push</span><wbr><span class="parameters">(<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&nbsp;element)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/StackADT.html#push(T)">StackADT</a></code></span></div>
-<div class="block">Adds one element to the top of this stack.</div>
+<div class="block">Adiciona um elemento ao topo da pilha.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/StackADT.html#push(T)">push</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>element</code> - element to be pushed onto stack</dd>
+<dd><code>element</code> - O elemento a ser adicionado ao topo da pilha.</dd>
 </dl>
 </section>
 </li>
@@ -189,15 +197,14 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <h3>pop</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedStack.html" title="type parameter in LinkedStack">T</a></span>&nbsp;<span class="element-name">pop</span>()
       throws <span class="exceptions"><a href="../Exceptions/EmptyStackException.html" title="class in Exceptions">EmptyStackException</a></span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/StackADT.html#pop()">StackADT</a></code></span></div>
-<div class="block">Removes and returns the top element from this stack.</div>
+<div class="block">Remove e retorna o elemento no topo da pilha.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/StackADT.html#pop()">pop</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>T element removed from the top of the stack</dd>
+<dd>O elemento no topo da pilha.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../Exceptions/EmptyStackException.html" title="class in Exceptions">EmptyStackException</a></code></dd>
+<dd><code><a href="../Exceptions/EmptyStackException.html" title="class in Exceptions">EmptyStackException</a></code> - Se a pilha estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -206,15 +213,14 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <h3>peek</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedStack.html" title="type parameter in LinkedStack">T</a></span>&nbsp;<span class="element-name">peek</span>()
        throws <span class="exceptions"><a href="../Exceptions/EmptyStackException.html" title="class in Exceptions">EmptyStackException</a></span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/StackADT.html#peek()">StackADT</a></code></span></div>
-<div class="block">Returns without removing the top element of this stack.</div>
+<div class="block">Retorna o elemento no topo da pilha sem removÃª-lo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/StackADT.html#peek()">peek</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>T element on top of the stack</dd>
+<dd>O elemento no topo da pilha.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../Exceptions/EmptyStackException.html" title="class in Exceptions">EmptyStackException</a></code></dd>
+<dd><code><a href="../Exceptions/EmptyStackException.html" title="class in Exceptions">EmptyStackException</a></code> - Se a pilha estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -222,13 +228,12 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <section class="detail" id="isEmpty()">
 <h3>isEmpty</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/StackADT.html#isEmpty()">StackADT</a></code></span></div>
-<div class="block">Returns true if this stack contains no elements.</div>
+<div class="block">Verifica se a pilha estÃ¡ vazia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/StackADT.html#isEmpty()">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>boolean whether or not this stack is empty</dd>
+<dd>Verdadeiro se a pilha estiver vazia, falso caso contrÃ¡rio.</dd>
 </dl>
 </section>
 </li>
@@ -236,13 +241,12 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <section class="detail" id="size()">
 <h3>size</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/StackADT.html#size()">StackADT</a></code></span></div>
-<div class="block">Returns the number of elements in this stack.</div>
+<div class="block">Retorna o nÃºmero de elementos na pilha.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/StackADT.html#size()">size</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>int number of elements in this stack</dd>
+<dd>O nÃºmero de elementos na pilha.</dd>
 </dl>
 </section>
 </li>
@@ -250,15 +254,14 @@ implements <a href="../Interfaces/StackADT.html" title="interface in Interfaces"
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/StackADT.html#toString()">StackADT</a></code></span></div>
-<div class="block">Returns a string representation of this stack.</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string da pilha.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/StackADT.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/StackADT.html" title="interface in Interfaces">StackADT</a>&lt;<a href="LinkedStack.html" title="type parameter in LinkedStack">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>String representation of this stack</dd>
+<dd>Uma representaÃ§Ã£o em string da pilha.</dd>
 </dl>
 </section>
 </li>

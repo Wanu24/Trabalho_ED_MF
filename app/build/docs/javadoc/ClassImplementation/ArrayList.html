@@ -75,6 +75,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de elementos que esta lista armazena.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;T&gt;</code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;T&gt;</code></dd>
 </dl>
@@ -86,6 +90,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ArrayList&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;T&gt;, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;T&gt;</span></div>
+<div class="block">Classe ArrayList que implementa ListADT e Iterable.
+ Cada ArrayList tem uma capacidade padrÃ£o, um valor para expansÃ£o, um valor para indicar que um elemento nÃ£o foi encontrado, um Ã­ndice para o final da lista, um array para armazenar os elementos e um contador de modificaÃ§Ãµes.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -100,13 +106,19 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected <a href="ArrayList.html" title="type parameter in ArrayList">T</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#list" class="member-name-link">list</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">O array para armazenar os elementos desta lista.</div>
+</div>
 <div class="col-first odd-row-color"><code>protected int</code></div>
 <div class="col-second odd-row-color"><code><a href="#modCount" class="member-name-link">modCount</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">O contador de modificaÃ§Ãµes nesta lista.</div>
+</div>
 <div class="col-first even-row-color"><code>protected int</code></div>
 <div class="col-second even-row-color"><code><a href="#rear" class="member-name-link">rear</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">O Ã­ndice para o final desta lista.</div>
+</div>
 </div>
 </section>
 </li>
@@ -119,9 +131,13 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ArrayList</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor para a classe ArrayList.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">ArrayList</a><wbr>(int&nbsp;initialCapacity)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Construtor para a classe ArrayList.</div>
+</div>
 </div>
 </section>
 </li>
@@ -139,73 +155,84 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(int,T)" class="member-name-link">add</a><wbr>(int&nbsp;index,
  <a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um elemento em um Ã­ndice especÃ­fico da lista.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(T)" class="member-name-link">add</a><wbr>(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um elemento ao final da lista.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#contains(T)" class="member-name-link">contains</a><wbr>(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;target)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this list contains the specified target
- element.</div>
+<div class="block">Verifica se a lista contÃ©m um elemento especÃ­fico.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#expandCapacity()" class="member-name-link">expandCapacity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Expande a capacidade da lista.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#find(T)" class="member-name-link">find</a><wbr>(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Procura um elemento especÃ­fico na lista.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="type parameter in ArrayList">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#first()" class="member-name-link">first</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a reference to the first element in this list.</div>
+<div class="block">Retorna o primeiro elemento da lista sem removÃª-lo.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="type parameter in ArrayList">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(int)" class="member-name-link">get</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um elemento de um Ã­ndice especÃ­fico da lista.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this list contains no elements.</div>
+<div class="block">Verifica se a lista estÃ¡ vazia.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iterator()" class="member-name-link">iterator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns an iterator for the elements in this list.</div>
+<div class="block">Retorna um iterador para a lista.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="type parameter in ArrayList">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#last()" class="member-name-link">last</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a reference to the last element in this list.</div>
+<div class="block">Retorna o Ãºltimo elemento da lista sem removÃª-lo.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="type parameter in ArrayList">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(T)" class="member-name-link">remove</a><wbr>(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes and returns the specified element from this list.</div>
+<div class="block">Remove e retorna um elemento especÃ­fico da lista.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="type parameter in ArrayList">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeFirst()" class="member-name-link">removeFirst</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes and returns the first element from this list.</div>
+<div class="block">Remove e retorna o primeiro elemento da lista.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="type parameter in ArrayList">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeLast()" class="member-name-link">removeLast</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes and returns the last element from this list.</div>
+<div class="block">Remove e retorna o Ãºltimo elemento da lista.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,T)" class="member-name-link">set</a><wbr>(int&nbsp;index,
  <a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define um elemento em um Ã­ndice especÃ­fico da lista.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of elements in this list.</div>
+<div class="block">Retorna o tamanho da lista.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a string representation of this list.</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string da lista.</div>
 </div>
 </div>
 </div>
@@ -231,18 +258,21 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="rear">
 <h3>rear</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">rear</span></div>
+<div class="block">O Ã­ndice para o final desta lista.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="list">
 <h3>list</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a>[]</span>&nbsp;<span class="element-name">list</span></div>
+<div class="block">O array para armazenar os elementos desta lista.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="modCount">
 <h3>modCount</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">modCount</span></div>
+<div class="block">O contador de modificaÃ§Ãµes nesta lista.</div>
 </section>
 </li>
 </ul>
@@ -257,12 +287,20 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="&lt;init&gt;()">
 <h3>ArrayList</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayList</span>()</div>
+<div class="block">Construtor para a classe ArrayList.
+ Inicializa o final da lista como 0 e o array com a capacidade padrÃ£o.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>ArrayList</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayList</span><wbr><span class="parameters">(int&nbsp;initialCapacity)</span></div>
+<div class="block">Construtor para a classe ArrayList.
+ Inicializa o array com a capacidade inicial fornecida.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>initialCapacity</code> - A capacidade inicial da lista.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -277,19 +315,25 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="expandCapacity()">
 <h3>expandCapacity</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">expandCapacity</span>()</div>
+<div class="block">Expande a capacidade da lista.
+ Cria um novo array com o dobro da capacidade do array atual e copia os elementos do array atual para o novo array.
+ Atualiza o array desta lista para o novo array.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="removeFirst()">
 <h3>removeFirst</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a></span>&nbsp;<span class="element-name">removeFirst</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#removeFirst()">ListADT</a></code></span></div>
-<div class="block">Removes and returns the first element from this list.</div>
+<div class="block">Remove e retorna o primeiro elemento da lista.
+ Se a lista estiver vazia, lanÃ§a uma exceÃ§Ã£o EmptyCollectionException.
+ Remove o elemento do inÃ­cio da lista, move todos os outros elementos para a esquerda e decrementa o Ã­ndice do final da lista.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#removeFirst()">removeFirst</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the first element from this list</dd>
+<dd>O primeiro elemento da lista.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a lista estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -297,13 +341,16 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="removeLast()">
 <h3>removeLast</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a></span>&nbsp;<span class="element-name">removeLast</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#removeLast()">ListADT</a></code></span></div>
-<div class="block">Removes and returns the last element from this list.</div>
+<div class="block">Remove e retorna o Ãºltimo elemento da lista.
+ Se a lista estiver vazia, lanÃ§a uma exceÃ§Ã£o EmptyCollectionException.
+ Remove o elemento do final da lista e decrementa o Ã­ndice do final da lista.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#removeLast()">removeLast</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the last element from this list</dd>
+<dd>O Ãºltimo elemento da lista.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a lista estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -311,13 +358,18 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="remove(T)">
 <h3 id="remove(java.lang.Object)">remove</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#remove(T)">ListADT</a></code></span></div>
-<div class="block">Removes and returns the specified element from this list.</div>
+<div class="block">Remove e retorna um elemento especÃ­fico da lista.
+ Se o elemento nÃ£o for encontrado, lanÃ§a uma exceÃ§Ã£o EmptyCollectionException.
+ Remove o elemento da lista, move todos os elementos Ã  direita do elemento removido para a esquerda e decrementa o Ã­ndice do final da lista.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#remove(T)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>element</code> - the element to be removed from the list</dd>
+<dd><code>element</code> - O elemento a ser removido.</dd>
+<dt>Returns:</dt>
+<dd>O elemento removido.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se o elemento nÃ£o for encontrado na lista.</dd>
 </dl>
 </section>
 </li>
@@ -326,15 +378,15 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <h3>first</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a></span>&nbsp;<span class="element-name">first</span>()
         throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#first()">ListADT</a></code></span></div>
-<div class="block">Returns a reference to the first element in this list.</div>
+<div class="block">Retorna o primeiro elemento da lista sem removÃª-lo.
+ Se a lista estiver vazia, lanÃ§a uma exceÃ§Ã£o EmptyCollectionException.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#first()">first</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>a reference to the first element in this list</dd>
+<dd>O primeiro elemento da lista.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a lista estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -343,15 +395,15 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <h3>last</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a></span>&nbsp;<span class="element-name">last</span>()
        throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#last()">ListADT</a></code></span></div>
-<div class="block">Returns a reference to the last element in this list.</div>
+<div class="block">Retorna o Ãºltimo elemento da lista sem removÃª-lo.
+ Se a lista estiver vazia, lanÃ§a uma exceÃ§Ã£o EmptyCollectionException.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#last()">last</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>a reference to the last element in this list</dd>
+<dd>O Ãºltimo elemento da lista.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a lista estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -359,16 +411,14 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="contains(T)">
 <h3 id="contains(java.lang.Object)">contains</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">contains</span><wbr><span class="parameters">(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;target)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#contains(T)">ListADT</a></code></span></div>
-<div class="block">Returns true if this list contains the specified target
- element.</div>
+<div class="block">Verifica se a lista contÃ©m um elemento especÃ­fico.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#contains(T)">contains</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>target</code> - the target that is being sought in the list</dd>
+<dd><code>target</code> - O elemento a ser verificado.</dd>
 <dt>Returns:</dt>
-<dd>true if the list contains this element</dd>
+<dd>Verdadeiro se a lista contÃ©m o elemento, falso caso contrÃ¡rio.</dd>
 </dl>
 </section>
 </li>
@@ -376,13 +426,12 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="isEmpty()">
 <h3>isEmpty</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#isEmpty()">ListADT</a></code></span></div>
-<div class="block">Returns true if this list contains no elements.</div>
+<div class="block">Verifica se a lista estÃ¡ vazia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#isEmpty()">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>true if this list contains no elements</dd>
+<dd>Verdadeiro se a lista estÃ¡ vazia, falso caso contrÃ¡rio.</dd>
 </dl>
 </section>
 </li>
@@ -390,14 +439,12 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="size()">
 <h3>size</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#size()">ListADT</a></code></span></div>
-<div class="block">Returns the number of elements in this list.</div>
+<div class="block">Retorna o tamanho da lista.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#size()">size</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the integer representation of number of
- elements in this list</dd>
+<dd>O tamanho da lista.</dd>
 </dl>
 </section>
 </li>
@@ -405,15 +452,14 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="iterator()">
 <h3>iterator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#iterator()">ListADT</a></code></span></div>
-<div class="block">Returns an iterator for the elements in this list.</div>
+<div class="block">Retorna um iterador para a lista.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html#iterator()" title="class or interface in java.lang" class="external-link">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#iterator()">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>an iterator over the elements in this list</dd>
+<dd>Um iterador para a lista.</dd>
 </dl>
 </section>
 </li>
@@ -421,21 +467,29 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="find(T)">
 <h3 id="find(java.lang.Object)">find</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">find</span><wbr><span class="parameters">(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;target)</span></div>
+<div class="block">Procura um elemento especÃ­fico na lista.
+ Retorna o Ã­ndice do elemento, ou -1 se o elemento nÃ£o for encontrado.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>target</code> - O elemento a ser procurado.</dd>
+<dt>Returns:</dt>
+<dd>O Ã­ndice do elemento, ou -1 se o elemento nÃ£o for encontrado.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/ListADT.html#toString()">ListADT</a></code></span></div>
-<div class="block">Returns a string representation of this list.</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string da lista.
+ Percorre a lista e concatena cada elemento em uma string.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>a string representation of this list</dd>
+<dd>Uma representaÃ§Ã£o em string da lista.</dd>
 </dl>
 </section>
 </li>
@@ -443,6 +497,13 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <section class="detail" id="add(T)">
 <h3 id="add(java.lang.Object)">add</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</span></div>
+<div class="block">Adiciona um elemento ao final da lista.
+ Se a lista estiver cheia, expande a capacidade da lista.
+ Adiciona o elemento no final da lista e incrementa o Ã­ndice do final da lista.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - O elemento a ser adicionado ao final da lista.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -450,6 +511,15 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <h3 id="add(int,java.lang.Object)">add</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(int&nbsp;index,
  <a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</span></div>
+<div class="block">Adiciona um elemento em um Ã­ndice especÃ­fico da lista.
+ Se o Ã­ndice for invÃ¡lido, lanÃ§a uma exceÃ§Ã£o IndexOutOfBoundsException.
+ Se a lista estiver cheia, expande a capacidade da lista.
+ Move todos os elementos Ã  direita do Ã­ndice para a direita, adiciona o elemento no Ã­ndice e incrementa o Ã­ndice do final da lista.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - O Ã­ndice onde o elemento deve ser adicionado.</dd>
+<dd><code>element</code> - O elemento a ser adicionado.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -457,12 +527,28 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <h3 id="set(int,java.lang.Object)">set</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;index,
  <a href="ArrayList.html" title="type parameter in ArrayList">T</a>&nbsp;element)</span></div>
+<div class="block">Define um elemento em um Ã­ndice especÃ­fico da lista.
+ Se o Ã­ndice for invÃ¡lido, lanÃ§a uma exceÃ§Ã£o IndexOutOfBoundsException.
+ Define o elemento no Ã­ndice especificado.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - O Ã­ndice onde o elemento deve ser definido.</dd>
+<dd><code>element</code> - O elemento a ser definido.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="get(int)">
 <h3>get</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="type parameter in ArrayList">T</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<div class="block">Retorna um elemento de um Ã­ndice especÃ­fico da lista.
+ Se o Ã­ndice for invÃ¡lido, lanÃ§a uma exceÃ§Ã£o IndexOutOfBoundsException.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - O Ã­ndice do elemento a ser retornado.</dd>
+<dt>Returns:</dt>
+<dd>O elemento no Ã­ndice especificado.</dd>
+</dl>
 </section>
 </li>
 </ul>

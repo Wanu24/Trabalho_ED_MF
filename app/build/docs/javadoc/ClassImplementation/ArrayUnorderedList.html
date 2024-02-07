@@ -77,6 +77,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de elemento que esta lista armazena.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;T&gt;</code>, <code><a href="../Interfaces/UnorderedListADT.html" title="interface in Interfaces">UnorderedListADT</a>&lt;T&gt;</code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;T&gt;</code></dd>
 </dl>
@@ -84,6 +88,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ArrayUnorderedList&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="ArrayList.html" title="class in ClassImplementation">ArrayList</a>&lt;T&gt;
 implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Interfaces">UnorderedListADT</a>&lt;T&gt;</span></div>
+<div class="block">Classe ArrayUnorderedList que estende a classe ArrayList e implementa a interface UnorderedListADT.
+ Cada ArrayUnorderedList tem uma lista de elementos genÃ©ricos.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -105,9 +111,13 @@ implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Int
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ArrayUnorderedList</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor para a classe ArrayUnorderedList.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">ArrayUnorderedList</a><wbr>(int&nbsp;initialCapacity)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Construtor para a classe ArrayUnorderedList.</div>
+</div>
 </div>
 </section>
 </li>
@@ -125,13 +135,19 @@ implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Int
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addAfter(T,T)" class="member-name-link">addAfter</a><wbr>(<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;element,
  <a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;target)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um elemento apÃ³s um elemento alvo na lista.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToFront(T)" class="member-name-link">addToFront</a><wbr>(<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;element)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um elemento ao inÃ­cio da lista.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToRear(T)" class="member-name-link">addToRear</a><wbr>(<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;element)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um elemento ao final da lista.</div>
+</div>
 </div>
 </div>
 </div>
@@ -162,12 +178,20 @@ implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Int
 <section class="detail" id="&lt;init&gt;()">
 <h3>ArrayUnorderedList</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayUnorderedList</span>()</div>
+<div class="block">Construtor para a classe ArrayUnorderedList.
+ Inicializa a lista chamando o construtor da classe pai.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>ArrayUnorderedList</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayUnorderedList</span><wbr><span class="parameters">(int&nbsp;initialCapacity)</span></div>
+<div class="block">Construtor para a classe ArrayUnorderedList.
+ Inicializa a lista com a capacidade inicial fornecida, chamando o construtor da classe pai.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>initialCapacity</code> - A capacidade inicial da lista.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -182,9 +206,15 @@ implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Int
 <section class="detail" id="addToFront(T)">
 <h3 id="addToFront(java.lang.Object)">addToFront</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addToFront</span><wbr><span class="parameters">(<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;element)</span></div>
+<div class="block">Adiciona um elemento ao inÃ­cio da lista.
+ Se a lista estiver cheia, expande a capacidade da lista.
+ Desloca os elementos para criar espaÃ§o e adiciona o elemento no inÃ­cio.
+ Incrementa o contador de elementos e o contador de modificaÃ§Ãµes.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/UnorderedListADT.html#addToFront(T)">addToFront</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/UnorderedListADT.html" title="interface in Interfaces">UnorderedListADT</a>&lt;<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>element</code> - O elemento a ser adicionado ao inÃ­cio da lista.</dd>
 </dl>
 </section>
 </li>
@@ -192,9 +222,14 @@ implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Int
 <section class="detail" id="addToRear(T)">
 <h3 id="addToRear(java.lang.Object)">addToRear</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addToRear</span><wbr><span class="parameters">(<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;element)</span></div>
+<div class="block">Adiciona um elemento ao final da lista.
+ Se a lista estiver cheia, expande a capacidade da lista.
+ Adiciona o elemento no final da lista e incrementa o contador de elementos.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/UnorderedListADT.html#addToRear(T)">addToRear</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/UnorderedListADT.html" title="interface in Interfaces">UnorderedListADT</a>&lt;<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>element</code> - O elemento a ser adicionado ao final da lista.</dd>
 </dl>
 </section>
 </li>
@@ -203,9 +238,19 @@ implements <a href="../Interfaces/UnorderedListADT.html" title="interface in Int
 <h3 id="addAfter(java.lang.Object,java.lang.Object)">addAfter</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addAfter</span><wbr><span class="parameters">(<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;element,
  <a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&nbsp;target)</span></div>
+<div class="block">Adiciona um elemento apÃ³s um elemento alvo na lista.
+ Se a lista estiver cheia, expande a capacidade da lista.
+ Procura o elemento alvo na lista e adiciona o novo elemento apÃ³s ele.
+ Se o elemento alvo nÃ£o for encontrado, lanÃ§a uma exceÃ§Ã£o ElementNotFoundException.
+ Incrementa o contador de elementos e o contador de modificaÃ§Ãµes.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/UnorderedListADT.html#addAfter(T,T)">addAfter</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/UnorderedListADT.html" title="interface in Interfaces">UnorderedListADT</a>&lt;<a href="ArrayUnorderedList.html" title="type parameter in ArrayUnorderedList">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>element</code> - O elemento a ser adicionado.</dd>
+<dd><code>target</code> - O elemento alvo apÃ³s o qual o novo elemento serÃ¡ adicionado.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code> - Se o elemento alvo nÃ£o for encontrado na lista.</dd>
 </dl>
 </section>
 </li>

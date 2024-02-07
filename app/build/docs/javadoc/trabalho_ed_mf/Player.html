@@ -89,16 +89,10 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,trabalho_ed_mf.Flag)" class="member-name-link">Player</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="Flag.html" title="class in trabalho_ed_mf">Flag</a>&nbsp;flag)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,trabalho_ed_mf.Base)" class="member-name-link">Player</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Base.html" title="class in trabalho_ed_mf">Base</a>&nbsp;base)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor para criar um jogador com um nome e uma bandeira.</div>
-</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,trabalho_ed_mf.Flag,ClassImplementation.LinkedList)" class="member-name-link">Player</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="Flag.html" title="class in trabalho_ed_mf">Flag</a>&nbsp;flag,
- <a href="../ClassImplementation/LinkedList.html" title="class in ClassImplementation">LinkedList</a>&lt;<a href="Bot.html" title="class in trabalho_ed_mf">Bot</a>&gt;&nbsp;bots)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Construtor para criar um jogador com um nome, uma bandeira e uma fila de bots.</div>
+<div class="block">Construtor da classe Player.</div>
 </div>
 </div>
 </section>
@@ -119,20 +113,20 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adiciona um bot Ã  fila de bots do jogador.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ClassImplementation/LinkedList.html" title="class in ClassImplementation">LinkedList</a>&lt;<a href="Bot.html" title="class in trabalho_ed_mf">Bot</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBots()" class="member-name-link">getBots</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Base.html" title="class in trabalho_ed_mf">Base</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBase()" class="member-name-link">getBase</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">ObtÃ©m a fila de bots do jogador.</div>
+<div class="block">ObtÃ©m a base do jogador.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Flag.html" title="class in trabalho_ed_mf">Flag</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlag()" class="member-name-link">getFlag</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ClassImplementation/LinkedList.html" title="class in ClassImplementation">LinkedList</a>&lt;<a href="Bot.html" title="class in trabalho_ed_mf">Bot</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBots()" class="member-name-link">getBots</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">ObtÃ©m a bandeira associada ao jogador.</div>
+<div class="block">ObtÃ©m a fila de bots do jogador.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Bot.html" title="class in trabalho_ed_mf">Bot</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastBot()" class="member-name-link">getLastBot</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">ObtÃ©m o Ãºltimo bot na fila do jogador.</div>
+<div class="block">ObtÃ©m o Ãºltimo bot da fila de bots do jogador.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
@@ -150,14 +144,14 @@ loadScripts(document, 'script');</script>
 <div class="block">Remove um bot da fila de bots do jogador.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBots(ClassImplementation.LinkedList)" class="member-name-link">setBots</a><wbr>(<a href="../ClassImplementation/LinkedList.html" title="class in ClassImplementation">LinkedList</a>&lt;<a href="Bot.html" title="class in trabalho_ed_mf">Bot</a>&gt;&nbsp;bots)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBase(trabalho_ed_mf.Base)" class="member-name-link">setBase</a><wbr>(<a href="Base.html" title="class in trabalho_ed_mf">Base</a>&nbsp;base)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Define a fila de bots do jogador.</div>
+<div class="block">Define a base do jogador.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFlag(trabalho_ed_mf.Flag)" class="member-name-link">setFlag</a><wbr>(<a href="Flag.html" title="class in trabalho_ed_mf">Flag</a>&nbsp;flag)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBots(ClassImplementation.LinkedList)" class="member-name-link">setBots</a><wbr>(<a href="../ClassImplementation/LinkedList.html" title="class in ClassImplementation">LinkedList</a>&lt;<a href="Bot.html" title="class in trabalho_ed_mf">Bot</a>&gt;&nbsp;bots)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Define a bandeira associada ao jogador.</div>
+<div class="block">Define a fila de bots do jogador.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setName(java.lang.String)" class="member-name-link">setName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
@@ -188,30 +182,15 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,trabalho_ed_mf.Flag)">
+<section class="detail" id="&lt;init&gt;(java.lang.String,trabalho_ed_mf.Base)">
 <h3>Player</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Player</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="Flag.html" title="class in trabalho_ed_mf">Flag</a>&nbsp;flag)</span></div>
-<div class="block">Construtor para criar um jogador com um nome e uma bandeira.</div>
+ <a href="Base.html" title="class in trabalho_ed_mf">Base</a>&nbsp;base)</span></div>
+<div class="block">Construtor da classe Player.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>name</code> - Nome do jogador.</dd>
-<dd><code>flag</code> - Bandeira associada ao jogador.</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,trabalho_ed_mf.Flag,ClassImplementation.LinkedList)">
-<h3>Player</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Player</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="Flag.html" title="class in trabalho_ed_mf">Flag</a>&nbsp;flag,
- <a href="../ClassImplementation/LinkedList.html" title="class in ClassImplementation">LinkedList</a>&lt;<a href="Bot.html" title="class in trabalho_ed_mf">Bot</a>&gt;&nbsp;bots)</span></div>
-<div class="block">Construtor para criar um jogador com um nome, uma bandeira e uma fila de bots.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - Nome do jogador.</dd>
-<dd><code>flag</code> - Bandeira associada ao jogador.</dd>
-<dd><code>bots</code> - Fila de bots associada ao jogador.</dd>
+<dd><code>name</code> - </dd>
+<dd><code>base</code> - </dd>
 </dl>
 </section>
 </li>
@@ -223,6 +202,28 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getBase()">
+<h3>getBase</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Base.html" title="class in trabalho_ed_mf">Base</a></span>&nbsp;<span class="element-name">getBase</span>()</div>
+<div class="block">ObtÃ©m a base do jogador.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Base do jogador.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setBase(trabalho_ed_mf.Base)">
+<h3>setBase</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBase</span><wbr><span class="parameters">(<a href="Base.html" title="class in trabalho_ed_mf">Base</a>&nbsp;base)</span></div>
+<div class="block">Define a base do jogador.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>base</code> - Nova base do jogador.</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="addBot(trabalho_ed_mf.Bot)">
 <h3>addBot</h3>
@@ -290,28 +291,6 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getFlag()">
-<h3>getFlag</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Flag.html" title="class in trabalho_ed_mf">Flag</a></span>&nbsp;<span class="element-name">getFlag</span>()</div>
-<div class="block">ObtÃ©m a bandeira associada ao jogador.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>Bandeira do jogador.</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setFlag(trabalho_ed_mf.Flag)">
-<h3>setFlag</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setFlag</span><wbr><span class="parameters">(<a href="Flag.html" title="class in trabalho_ed_mf">Flag</a>&nbsp;flag)</span></div>
-<div class="block">Define a bandeira associada ao jogador.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>flag</code> - Nova bandeira do jogador.</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="getPlayerColour()">
 <h3>getPlayerColour</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PlayerColour.html" title="enum class in trabalho_ed_mf">PlayerColour</a></span>&nbsp;<span class="element-name">getPlayerColour</span>()</div>
@@ -339,10 +318,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getLastBot()">
 <h3>getLastBot</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Bot.html" title="class in trabalho_ed_mf">Bot</a></span>&nbsp;<span class="element-name">getLastBot</span>()</div>
-<div class="block">ObtÃ©m o Ãºltimo bot na fila do jogador.</div>
+<div class="block">ObtÃ©m o Ãºltimo bot da fila de bots do jogador.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Ãšltimo bot na fila do jogador.</dd>
+<dd>Ãšltimo bot da fila de bots do jogador.</dd>
 </dl>
 </section>
 </li>

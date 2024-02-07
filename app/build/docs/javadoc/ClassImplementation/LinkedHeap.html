@@ -77,6 +77,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de elementos que este heap contÃ©m.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeADT</a>&lt;T&gt;</code>, <code><a href="../Interfaces/HeapADT.html" title="interface in Interfaces">HeapADT</a>&lt;T&gt;</code></dd>
 </dl>
@@ -84,6 +88,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LinkedHeap&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="LinkedBinaryTree.html" title="class in ClassImplementation">LinkedBinaryTree</a>&lt;T&gt;
 implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">HeapADT</a>&lt;T&gt;</span></div>
+<div class="block">Classe LinkedHeap que estende LinkedBinaryTree e implementa HeapADT.
+ Cada LinkedHeap tem um lastNode, que Ã© o Ãºltimo nÃ³ que foi adicionado ao heap.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -98,7 +104,9 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="HeapNode.html" title="class in ClassImplementation">HeapNode</a>&lt;<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#lastNode" class="member-name-link">lastNode</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">O Ãºltimo nÃ³ que foi adicionado ao heap.</div>
+</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-ClassImplementation.LinkedBinaryTree">Fields inherited from class&nbsp;ClassImplementation.<a href="LinkedBinaryTree.html" title="class in ClassImplementation">LinkedBinaryTree</a></h3>
@@ -114,7 +122,9 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">LinkedHeap</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor para a classe LinkedHeap.</div>
+</div>
 </div>
 </section>
 </li>
@@ -132,21 +142,17 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addElement(T)" class="member-name-link">addElement</a><wbr>(<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds the specified element to this heap in the 
- appropriate position according to its key value
- Note that equal elements are added to the right.</div>
+<div class="block">Adiciona um elemento ao heap.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findMin()" class="member-name-link">findMin</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a reference to the element with the lowest value in 
- this heap.</div>
+<div class="block">Retorna o elemento mÃ­nimo no heap sem removÃª-lo.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMin()" class="member-name-link">removeMin</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Remove the element with the lowest value in this heap and
- returns a reference to it.</div>
+<div class="block">Remove e retorna o elemento mÃ­nimo do heap.</div>
 </div>
 </div>
 </div>
@@ -175,6 +181,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <section class="detail" id="lastNode">
 <h3>lastNode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="HeapNode.html" title="class in ClassImplementation">HeapNode</a>&lt;<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&gt;</span>&nbsp;<span class="element-name">lastNode</span></div>
+<div class="block">O Ãºltimo nÃ³ que foi adicionado ao heap.</div>
 </section>
 </li>
 </ul>
@@ -189,6 +196,8 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <section class="detail" id="&lt;init&gt;()">
 <h3>LinkedHeap</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LinkedHeap</span>()</div>
+<div class="block">Construtor para a classe LinkedHeap.
+ Chama o construtor da superclasse.</div>
 </section>
 </li>
 </ul>
@@ -203,14 +212,16 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <section class="detail" id="addElement(T)">
 <h3 id="addElement(java.lang.Object)">addElement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addElement</span><wbr><span class="parameters">(<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&nbsp;obj)</span></div>
-<div class="block">Adds the specified element to this heap in the 
- appropriate position according to its key value
- Note that equal elements are added to the right.</div>
+<div class="block">Adiciona um elemento ao heap.
+ Se o heap estiver vazio, a raiz se torna o novo nÃ³.
+ Caso contrÃ¡rio, o novo nÃ³ Ã© adicionado como filho do prÃ³ximo nÃ³ pai.
+ O lastNode Ã© atualizado para o novo nÃ³.
+ Se o heap tiver mais de um nÃ³ apÃ³s a adiÃ§Ã£o, o heap Ã© reorganizado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/HeapADT.html#addElement(T)">addElement</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/HeapADT.html" title="interface in Interfaces">HeapADT</a>&lt;<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>obj</code> - the element to be added to this head</dd>
+<dd><code>obj</code> - O elemento a ser adicionado ao heap.</dd>
 </dl>
 </section>
 </li>
@@ -219,17 +230,17 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <h3>removeMin</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a></span>&nbsp;<span class="element-name">removeMin</span>()
             throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block">Remove the element with the lowest value in this heap and
- returns a reference to it.  
- Throws an EmptyCollectionException if the heap is empty.</div>
+<div class="block">Remove e retorna o elemento mÃ­nimo do heap.
+ Se o heap estiver vazio, uma EmptyCollectionException Ã© lanÃ§ada.
+ Se o heap tiver apenas um nÃ³, a raiz e o lastNode sÃ£o definidos como nulos.
+ Caso contrÃ¡rio, a raiz Ã© substituÃ­da pelo Ãºltimo nÃ³ e o heap Ã© reorganizado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/HeapADT.html#removeMin()">removeMin</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/HeapADT.html" title="interface in Interfaces">HeapADT</a>&lt;<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the element with the lowest value in this heap</dd>
+<dd>O elemento mÃ­nimo do heap.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - if an empty collection 
-                                   exception occurs</dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se o heap estiver vazio.</dd>
 </dl>
 </section>
 </li>
@@ -237,15 +248,12 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <section class="detail" id="findMin()">
 <h3>findMin</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a></span>&nbsp;<span class="element-name">findMin</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/HeapADT.html#findMin()">HeapADT</a></code></span></div>
-<div class="block">Returns a reference to the element with the lowest value in 
- this heap.</div>
+<div class="block">Retorna o elemento mÃ­nimo no heap sem removÃª-lo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/HeapADT.html#findMin()">findMin</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/HeapADT.html" title="interface in Interfaces">HeapADT</a>&lt;<a href="LinkedHeap.html" title="type parameter in LinkedHeap">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>a reference to the element with the lowest value 
- in this heap</dd>
+<dd>O elemento mÃ­nimo no heap.</dd>
 </dl>
 </section>
 </li>

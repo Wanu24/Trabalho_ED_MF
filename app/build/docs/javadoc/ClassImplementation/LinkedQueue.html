@@ -75,6 +75,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de dados que a fila irÃ¡ conter.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;T&gt;</code></dd>
 </dl>
@@ -82,6 +86,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LinkedQueue&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;T&gt;</span></div>
+<div class="block">Classe LinkedQueue que representa uma fila usando uma lista encadeada.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -94,7 +99,9 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">LinkedQueue</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor padrÃ£o da classe LinkedQueue.</div>
+</div>
 </div>
 </section>
 </li>
@@ -112,40 +119,42 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dequeue()" class="member-name-link">dequeue</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes and returns the element at the front of
- this queue.</div>
+<div class="block">Remove e retorna o elemento no inÃ­cio da fila.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enqueue(T)" class="member-name-link">enqueue</a><wbr>(<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&nbsp;element)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds one element to the rear of this queue.</div>
+<div class="block">Adiciona um elemento ao fim da fila.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#first()" class="member-name-link">first</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns without removing the element at the front of
- this queue.</div>
+<div class="block">Retorna o elemento no inÃ­cio da fila sem removÃª-lo.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Node.html" title="class in ClassImplementation">Node</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFront()" class="member-name-link">getFront</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o nÃ³ no inÃ­cio da fila.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Node.html" title="class in ClassImplementation">Node</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRear()" class="member-name-link">getRear</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o nÃ³ no fim da fila.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this queue contains no elements.</div>
+<div class="block">Verifica se a fila estÃ¡ vazia.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of elements in this queue.</div>
+<div class="block">Retorna o nÃºmero de elementos na fila.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a string representation of this queue.</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string da fila.</div>
 </div>
 </div>
 </div>
@@ -168,6 +177,8 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="&lt;init&gt;()">
 <h3>LinkedQueue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LinkedQueue</span>()</div>
+<div class="block">Construtor padrÃ£o da classe LinkedQueue.
+ Inicializa o contador como 0 e o inÃ­cio e o fim da fila como nulos.</div>
 </section>
 </li>
 </ul>
@@ -182,14 +193,12 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="enqueue(T)">
 <h3 id="enqueue(java.lang.Object)">enqueue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">enqueue</span><wbr><span class="parameters">(<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&nbsp;element)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/QueueADT.html#enqueue(T)">QueueADT</a></code></span></div>
-<div class="block">Adds one element to the rear of this queue.</div>
+<div class="block">Adiciona um elemento ao fim da fila.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#enqueue(T)">enqueue</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>element</code> - the element to be added to
- the rear of this queue</dd>
+<dd><code>element</code> - O elemento a ser adicionado ao fim da fila.</dd>
 </dl>
 </section>
 </li>
@@ -198,16 +207,14 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <h3>dequeue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a></span>&nbsp;<span class="element-name">dequeue</span>()
           throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/QueueADT.html#dequeue()">QueueADT</a></code></span></div>
-<div class="block">Removes and returns the element at the front of
- this queue.</div>
+<div class="block">Remove e retorna o elemento no inÃ­cio da fila.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#dequeue()">dequeue</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the element at the front of this queue</dd>
+<dd>O elemento no inÃ­cio da fila.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a fila estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -215,14 +222,14 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="first()">
 <h3>first</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a></span>&nbsp;<span class="element-name">first</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/QueueADT.html#first()">QueueADT</a></code></span></div>
-<div class="block">Returns without removing the element at the front of
- this queue.</div>
+<div class="block">Retorna o elemento no inÃ­cio da fila sem removÃª-lo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#first()">first</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the first element in this queue</dd>
+<dd>O elemento no inÃ­cio da fila.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a fila estiver vazia.</dd>
 </dl>
 </section>
 </li>
@@ -230,13 +237,12 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="isEmpty()">
 <h3>isEmpty</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/QueueADT.html#isEmpty()">QueueADT</a></code></span></div>
-<div class="block">Returns true if this queue contains no elements.</div>
+<div class="block">Verifica se a fila estÃ¡ vazia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#isEmpty()">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>true if this queue is empty</dd>
+<dd>Verdadeiro se a fila estiver vazia, falso caso contrÃ¡rio.</dd>
 </dl>
 </section>
 </li>
@@ -244,14 +250,12 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="size()">
 <h3>size</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/QueueADT.html#size()">QueueADT</a></code></span></div>
-<div class="block">Returns the number of elements in this queue.</div>
+<div class="block">Retorna o nÃºmero de elementos na fila.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#size()">size</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>the integer representation of the size
- of this queue</dd>
+<dd>O nÃºmero de elementos na fila.</dd>
 </dl>
 </section>
 </li>
@@ -259,15 +263,14 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/QueueADT.html#toString()">QueueADT</a></code></span></div>
-<div class="block">Returns a string representation of this queue.</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string da fila.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>the string representation of this queue</dd>
+<dd>Uma representaÃ§Ã£o em string da fila.</dd>
 </dl>
 </section>
 </li>
@@ -275,12 +278,22 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <section class="detail" id="getFront()">
 <h3>getFront</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Node.html" title="class in ClassImplementation">Node</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</span>&nbsp;<span class="element-name">getFront</span>()</div>
+<div class="block">Retorna o nÃ³ no inÃ­cio da fila.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O nÃ³ no inÃ­cio da fila.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getRear()">
 <h3>getRear</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Node.html" title="class in ClassImplementation">Node</a>&lt;<a href="LinkedQueue.html" title="type parameter in LinkedQueue">T</a>&gt;</span>&nbsp;<span class="element-name">getRear</span>()</div>
+<div class="block">Retorna o nÃ³ no fim da fila.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O nÃ³ no fim da fila.</dd>
+</dl>
 </section>
 </li>
 </ul>

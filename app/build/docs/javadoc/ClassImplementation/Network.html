@@ -77,6 +77,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de dados que os vÃ©rtices no grafo irÃ£o conter.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;T&gt;</code>, <code><a href="../Interfaces/NetworkADT.html" title="interface in Interfaces">NetworkADT</a>&lt;T&gt;</code></dd>
 </dl>
@@ -84,6 +88,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Network&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;T&gt;
 implements <a href="../Interfaces/NetworkADT.html" title="interface in Interfaces">NetworkADT</a>&lt;T&gt;</span></div>
+<div class="block">Classe Network que estende a classe Graph e implementa a interface NetworkADT.
+ Esta classe representa uma rede ou grafo com pesos nas arestas.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -105,7 +111,9 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Network</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor da classe Network.</div>
+</div>
 </div>
 </section>
 </li>
@@ -124,93 +132,137 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(int,int,double)" class="member-name-link">addEdge</a><wbr>(int&nbsp;index1,
  int&nbsp;index2,
  double&nbsp;weight)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona uma aresta entre dois Ã­ndices com um peso especÃ­fico.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(T,T)" class="member-name-link">addEdge</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex1,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex2)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Inserts an edge between two vertices of the graph.</div>
+<div class="block">Adiciona uma aresta entre dois vÃ©rtices.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(T,T,double)" class="member-name-link">addEdge</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex1,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex2,
  double&nbsp;weight)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona uma aresta entre dois vÃ©rtices com um peso especÃ­fico.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdgeDiretional(int,int,double)" class="member-name-link">addEdgeDiretional</a><wbr>(int&nbsp;index1,
  int&nbsp;index2,
  double&nbsp;weight)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona uma aresta direcional entre dois Ã­ndices com um peso especÃ­fico.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex()" class="member-name-link">addVertex</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um vÃ©rtice ao grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex(T)" class="member-name-link">addVertex</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um vÃ©rtice ao grafo.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayList.html" title="class in ClassImplementation">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dijkstraAlgorithm(int,int)" class="member-name-link">dijkstraAlgorithm</a><wbr>(int&nbsp;startIndex,
  int&nbsp;finalIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois vÃ©rtices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#expandCapacity()" class="member-name-link">expandCapacity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Expande a capacidade da matriz de adjacÃªncia e do array de vÃ©rtices.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double[][]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAdjMatrix()" class="member-name-link">getAdjMatrix</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected int[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEdgeWithWeightOf(double,boolean%5B%5D)" class="member-name-link">getEdgeWithWeightOf</a><wbr>(double&nbsp;weight,
  boolean[]&nbsp;visited)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o Ã­ndice do vÃ©rtice adjacente com um peso especÃ­fico.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIndexOfAdjVertexWithWeightOf(boolean%5B%5D,double%5B%5D,double)" class="member-name-link">getIndexOfAdjVertexWithWeightOf</a><wbr>(boolean[]&nbsp;visited,
  double[]&nbsp;pathWeight,
  double&nbsp;weight)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o Ã­ndice do vÃ©rtice adjacente com um peso especÃ­fico.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEdge(int,int)" class="member-name-link">hasEdge</a><wbr>(int&nbsp;startIndex,
  int&nbsp;targetIndex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se os vÃ©rtices sÃ£o conectados</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorBFS(int)" class="member-name-link">iteratorBFS</a><wbr>(int&nbsp;startIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que realiza uma busca em largura a partir de um Ã­ndice inicial.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorBFS(T)" class="member-name-link">iteratorBFS</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que realiza uma busca em largura a partir de um vÃ©rtice inicial.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorDFS(int)" class="member-name-link">iteratorDFS</a><wbr>(int&nbsp;startIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que realiza uma busca em profundidade a partir de um Ã­ndice inicial.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorDFS(T)" class="member-name-link">iteratorDFS</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que realiza uma busca em profundidade a partir de um vÃ©rtice inicial.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPath(int,int)" class="member-name-link">iteratorShortestPath</a><wbr>(int&nbsp;startIndex,
  int&nbsp;targetIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois vÃ©rtices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPath(T,T)" class="member-name-link">iteratorShortestPath</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;targetVertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois vÃ©rtices.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPathIndices(int,int)" class="member-name-link">iteratorShortestPathIndices</a><wbr>(int&nbsp;startIndex,
  int&nbsp;targetIndex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois Ã­ndices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Network.html" title="class in ClassImplementation">Network</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mstNetwork()" class="member-name-link">mstNetwork</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calcula uma Ã¡rvore geradora mÃ­nima da rede original.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;index1,
  int&nbsp;index2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove uma aresta entre dois Ã­ndices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(T,T)" class="member-name-link">removeEdge</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex1,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove uma aresta entre dois vÃ©rtices.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(int)" class="member-name-link">removeVertex</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove um vÃ©rtice do grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(T)" class="member-name-link">removeVertex</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove um vÃ©rtice do grafo.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shortestPathWeight(int,int)" class="member-name-link">shortestPathWeight</a><wbr>(int&nbsp;startIndex,
  int&nbsp;targetIndex)</code></div>
@@ -218,10 +270,14 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shortestPathWeight(T,T)" class="member-name-link">shortestPathWeight</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;targetVertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o peso do caminho mais curto entre dois vÃ©rtices.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna uma representaÃ§Ã£o em string do grafo.</div>
+</div>
 </div>
 </div>
 </div>
@@ -249,6 +305,8 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="&lt;init&gt;()">
 <h3>Network</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Network</span>()</div>
+<div class="block">Construtor da classe Network.
+ Inicializa a matriz de adjacÃªncia e o array de vÃ©rtices.</div>
 </section>
 </li>
 </ul>
@@ -269,11 +327,14 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Retorna uma representaÃ§Ã£o em string do grafo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>Uma representaÃ§Ã£o em string do grafo.</dd>
 </dl>
 </section>
 </li>
@@ -283,6 +344,13 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(int&nbsp;index1,
  int&nbsp;index2,
  double&nbsp;weight)</span></div>
+<div class="block">Adiciona uma aresta entre dois Ã­ndices com um peso especÃ­fico.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index1</code> - O Ã­ndice do primeiro vÃ©rtice.</dd>
+<dd><code>index2</code> - O Ã­ndice do segundo vÃ©rtice.</dd>
+<dd><code>weight</code> - O peso da aresta.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -291,6 +359,13 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdgeDiretional</span><wbr><span class="parameters">(int&nbsp;index1,
  int&nbsp;index2,
  double&nbsp;weight)</span></div>
+<div class="block">Adiciona uma aresta direcional entre dois Ã­ndices com um peso especÃ­fico.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index1</code> - O Ã­ndice do primeiro vÃ©rtice.</dd>
+<dd><code>index2</code> - O Ã­ndice do segundo vÃ©rtice.</dd>
+<dd><code>weight</code> - O peso da aresta.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -298,9 +373,13 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3>removeEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(int&nbsp;index1,
  int&nbsp;index2)</span></div>
+<div class="block">Remove uma aresta entre dois Ã­ndices.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#removeEdge(int,int)">removeEdge</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>index1</code> - O Ã­ndice do primeiro vÃ©rtice.</dd>
+<dd><code>index2</code> - O Ã­ndice do segundo vÃ©rtice.</dd>
 </dl>
 </section>
 </li>
@@ -310,9 +389,14 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex1,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex2,
  double&nbsp;weight)</span></div>
+<div class="block">Adiciona uma aresta entre dois vÃ©rtices com um peso especÃ­fico.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/NetworkADT.html#addEdge(T,T,double)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/NetworkADT.html" title="interface in Interfaces">NetworkADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex1</code> - O primeiro vÃ©rtice.</dd>
+<dd><code>vertex2</code> - O segundo vÃ©rtice.</dd>
+<dd><code>weight</code> - O peso da aresta.</dd>
 </dl>
 </section>
 </li>
@@ -321,16 +405,15 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3 id="addEdge(java.lang.Object,java.lang.Object)">addEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex1,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex2)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="Graph.html#addEdge(T,T)">Graph</a></code></span></div>
-<div class="block">Inserts an edge between two vertices of the graph.</div>
+<div class="block">Adiciona uma aresta entre dois vÃ©rtices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#addEdge(T,T)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#addEdge(T,T)">addEdge</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>vertex1</code> - the first vertex</dd>
-<dd><code>vertex2</code> - the second vertex</dd>
+<dd><code>vertex1</code> - O primeiro vÃ©rtice.</dd>
+<dd><code>vertex2</code> - O segundo vÃ©rtice.</dd>
 </dl>
 </section>
 </li>
@@ -339,11 +422,15 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3 id="removeEdge(java.lang.Object,java.lang.Object)">removeEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex1,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex2)</span></div>
+<div class="block">Remove uma aresta entre dois vÃ©rtices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#removeEdge(T,T)">removeEdge</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#removeEdge(T,T)">removeEdge</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex1</code> - O primeiro vÃ©rtice.</dd>
+<dd><code>vertex2</code> - O segundo vÃ©rtice.</dd>
 </dl>
 </section>
 </li>
@@ -351,17 +438,22 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="addVertex()">
 <h3>addVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span>()</div>
+<div class="block">Adiciona um vÃ©rtice ao grafo.
+ Verifica se o array de vÃ©rtices estÃ¡ cheio e expande-o se necessÃ¡rio.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="addVertex(T)">
 <h3 id="addVertex(java.lang.Object)">addVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex)</span></div>
+<div class="block">Adiciona um vÃ©rtice ao grafo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#addVertex(T)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#addVertex(T)">addVertex</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - O vÃ©rtice a ser adicionado.</dd>
 </dl>
 </section>
 </li>
@@ -369,9 +461,12 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="removeVertex(int)">
 <h3>removeVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<div class="block">Remove um vÃ©rtice do grafo.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#removeVertex(int)">removeVertex</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>index</code> - O Ã­ndice do vÃ©rtice a ser removido.</dd>
 </dl>
 </section>
 </li>
@@ -379,11 +474,14 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="removeVertex(T)">
 <h3 id="removeVertex(java.lang.Object)">removeVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex)</span></div>
+<div class="block">Remove um vÃ©rtice do grafo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#removeVertex(T)">removeVertex</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#removeVertex(T)">removeVertex</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - O vÃ©rtice a ser removido.</dd>
 </dl>
 </section>
 </li>
@@ -391,17 +489,29 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="iteratorDFS(int)">
 <h3>iteratorDFS</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorDFS</span><wbr><span class="parameters">(int&nbsp;startIndex)</span></div>
+<div class="block">Retorna um iterador que realiza uma busca em profundidade a partir de um Ã­ndice inicial.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - O Ã­ndice inicial para a busca.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que realiza uma busca em profundidade.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="iteratorDFS(T)">
 <h3 id="iteratorDFS(java.lang.Object)">iteratorDFS</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorDFS</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex)</span></div>
+<div class="block">Retorna um iterador que realiza uma busca em profundidade a partir de um vÃ©rtice inicial.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorDFS(T)">iteratorDFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#iteratorDFS(T)">iteratorDFS</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O vÃ©rtice inicial para a busca.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que realiza uma busca em profundidade.</dd>
 </dl>
 </section>
 </li>
@@ -409,17 +519,29 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="iteratorBFS(int)">
 <h3>iteratorBFS</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorBFS</span><wbr><span class="parameters">(int&nbsp;startIndex)</span></div>
+<div class="block">Retorna um iterador que realiza uma busca em largura a partir de um Ã­ndice inicial.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - O Ã­ndice inicial para a busca.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que realiza uma busca em largura.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="iteratorBFS(T)">
 <h3 id="iteratorBFS(java.lang.Object)">iteratorBFS</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorBFS</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex)</span></div>
+<div class="block">Retorna um iterador que realiza uma busca em largura a partir de um vÃ©rtice inicial.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorBFS(T)">iteratorBFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#iteratorBFS(T)">iteratorBFS</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O vÃ©rtice inicial para a busca.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que realiza uma busca em largura.</dd>
 </dl>
 </section>
 </li>
@@ -428,9 +550,15 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3>iteratorShortestPathIndices</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPathIndices</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;targetIndex)</span></div>
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois Ã­ndices.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#iteratorShortestPathIndices(int,int)">iteratorShortestPathIndices</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - O Ã­ndice inicial do caminho.</dd>
+<dd><code>targetIndex</code> - O Ã­ndice final do caminho.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto.</dd>
 </dl>
 </section>
 </li>
@@ -440,6 +568,15 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getIndexOfAdjVertexWithWeightOf</span><wbr><span class="parameters">(boolean[]&nbsp;visited,
  double[]&nbsp;pathWeight,
  double&nbsp;weight)</span></div>
+<div class="block">Retorna o Ã­ndice do vÃ©rtice adjacente com um peso especÃ­fico.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>visited</code> - Um array de booleanos que indica se um vÃ©rtice foi visitado.</dd>
+<dd><code>pathWeight</code> - Um array de pesos.</dd>
+<dd><code>weight</code> - O peso a ser procurado.</dd>
+<dt>Returns:</dt>
+<dd>O Ã­ndice do vÃ©rtice adjacente com um peso especÃ­fico.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -447,6 +584,14 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3>dijkstraAlgorithm</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayList.html" title="class in ClassImplementation">ArrayList</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">dijkstraAlgorithm</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;finalIndex)</span></div>
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois vÃ©rtices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - O vÃ©rtice inicial do caminho.</dd>
+<dd><code>finalIndex</code> - O vÃ©rtice final do caminho.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -454,9 +599,15 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3>iteratorShortestPath</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPath</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;targetIndex)</span></div>
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois vÃ©rtices.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#iteratorShortestPath(int,int)">iteratorShortestPath</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - vÃ©rtice inicial do caminho.</dd>
+<dd><code>targetIndex</code> - O vÃ©rtice final do caminho.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto.</dd>
 </dl>
 </section>
 </li>
@@ -465,11 +616,17 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3 id="iteratorShortestPath(java.lang.Object,java.lang.Object)">iteratorShortestPath</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPath</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;targetVertex)</span></div>
+<div class="block">Retorna um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto entre dois vÃ©rtices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorShortestPath(T,T)">iteratorShortestPath</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="Graph.html#iteratorShortestPath(T,T)">iteratorShortestPath</a></code>&nbsp;in class&nbsp;<code><a href="Graph.html" title="class in ClassImplementation">Graph</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O vÃ©rtice inicial do caminho.</dd>
+<dd><code>targetVertex</code> - O vÃ©rtice final do caminho.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador que contÃ©m os Ã­ndices dos vÃ©rtices no caminho mais curto.</dd>
 </dl>
 </section>
 </li>
@@ -485,9 +642,15 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3 id="shortestPathWeight(java.lang.Object,java.lang.Object)">shortestPathWeight</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">shortestPathWeight</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex,
  <a href="Network.html" title="type parameter in Network">T</a>&nbsp;targetVertex)</span></div>
+<div class="block">Retorna o peso do caminho mais curto entre dois vÃ©rtices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/NetworkADT.html#shortestPathWeight(T,T)">shortestPathWeight</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/NetworkADT.html" title="interface in Interfaces">NetworkADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O vÃ©rtice inicial do caminho.</dd>
+<dd><code>targetVertex</code> - O vÃ©rtice final do caminho.</dd>
+<dt>Returns:</dt>
+<dd>O peso do caminho mais curto.</dd>
 </dl>
 </section>
 </li>
@@ -495,6 +658,11 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <section class="detail" id="mstNetwork()">
 <h3>mstNetwork</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Network.html" title="class in ClassImplementation">Network</a></span>&nbsp;<span class="element-name">mstNetwork</span>()</div>
+<div class="block">Calcula uma Ã¡rvore geradora mÃ­nima da rede original.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Uma nova rede que Ã© uma Ã¡rvore geradora mÃ­nima.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -502,12 +670,25 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3>getEdgeWithWeightOf</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">getEdgeWithWeightOf</span><wbr><span class="parameters">(double&nbsp;weight,
  boolean[]&nbsp;visited)</span></div>
+<div class="block">Retorna o Ã­ndice do vÃ©rtice adjacente com um peso especÃ­fico.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>weight</code> - O peso a ser procurado.</dd>
+<dd><code>visited</code> - Um array de booleanos que indica se um vÃ©rtice foi visitado.</dd>
+<dt>Returns:</dt>
+<dd>O Ã­ndice do vÃ©rtice adjacente com um peso especÃ­fico.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="expandCapacity()">
 <h3>expandCapacity</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">expandCapacity</span>()</div>
+<div class="block">Expande a capacidade da matriz de adjacÃªncia e do array de vÃ©rtices.
+ Este mÃ©todo Ã© chamado quando o array de vÃ©rtices ou a matriz de adjacÃªncia estÃ£o cheios e Ã© necessÃ¡rio adicionar mais um vÃ©rtice ou aresta.
+ Ele cria um novo array de vÃ©rtices e uma nova matriz de adjacÃªncia com o dobro do tamanho dos atuais.
+ Em seguida, copia os vÃ©rtices e a matriz de adjacÃªncia existentes para os novos array e matriz.
+ Finalmente, atribui o novo array de vÃ©rtices e a nova matriz de adjacÃªncia aos atuais, efetivamente expandindo sua capacidade.</div>
 </section>
 </li>
 <li>
@@ -515,6 +696,11 @@ implements <a href="../Interfaces/NetworkADT.html" title="interface in Interface
 <h3>hasEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasEdge</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;targetIndex)</span></div>
+<div class="block">Verifica se os vÃ©rtices sÃ£o conectados</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Verdadeiro os vÃ©rtices sÃ£o conectados e falso caso contrÃ¡rio.</dd>
+</dl>
 </section>
 </li>
 </ul>

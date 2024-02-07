@@ -35,9 +35,8 @@ public class Game {
     }
 
     /**
-     * Inicia o jogo, criando o mapa, os jogadores, os bots e a bandeira.
-     *
-     * @throws IOException Se ocorrer um erro de entrada/saída.
+     * Gera um número aleatório entre 0 e max.
+     * @param max O valor máximo do número aleatório.
      */
     public int randomNumber(int max) {
         Random random = new Random();

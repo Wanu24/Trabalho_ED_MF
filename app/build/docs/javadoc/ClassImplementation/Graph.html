@@ -75,6 +75,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - O tipo de elementos que este grafo contÃ©m.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;T&gt;</code></dd>
 </dl>
@@ -86,6 +90,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Graph&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;T&gt;</span></div>
+<div class="block">Classe Graph que implementa GraphADT.
+ Cada Graph tem uma capacidade padrÃ£o, um nÃºmero de vÃ©rtices, uma matriz de adjacÃªncia e um array de vÃ©rtices.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -100,16 +106,24 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected boolean[][]</code></div>
 <div class="col-second even-row-color"><code><a href="#adjMatrix" class="member-name-link">adjMatrix</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">A matriz de adjacÃªncia deste grafo.</div>
+</div>
 <div class="col-first odd-row-color"><code>protected final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#DEFAULT_CAPACITY" class="member-name-link">DEFAULT_CAPACITY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">A capacidade padrÃ£o deste grafo.</div>
+</div>
 <div class="col-first even-row-color"><code>protected int</code></div>
 <div class="col-second even-row-color"><code><a href="#numVertices" class="member-name-link">numVertices</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">O nÃºmero de vÃ©rtices neste grafo.</div>
+</div>
 <div class="col-first odd-row-color"><code>protected <a href="Graph.html" title="type parameter in Graph">T</a>[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#vertices" class="member-name-link">vertices</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">O array de vÃ©rtices deste grafo.</div>
+</div>
 </div>
 </section>
 </li>
@@ -123,11 +137,11 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Graph</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates an empty graph.</div>
+<div class="block">Construtor para a classe Graph.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">Graph</a><wbr>(int&nbsp;size)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a graph with the specified capacity.</div>
+<div class="block">Construtor para a classe Graph.</div>
 </div>
 </div>
 </section>
@@ -146,72 +160,110 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(int,int)" class="member-name-link">addEdge</a><wbr>(int&nbsp;index1,
  int&nbsp;index2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona uma aresta ao grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(T,T)" class="member-name-link">addEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex1,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex2)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Inserts an edge between two vertices of the graph.</div>
+<div class="block">Adiciona uma aresta ao grafo.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex(T)" class="member-name-link">addVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um vÃ©rtice ao grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIndex(T)" class="member-name-link">getIndex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o Ã­ndice de um vÃ©rtice.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Graph.html" title="class in ClassImplementation">Graph</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMST()" class="member-name-link">getMST</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um grafo que Ã© uma Ã¡rvore geradora mÃ­nima do grafo original.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Graph.html" title="type parameter in Graph">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVertex(int)" class="member-name-link">getVertex</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o vÃ©rtice em um Ã­ndice especÃ­fico.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#indexIsValid(int)" class="member-name-link">indexIsValid</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the given index is valid.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConnected()" class="member-name-link">isConnected</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se o grafo estÃ¡ conectado.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se o grafo estÃ¡ vazio.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorBFS(T)" class="member-name-link">iteratorBFS</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;startVertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador para a busca em largura a partir de um Ã­ndice inicial.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorDFS(T)" class="member-name-link">iteratorDFS</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;startVertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador para a busca em profundidade a partir de um vÃ©rtice inicial.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPath(int,int)" class="member-name-link">iteratorShortestPath</a><wbr>(int&nbsp;startIndex,
  int&nbsp;targetIndex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador para o caminho mais curto entre dois Ã­ndices.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPath(T,T)" class="member-name-link">iteratorShortestPath</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;startVertex,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;targetVertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador para o caminho mais curto entre dois vÃ©rtices.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPathIndices(int,int)" class="member-name-link">iteratorShortestPathIndices</a><wbr>(int&nbsp;startIndex,
  int&nbsp;targetIndex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna um iterador para o caminho mais curto entre dois Ã­ndices.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;index1,
  int&nbsp;index2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove uma aresta do grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(T,T)" class="member-name-link">removeEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex1,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove uma aresta do grafo.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(int)" class="member-name-link">removeVertex</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove um vÃ©rtice do grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(T)" class="member-name-link">removeVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove um vÃ©rtice do grafo.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o tamanho do grafo.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a string representation of the graph.</div>
+</div>
 </div>
 </div>
 </div>
@@ -233,6 +285,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="DEFAULT_CAPACITY">
 <h3>DEFAULT_CAPACITY</h3>
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_CAPACITY</span></div>
+<div class="block">A capacidade padrÃ£o deste grafo.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -247,18 +300,21 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="numVertices">
 <h3>numVertices</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">numVertices</span></div>
+<div class="block">O nÃºmero de vÃ©rtices neste grafo.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="adjMatrix">
 <h3>adjMatrix</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean[][]</span>&nbsp;<span class="element-name">adjMatrix</span></div>
+<div class="block">A matriz de adjacÃªncia deste grafo.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="vertices">
 <h3>vertices</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Graph.html" title="type parameter in Graph">T</a>[]</span>&nbsp;<span class="element-name">vertices</span></div>
+<div class="block">O array de vÃ©rtices deste grafo.</div>
 </section>
 </li>
 </ul>
@@ -273,17 +329,19 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="&lt;init&gt;()">
 <h3>Graph</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Graph</span>()</div>
-<div class="block">Creates an empty graph.</div>
+<div class="block">Construtor para a classe Graph.
+ Inicializa o nÃºmero de vÃ©rtices como 0, a matriz de adjacÃªncia com a capacidade padrÃ£o e o array de vÃ©rtices com a capacidade padrÃ£o.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>Graph</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Graph</span><wbr><span class="parameters">(int&nbsp;size)</span></div>
-<div class="block">Creates a graph with the specified capacity.</div>
+<div class="block">Construtor para a classe Graph.
+ Inicializa o nÃºmero de vÃ©rtices como 0, a matriz de adjacÃªncia com o tamanho fornecido e o array de vÃ©rtices com o tamanho fornecido.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>size</code> - the number of vertices that the graph can hold</dd>
+<dd><code>size</code> - O tamanho inicial do grafo.</dd>
 </dl>
 </section>
 </li>
@@ -300,6 +358,13 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>addEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(int&nbsp;index1,
  int&nbsp;index2)</span></div>
+<div class="block">Adiciona uma aresta ao grafo.
+ Se os Ã­ndices forem vÃ¡lidos, adiciona uma aresta entre os vÃ©rtices nos Ã­ndices fornecidos.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index1</code> - O Ã­ndice do primeiro vÃ©rtice.</dd>
+<dd><code>index2</code> - O Ã­ndice do segundo vÃ©rtice.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -307,6 +372,13 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>removeEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(int&nbsp;index1,
  int&nbsp;index2)</span></div>
+<div class="block">Remove uma aresta do grafo.
+ Se os Ã­ndices forem vÃ¡lidos, remove a aresta entre os vÃ©rtices nos Ã­ndices fornecidos.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index1</code> - O Ã­ndice do primeiro vÃ©rtice.</dd>
+<dd><code>index2</code> - O Ã­ndice do segundo vÃ©rtice.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -314,13 +386,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="addEdge(java.lang.Object,java.lang.Object)">addEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex1,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex2)</span></div>
-<div class="block">Inserts an edge between two vertices of the graph.</div>
+<div class="block">Adiciona uma aresta ao grafo.
+ Adiciona uma aresta entre os vÃ©rtices fornecidos.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#addEdge(T,T)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>vertex1</code> - the first vertex</dd>
-<dd><code>vertex2</code> - the second vertex</dd>
+<dd><code>vertex1</code> - O primeiro vÃ©rtice.</dd>
+<dd><code>vertex2</code> - O segundo vÃ©rtice.</dd>
 </dl>
 </section>
 </li>
@@ -329,9 +402,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="removeEdge(java.lang.Object,java.lang.Object)">removeEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex1,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex2)</span></div>
+<div class="block">Remove uma aresta do grafo.
+ Remove a aresta entre os vÃ©rtices fornecidos.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#removeEdge(T,T)">removeEdge</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex1</code> - O primeiro vÃ©rtice.</dd>
+<dd><code>vertex2</code> - O segundo vÃ©rtice.</dd>
 </dl>
 </section>
 </li>
@@ -339,9 +417,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="iteratorBFS(T)">
 <h3 id="iteratorBFS(java.lang.Object)">iteratorBFS</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorBFS</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;startVertex)</span></div>
+<div class="block">Retorna um iterador para a busca em largura a partir de um Ã­ndice inicial.
+ Se o Ã­ndice nÃ£o for vÃ¡lido, retorna um iterador para uma lista vazia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorBFS(T)">iteratorBFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O Ã­ndice inicial para a busca em largura.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador para a busca em largura a partir do Ã­ndice inicial.</dd>
 </dl>
 </section>
 </li>
@@ -349,9 +433,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="iteratorDFS(T)">
 <h3 id="iteratorDFS(java.lang.Object)">iteratorDFS</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorDFS</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;startVertex)</span></div>
+<div class="block">Retorna um iterador para a busca em profundidade a partir de um vÃ©rtice inicial.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorDFS(T)">iteratorDFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O vÃ©rtice inicial para a busca em profundidade.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador para a busca em profundidade a partir do vÃ©rtice inicial.</dd>
 </dl>
 </section>
 </li>
@@ -360,6 +449,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>iteratorShortestPathIndices</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPathIndices</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;targetIndex)</span></div>
+<div class="block">Retorna um iterador para o caminho mais curto entre dois Ã­ndices.
+ Se os Ã­ndices nÃ£o forem vÃ¡lidos ou forem iguais, retorna um iterador para uma lista vazia.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - O Ã­ndice inicial para o caminho mais curto.</dd>
+<dd><code>targetIndex</code> - O Ã­ndice alvo para o caminho mais curto.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador para o caminho mais curto entre os dois Ã­ndices.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -367,6 +465,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>iteratorShortestPath</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPath</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;targetIndex)</span></div>
+<div class="block">Retorna um iterador para o caminho mais curto entre dois Ã­ndices.
+ Se os Ã­ndices nÃ£o forem vÃ¡lidos, retorna um iterador para uma lista vazia.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startIndex</code> - O Ã­ndice inicial para o caminho mais curto.</dd>
+<dd><code>targetIndex</code> - O Ã­ndice alvo para o caminho mais curto.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador para o caminho mais curto entre os dois Ã­ndices.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -374,9 +481,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="iteratorShortestPath(java.lang.Object,java.lang.Object)">iteratorShortestPath</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPath</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;startVertex,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;targetVertex)</span></div>
+<div class="block">Retorna um iterador para o caminho mais curto entre dois vÃ©rtices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorShortestPath(T,T)">iteratorShortestPath</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - O vÃ©rtice inicial para o caminho mais curto.</dd>
+<dd><code>targetVertex</code> - O vÃ©rtice alvo para o caminho mais curto.</dd>
+<dt>Returns:</dt>
+<dd>Um iterador para o caminho mais curto entre os dois vÃ©rtices.</dd>
 </dl>
 </section>
 </li>
@@ -384,9 +497,12 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="isEmpty()">
 <h3>isEmpty</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
+<div class="block">Verifica se o grafo estÃ¡ vazio.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#isEmpty()">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>Verdadeiro se o grafo estÃ¡ vazio, falso caso contrÃ¡rio.</dd>
 </dl>
 </section>
 </li>
@@ -394,9 +510,12 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="isConnected()">
 <h3>isConnected</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isConnected</span>()</div>
+<div class="block">Verifica se o grafo estÃ¡ conectado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#isConnected()">isConnected</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>Verdadeiro se o grafo estÃ¡ conectado, falso caso contrÃ¡rio.</dd>
 </dl>
 </section>
 </li>
@@ -404,9 +523,12 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="size()">
 <h3>size</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
+<div class="block">Retorna o tamanho do grafo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#size()">size</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>O tamanho do grafo.</dd>
 </dl>
 </section>
 </li>
@@ -414,9 +536,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="addVertex(T)">
 <h3 id="addVertex(java.lang.Object)">addVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Adiciona um vÃ©rtice ao grafo.
+ Se o grafo estiver cheio, expande a capacidade do grafo.
+ Adiciona o vÃ©rtice no final do array de vÃ©rtices e incrementa o nÃºmero de vÃ©rtices.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#addVertex(T)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - O vÃ©rtice a ser adicionado ao grafo.</dd>
 </dl>
 </section>
 </li>
@@ -424,15 +551,25 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="removeVertex(int)">
 <h3>removeVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<div class="block">Remove um vÃ©rtice do grafo.
+ Se o Ã­ndice for vÃ¡lido, remove o vÃ©rtice no Ã­ndice fornecido.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - O Ã­ndice do vÃ©rtice a ser removido.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="removeVertex(T)">
 <h3 id="removeVertex(java.lang.Object)">removeVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Remove um vÃ©rtice do grafo.
+ Remove o vÃ©rtice fornecido do grafo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#removeVertex(T)">removeVertex</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - O vÃ©rtice a ser removido.</dd>
 </dl>
 </section>
 </li>
@@ -440,23 +577,43 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="getIndex(T)">
 <h3 id="getIndex(java.lang.Object)">getIndex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getIndex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Retorna o Ã­ndice de um vÃ©rtice.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - O vÃ©rtice cujo Ã­ndice deve ser retornado.</dd>
+<dt>Returns:</dt>
+<dd>O Ã­ndice do vÃ©rtice.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="indexIsValid(int)">
 <h3>indexIsValid</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">indexIsValid</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<div class="block">Checks if the given index is valid.
+ An index is considered valid if it is greater than or equal to 0 and less than the number of vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - The index to be checked.</dd>
+<dt>Returns:</dt>
+<dd>true if the index is valid, false otherwise.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Returns a string representation of the graph.
+ The string representation includes the adjacency matrix and the vertex values.
+ If the graph is empty, returns "Graph is empty".</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>A string representation of the graph.</dd>
 </dl>
 </section>
 </li>
@@ -464,12 +621,27 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <section class="detail" id="getMST()">
 <h3>getMST</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Graph.html" title="class in ClassImplementation">Graph</a></span>&nbsp;<span class="element-name">getMST</span>()</div>
+<div class="block">Retorna um grafo que Ã© uma Ã¡rvore geradora mÃ­nima do grafo original.
+ Se o grafo original estiver vazio ou nÃ£o estiver conectado, retorna um grafo vazio.
+ Cria um novo grafo, adiciona o primeiro vÃ©rtice do grafo original ao novo grafo e marca o vÃ©rtice como visitado.
+ Enquanto o novo grafo nÃ£o tiver o mesmo tamanho que o grafo original e houver arestas para adicionar, adiciona a aresta de menor peso que conecta um vÃ©rtice visitado a um vÃ©rtice nÃ£o visitado ao novo grafo e marca o vÃ©rtice nÃ£o visitado como visitado.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Um grafo que Ã© uma Ã¡rvore geradora mÃ­nima do grafo original.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getVertex(int)">
 <h3>getVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Graph.html" title="type parameter in Graph">T</a></span>&nbsp;<span class="element-name">getVertex</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<div class="block">Retorna o vÃ©rtice em um Ã­ndice especÃ­fico.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - O Ã­ndice do vÃ©rtice a ser retornado.</dd>
+<dt>Returns:</dt>
+<dd>O vÃ©rtice no Ã­ndice especificado.</dd>
+</dl>
 </section>
 </li>
 </ul>
