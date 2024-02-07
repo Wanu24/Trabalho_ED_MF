@@ -4,17 +4,28 @@
  * and open the template in the editor.
  */
 package ClassImplementation;
-/**
+/*
  * @author 8210666 Manuel Pereira
  * @author 8190183 Fábio Cunha
  */
-public class HeapNode<T> extends BinaryTreeNode<T>{
-   protected HeapNode<T> parent;
+/**
+ * Classe HeapNode que estende a classe BinaryTreeNode.
+ * Cada nó HeapNode tem um objeto genérico e um nó pai.
+ * O nó pai é inicializado como nulo no construtor.
+ *
+ * @param <T> O tipo de objeto que este nó armazena.
+ */
+public class HeapNode<T> extends BinaryTreeNode<T> {
    /**
-    * Creates a new heap node with the specified data.
-    * 
-    * @param obj  the data to be contained within 
-    *             the new heap nodes
+    * O nó pai deste nó HeapNode.
+    */
+   protected HeapNode<T> parent;
+
+   /**
+    * Construtor para a classe HeapNode.
+    * Inicializa o objeto do nó com o objeto fornecido e o nó pai como nulo.
+    *
+    * @param obj O objeto a ser armazenado neste nó.
     */
    HeapNode(T obj) {
       super(obj);

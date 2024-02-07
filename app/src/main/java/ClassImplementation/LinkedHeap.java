@@ -7,27 +7,44 @@ package ClassImplementation;
 
 import Interfaces.HeapADT;
 import Exceptions.EmptyCollectionException;
-/**
+/*
  * @author 8210666 Manuel Pereira
  * @author 8190183 Fábio Cunha
  */
+/**
+ * Classe LinkedHeap que estende LinkedBinaryTree e implementa HeapADT.
+ * Cada LinkedHeap tem um lastNode, que é o último nó que foi adicionado ao heap.
+ *
+ * @param <T> O tipo de elementos que este heap contém.
+ */
 public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
-   public HeapNode<T> lastNode;  
+   /**
+    * O último nó que foi adicionado ao heap.
+    */
+   public HeapNode<T> lastNode;
+   /**
+    * Construtor para a classe LinkedHeap.
+    * Chama o construtor da superclasse.
+    */
    public LinkedHeap() {
       super();
    }
-       /**
-    * Adds the specified element to this heap in the 
-    * appropriate position according to its key value
-    * Note that equal elements are added to the right.
-    * @param obj  the element to be added to this head
+
+   /**
+    * Adiciona um elemento ao heap.
+    * Se o heap estiver vazio, a raiz se torna o novo nó.
+    * Caso contrário, o novo nó é adicionado como filho do próximo nó pai.
+    * O lastNode é atualizado para o novo nó.
+    * Se o heap tiver mais de um nó após a adição, o heap é reorganizado.
+    *
+    * @param obj O elemento a ser adicionado ao heap.
     */
    public void addElement (T obj) {
       HeapNode<T> node = new HeapNode<T>(obj);
       if (root == null)
          root=node;
       else {
-         HeapNode<T> next_parent = getNextParentAdd(); 
+         HeapNode<T> next_parent = getNextParentAdd();
          if (next_parent.left == null)
             next_parent.left = node;
          else
@@ -40,14 +57,14 @@ public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
          heapifyAdd();
    }
 
-      /**
-    * Returns the node that will be the parent of the new node
+   /**
+    * Retorna o próximo nó pai onde um novo nó deve ser adicionado.
     *
-    * @return  the node that will be a parent of the new node
+    * @return O próximo nó pai.
     */
    private HeapNode<T> getNextParentAdd() {
       HeapNode<T> result = lastNode;
-      while ((result != root) && 
+      while ((result != root) &&
                      (result.parent.left != result))
          result = result.parent;
       if (result != root)
@@ -65,7 +82,8 @@ public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
    }
 
    /**
-    * Reorders this heap after adding a node.
+    * Reorganiza o heap após uma adição.
+    * O novo nó é movido para cima até que a propriedade do heap seja restaurada.
     */
    private void heapifyAdd() {
       T temp;
@@ -81,13 +99,13 @@ public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
    }
 
    /**
-    * Remove the element with the lowest value in this heap and
-    * returns a reference to it.  
-    * Throws an EmptyCollectionException if the heap is empty.
+    * Remove e retorna o elemento mínimo do heap.
+    * Se o heap estiver vazio, uma EmptyCollectionException é lançada.
+    * Se o heap tiver apenas um nó, a raiz e o lastNode são definidos como nulos.
+    * Caso contrário, a raiz é substituída pelo último nó e o heap é reorganizado.
     *
-    * @return    the element with the lowest value in this heap
-    * @throws EmptyCollectionException  if an empty collection 
-    *                                   exception occurs
+    * @return O elemento mínimo do heap.
+    * @throws EmptyCollectionException Se o heap estiver vazio.
     */
    public T removeMin() throws EmptyCollectionException {
       if (isEmpty())
@@ -112,11 +130,9 @@ public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
    }
 
    /**
-    * Returns the node that will be the new last node after 
-    * a remove.
+    * Retorna o novo último nó após uma remoção.
     *
-    * @return  the node that willbe the new last node after 
-    * a remove
+    * @return O novo último nó.
     */
    private HeapNode<T> getNewLastNode(){
       HeapNode<T> result = lastNode;
@@ -130,7 +146,8 @@ public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
    }
 
    /**
-    * Reorders this heap after removing the root element.
+    * Reorganiza o heap após uma remoção.
+    * A raiz é movida para baixo até que a propriedade do heap seja restaurada.
     */
    private void heapifyRemove(){
       T temp;
@@ -168,9 +185,13 @@ public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
       node.element = temp;
    }
 
+   /**
+    * Retorna o elemento mínimo no heap sem removê-lo.
+    *
+    * @return O elemento mínimo no heap.
+    */
     @Override
     public T findMin() {
         return super.root.element;
     }
 }
-   
