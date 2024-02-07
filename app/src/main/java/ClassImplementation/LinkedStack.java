@@ -3,8 +3,8 @@ import Interfaces.StackADT;
 import Exceptions.*;
 
 /**
- * @author 8210311 Daniela Moreira
- * @author 8210367 Orlando Pires
+ * @author 8210666 Manuel Pereira
+ * @author 8190183 Fábio Cunha
  */
 public class LinkedStack<T> implements StackADT<T>{
     private int count;

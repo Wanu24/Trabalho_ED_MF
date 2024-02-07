@@ -1,7 +1,7 @@
 package ClassImplementation;
 /**
- * @author 8210311 Daniela Moreira
- * @author 8210367 Orlando Pires
+ * @author 8210666 Manuel Pereira
+ * @author 8190183 Fábio Cunha
  */
 import Interfaces.StackADT;
 import Exceptions.EmptyCollectionException;
