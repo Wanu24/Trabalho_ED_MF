@@ -11,7 +11,7 @@ public enum MovementEnum {
     /**
      * Arvore geradora de custo mínimo.
      */
-    SHORTESTCONEECTEDPATH,
+    MINIMUMSPANNINGTREE,
     /**
      * Caminho mais curto por conexões em direção a um destino.
      */

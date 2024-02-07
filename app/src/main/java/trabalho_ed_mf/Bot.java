@@ -51,7 +51,7 @@ public class Bot {
         System.out.print("Bot " + index + " moved from " + location);
         if (movEnum == MovementEnum.SHORTESTWEIGHTPATH) {
             location = shortestWeightPath(map, location, targetIndex);
-        } else if (movEnum == MovementEnum.SHORTESTCONEECTEDPATH) {
+        } else if (movEnum == MovementEnum.MINIMUMSPANNINGTREE) {
             location = minimumSpanningTree(map, location, targetIndex);
         } //else if (movEnum == MovementEnum.RANDOMPATH) {
         //location = randomPath(map, location);
