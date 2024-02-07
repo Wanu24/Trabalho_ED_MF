@@ -70,11 +70,11 @@ public class BotMovement {
         if (startIndex == targetIndex) {
             return startIndex;
         }
-        int[] parent = new int[map.getNetwork().getAdjMatrix().length];
-        int[] key = new int[map.getNetwork().getAdjMatrix().length];
-        boolean[] mstSet = new boolean[map.getNetwork().getAdjMatrix().length];
+        int[] parent = new int[map.getSize()];
+        int[] key = new int[map.getSize()];
+        boolean[] mstSet = new boolean[map.getSize()];
 
-        for (int i = 0; i < map.getNetwork().getAdjMatrix().length; i++) {
+        for (int i = 0; i < map.getSize(); i++) {
             key[i] = Integer.MAX_VALUE;
             mstSet[i] = false;
         }
@@ -82,11 +82,11 @@ public class BotMovement {
         key[startIndex] = 0;
         parent[startIndex] = -1;
 
-        for (int count = 0; count < map.getNetwork().getAdjMatrix().length - 1; count++) {
+        for (int count = 0; count < map.getSize() - 1; count++) {
             int u = minKey(map, key, mstSet);
             mstSet[u] = true;
 
-            for (int v = 0; v < map.getNetwork().getAdjMatrix().length; v++) {
+            for (int v = 0; v < map.getSize(); v++) {
                 if (map.getNetwork().getAdjMatrix()[u][v] != 0 && !mstSet[v] && map.getNetwork().getAdjMatrix()[u][v] < key[v]) {
                     parent[v] = u;
                     key[v] = (int) map.getNetwork().getAdjMatrix()[u][v];
@@ -117,7 +117,7 @@ public class BotMovement {
     public static int minKey(Map map, int key[], boolean mstSet[]) {
         int min = Integer.MAX_VALUE, min_index = -1;
 
-        for (int v = 0; v < map.getNetwork().getAdjMatrix().length; v++)
+        for (int v = 0; v < map.getSize(); v++)
             if (mstSet[v] == false && key[v] < min) {
                 min = key[v];
                 min_index = v;
